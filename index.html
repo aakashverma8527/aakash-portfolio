@@ -1,62 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aakash Verma – Project Showcase</title>
+  <title>Aakash Verma – Data Validation Specialist</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f7f9fc;
-      color: #333;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
+      background-color: #f7f9fc;
+      color: #333;
+    }
+    header, footer {
+      background-color: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
     }
     .container {
       max-width: 960px;
       margin: auto;
       padding: 40px 20px;
     }
-    h1 {
+    h1, h2, h3 {
       color: #003366;
-      text-align: center;
-      margin-bottom: 50px;
+    }
+    .cta-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    .cta-buttons a:hover {
+      background-color: #0056b3;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 15px;
     }
     .project {
       background-color: #fff;
-      border-left: 5px solid #007bff;
-      padding: 20px;
+      padding: 15px;
       margin-bottom: 40px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      border-left: 4px solid #007bff;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     .project img {
       width: 100%;
-      max-height: 280px;
-      object-fit: cover;
-      border-radius: 8px;
+      height: auto;
       margin-bottom: 15px;
+      border-radius: 6px;
     }
-    .project h2 {
-      color: #003366;
-      margin-bottom: 10px;
+    a {
+      color: #007bff;
     }
-    .project ul {
-      margin-top: 10px;
-      padding-left: 20px;
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>My Project Portfolio</h1>
+<header>
+  <h1>Reliable Data Solutions from a Trusted Remote Team</h1>
+  <p>We help businesses clean, validate, and organize large-scale data with speed, precision, and integrity.</p>
+  <div class="cta-buttons">
+    <a href="#contact">📬 Contact Us</a>
+    <a href="#services">📋 View Services</a>
+    <a href="#more">🔗 Learn More</a>
+  </div>
+</header>
 
-    <!-- Project 1 -->
+<div class="container">
+
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <p><strong>Aakash Verma</strong> – I’m a Data Validation Specialist with 2+ years of experience in e-commerce, academic data review, Salesforce CRM, and MIS reporting. I lead a team of 5 experienced professionals, all dedicated to delivering 98%+ accuracy and fast turnaround for remote data projects.</p>
+    <p><strong>Our Team:</strong> 5 remote data professionals with 2+ years of experience each in content moderation, data research, and dashboard automation.</p>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects Portfolio</h2>
+
     <div class="project">
-      <img src="images/studocu-data-validation.png" alt="Studocu Data Validation Project">
-      <h2>✅ Studocu – University & Course Data Validation</h2>
+      <img src="images/studocu-data-validation.png" alt="Studocu Data Validation">
+      <h3>✅ Studocu – University & Course Data Validation</h3>
       <ul>
         <li>Verified & cleaned 2000+ academic records</li>
         <li>Matched courses/institutions with dashboard data</li>
@@ -64,27 +106,70 @@
       </ul>
     </div>
 
-    <!-- Project 2 -->
     <div class="project">
-      <img src="images/salesforce-crm-management.png" alt="Salesforce CRM Project">
-      <h2>✅ Salesforce CRM Management – U.S. Clients</h2>
+      <img src="images/salesforce-crm-management.png" alt="Salesforce CRM Management">
+      <h3>✅ Salesforce CRM Management – U.S. Clients</h3>
       <ul>
         <li>Created and updated 500+ customer accounts</li>
         <li>Tagged, deduplicated, and automated workflows using Excel Macros</li>
       </ul>
     </div>
 
-    <!-- Project 3 -->
     <div class="project">
-      <img src="images/dressinn-ecommerce-listing.png" alt="Dressinn E-commerce Project">
-      <h2>✅ Dressinn E-commerce Listing</h2>
+      <img src="images/dressinn-ecommerce-listing.png" alt="Dressinn E-commerce Listing">
+      <h3>✅ Dressinn E-commerce Listing</h3>
       <ul>
         <li>Uploaded 500+ fashion products</li>
         <li>Standardized metadata (size, color, brand)</li>
         <li>Improved catalog accuracy by 40%</li>
       </ul>
     </div>
-  </div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Services Offered</h2>
+    <ul>
+      <li>Data Validation & Cleaning</li>
+      <li>Salesforce/CRM Account Management</li>
+      <li>Content Moderation & Document Redaction</li>
+      <li>Web Research & Data Enrichment</li>
+      <li>E-commerce Product Listing</li>
+      <li>MIS Reporting (Excel, Google Sheets)</li>
+    </ul>
+    <p><strong>🎁 Free Demo Offer:</strong> Send us a sample dataset, and we’ll validate or enrich a few records for free to prove our quality.</p>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p><strong>Email:</strong>
+      <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a>
+    </p>
+    <p><strong>LinkedIn:</strong>
+      <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank">LinkedIn</a>
+    </p>
+  </section>
+
+  <section id="more">
+    <h2 class="section-title">More About Us</h2>
+    <p>We offer full-service remote data support with a focus on trust, accuracy, and speed. Whether you're a startup or a global business, our team is equipped to handle your validation, research, and reporting needs.</p>
+
+    <h3>💼 Why Clients Choose Us</h3>
+    <ul>
+      <li>98%+ Accuracy on All Projects</li>
+      <li>Team of 5 Professionals (Min 2+ Years Experience)</li>
+      <li>Fast Turnaround with Clear Communication</li>
+      <li>100% Remote, Flexible & Confidential</li>
+      <li>Free Demo Before You Pay</li>
+    </ul>
+
+    <p><a href="#contact">📬 Reach out now →</a></p>
+  </section>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Aakash Verma – Data Validation Specialist. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
