@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services – Aakash Verma</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
     <h1>Our Services</h1>
     <div class="cta-buttons">
@@ -17,19 +18,38 @@
   </header>
 
   <div class="container">
-    <h2 class="section-title">Services We Offer</h2>
-    <ul>
-      <li>✅ Data Validation & Cleaning</li>
-      <li>✅ Salesforce CRM Management</li>
-      <li>✅ Content Moderation & Redaction</li>
-      <li>✅ Web Research & Enrichment</li>
-      <li>✅ Product Listings (Amazon, Flipkart, etc.)</li>
-      <li>✅ Excel/Google Sheets MIS Reporting</li>
-    </ul>
+    <!-- ✅ Services Section with Accordion -->
+    <section id="services"> 
+      <h2 class="section-title">Services Offered</h2>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-toggle">📊 Data</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Product Data Validation</li>
+              <li>Title & Description Optimization</li>
+              <li>Brand, Color & Size Correction</li>
+              <li>Duplicate Entry Check</li>
+              <li>Spreadsheet Cleanup</li>
+              <li>Mismatch Fixing</li>
+              <li>Content Accuracy Verification</li>
+              <li>Data Comparison (2 sources)</li>
+              <li>Manual Data QA</li>
+              <li>Error Marking & Reporting</li>
+              <li>Bulk CSV Review</li>
+              <li>Data Entry & Formatting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
   <footer>
     <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
