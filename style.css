@@ -6,12 +6,12 @@
 }
 
 :root {
-  --primary: #00bcd4;
-  --primary-dark: #0097a7;
-  --bg-dark: #222;
-  --bg-light: #f4f4f4;
-  --text-light: #fff;
-  --text-dark: #333;
+  --primary: #007BFF;         /* Bright Blue */
+  --primary-dark: #0056b3;    /* Hover Blue */
+  --bg-dark: #1f2937;         /* Dark Nav/Footer */
+  --bg-light: #f9fafb;        /* Light Background */
+  --text-light: #ffffff;      /* White Text */
+  --text-dark: #111827;       /* Dark Text */
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
