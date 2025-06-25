@@ -6,98 +6,29 @@
   <title>Contact - Aakash Verma</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f7fa;
-      margin: 0;
-      padding: 0;
-    }
-
-    .contact-container {
-      max-width: 800px;
-      margin: 50px auto;
-      background: #fff;
-      padding: 40px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-    }
-
-    .contact-container h2 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 30px;
-    }
-
-    .contact-info {
-      margin-bottom: 30px;
-      font-size: 16px;
-    }
-
-    .contact-info p {
-      margin: 10px 0;
-    }
-
-    .contact-info i {
-      margin-right: 10px;
-      color: #007bff;
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: bold;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
-      transition: border 0.3s ease;
-    }
-
-    form input:focus, form textarea:focus {
-      border-color: #007bff;
-      outline: none;
-    }
-
-    form button {
-      background-color: #007bff;
-      color: #fff;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
-
-    form button:hover {
-      background-color: #0056b3;
-    }
-
-    @media (max-width: 600px) {
-      .contact-container {
-        padding: 20px;
-      }
-    }
-  </style>
 </head>
-
 <body>
-  <div class="contact-container">
+
+  <header>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-container">
     <h2>Contact Me</h2>
 
     <div class="contact-info">
-      <p><i class="fas fa-user"></i><strong>Name:</strong> Aakash Verma</p>
-      <p><i class="fas fa-envelope"></i><strong>Email:</strong> <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a></p>
-      <p><i class="fas fa-phone"></i><strong>Phone:</strong> <a href="tel:+918527879047">+91 85278 79047</a></p>
-      <p><i class="fas fa-map-marker-alt"></i><strong>Location:</strong> Rohini, Delhi, India</p>
-      <p><i class="fas fa-briefcase"></i><strong>Available for:</strong> Remote, Gurgaon, Noida (Day/Night/Rotational shifts)</p>
+      <p><i class="fas fa-user"></i> <strong>Name:</strong> Aakash Verma</p>
+      <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a></p>
+      <p><i class="fas fa-phone"></i> <strong>Phone:</strong> <a href="tel:+918527879047">+91 85278 79047</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Rohini, Delhi, India</p>
+      <p><i class="fas fa-briefcase"></i> <strong>Available for:</strong> Remote, Gurgaon, Noida (Day/Night/Rotational shifts)</p>
     </div>
 
     <form action="https://formspree.io/f/yourformid" method="POST">
@@ -115,16 +46,11 @@
 
       <button type="submit">Send Message</button>
     </form>
-  </div>
+  </main>
 
-  <!-- Optional JavaScript confirmation -->
-  <script>
-    const form = document.querySelector("form");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("Thank you! Your message has been sent.");
-      form.reset();
-    });
-  </script>
+  <footer>
+    <p>© 2025 Aakash Verma | All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
