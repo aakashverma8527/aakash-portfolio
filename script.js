@@ -30,11 +30,13 @@ function toggleAccordion(button) {
   const content = button.nextElementSibling;
   const isOpen = content.classList.contains("open");
 
+  // Close all open accordions
   document.querySelectorAll(".accordion-content.open").forEach((el) => {
     el.classList.remove("open");
     el.previousElementSibling.setAttribute("aria-expanded", "false");
   });
 
+  // Open the clicked one
   if (!isOpen) {
     content.classList.add("open");
     button.setAttribute("aria-expanded", "true");
@@ -43,17 +45,14 @@ function toggleAccordion(button) {
 
 // ================= DARK MODE =================
 function initDarkMode() {
-  const toggleBtn = document.createElement("button");
-  toggleBtn.innerHTML = "<span aria-hidden='true'>🌓</span><span class='visually-hidden'>Toggle Theme</span>";
-  toggleBtn.className = "dark-toggle btn-secondary";
-  toggleBtn.setAttribute("aria-label", "Toggle dark mode");
-  document.body.appendChild(toggleBtn);
+  const existingToggle = document.getElementById("darkToggle");
+  if (!existingToggle) return;
 
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const savedTheme = localStorage.getItem("theme") || (prefersDark ? "dark" : "light");
   document.body.classList.toggle("dark-mode", savedTheme === "dark");
 
-  toggleBtn.addEventListener("click", () => {
+  existingToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     const theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
     localStorage.setItem("theme", theme);
@@ -62,24 +61,23 @@ function initDarkMode() {
 
 // ================= SCROLL TO TOP =================
 function initScrollToTop() {
-  const btn = document.createElement("button");
-  btn.innerHTML = "⬆";
-  btn.className = "scroll-top";
-  btn.setAttribute("aria-label", "Back to top");
-  btn.style.display = "none";
-  document.body.appendChild(btn);
+  const existingBtn = document.getElementById("scrollTop");
+  if (!existingBtn) return;
 
   window.addEventListener("scroll", () => {
-    btn.classList.toggle("visible", window.scrollY > 300);
+    existingBtn.style.display = window.scrollY > 300 ? "block" : "none";
   });
 
-  btn.addEventListener("click", () => {
+  existingBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
 // ================= SCROLL REVEAL =================
 function initRevealOnScroll() {
+  const elements = document.querySelectorAll(".reveal");
+  if (!elements.length) return;
+
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -89,8 +87,5 @@ function initRevealOnScroll() {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll("section, .project, .card, .testimonial").forEach((el) => {
-    el.classList.add("reveal");
-    observer.observe(el);
-  });
+  elements.forEach((el) => observer.observe(el));
 }
