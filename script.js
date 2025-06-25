@@ -7,12 +7,14 @@ function initMenuToggle() {
 
   if (!menuBtn || !nav) return;
 
+  menuBtn.setAttribute("aria-expanded", "false"); // Initial state
+
   menuBtn.addEventListener("click", () => {
     nav.classList.toggle("active");
 
-    // Accessibility: Update aria-expanded state
+    // Accessibility: Update aria-expanded on the button, not nav
     const expanded = nav.classList.contains("active");
-    nav.setAttribute("aria-expanded", expanded);
+    menuBtn.setAttribute("aria-expanded", expanded.toString());
   });
 }
 
@@ -23,10 +25,15 @@ function initFormValidation() {
 
   if (!form || !errorDiv) return;
 
+  // Clear error message on user input
+  form.addEventListener("input", () => {
+    errorDiv.textContent = "";
+  });
+
   form.addEventListener("submit", (e) => {
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
