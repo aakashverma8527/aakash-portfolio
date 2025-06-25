@@ -1,19 +1,25 @@
 // script.js
 
 // ==== Toggle Mobile Navigation ====
-const toggleMenu = () => {
-  const nav = document.getElementById("nav-links");
-  nav.classList.toggle("active");
-};
-
-document.addEventListener("DOMContentLoaded", function () {
+function initMenuToggle() {
   const menuBtn = document.getElementById("menu-toggle");
-  if (menuBtn) {
-    menuBtn.addEventListener("click", toggleMenu);
-  }
+  const nav = document.getElementById("nav-links");
 
-  // ==== Contact Form Validation ====
+  if (menuBtn && nav) {
+    menuBtn.addEventListener("click", () => {
+      nav.classList.toggle("active");
+
+      // Optional Accessibility Update
+      const expanded = nav.classList.contains("active");
+      nav.setAttribute("aria-expanded", expanded);
+    });
+  }
+}
+
+// ==== Contact Form Validation ====
+function initFormValidation() {
   const form = document.getElementById("contact-form");
+
   if (form) {
     form.addEventListener("submit", function (e) {
       const name = document.getElementById("name").value.trim();
@@ -21,25 +27,40 @@ document.addEventListener("DOMContentLoaded", function () {
       const message = document.getElementById("message").value.trim();
       const errorDiv = document.getElementById("form-error");
 
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
       if (!name || !email || !message) {
         e.preventDefault();
         errorDiv.textContent = "Please fill out all fields.";
+        errorDiv.style.color = "red";
+      } else if (!emailRegex.test(email)) {
+        e.preventDefault();
+        errorDiv.textContent = "Please enter a valid email address.";
         errorDiv.style.color = "red";
       } else {
         errorDiv.textContent = "";
       }
     });
   }
+}
 
-  // ==== Portfolio Image Hover Preview (optional) ====
+// ==== Portfolio Image Hover Preview ====
+function initImageHover() {
   const images = document.querySelectorAll(".portfolio-img");
+
   images.forEach((img) => {
     img.addEventListener("mouseover", () => {
-      img.style.transform = "scale(1.05)";
-      img.style.transition = "0.3s";
+      img.classList.add("hovered");
     });
     img.addEventListener("mouseout", () => {
-      img.style.transform = "scale(1)";
+      img.classList.remove("hovered");
     });
   });
+}
+
+// ==== Init all after DOM Loaded ====
+document.addEventListener("DOMContentLoaded", function () {
+  initMenuToggle();
+  initFormValidation();
+  initImageHover();
 });
