@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aakash Verma | Freelance Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Aakash Verma - Process Associate specializing in Salesforce, E-commerce, Data Entry and Content Moderation." />
 </head>
 <body>
 
   <!-- Header -->
   <header>
-    <nav>
-      <ul>
+    <nav class="container" aria-label="Primary Navigation">
+      <ul class="nav-list">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
@@ -22,16 +23,16 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
+    <div class="container text-center">
       <h1>Aakash Verma</h1>
-      <p>Process Associate | Salesforce | E-commerce | Data Entry | Content Moderator</p>
-      <p>“Driven by process, powered by precision.”</p>
+      <p class="hero-subtitle">Process Associate | Salesforce | E-commerce | Data Entry | Content Moderator</p>
+      <p class="hero-quote">“Driven by process, powered by precision.”</p>
       <a href="contact.html" class="btn">Hire Me</a>
     </div>
   </section>
 
   <!-- Intro -->
-  <section class="container">
+  <section class="container intro">
     <h2 class="section-title">Who I Am</h2>
     <p>
       I’m Aakash Verma, a Process Associate based in Delhi with 2+ years of experience in Salesforce CRM, e-commerce product listings, content moderation, and SOP-based data validation.
@@ -39,9 +40,9 @@
   </section>
 
   <!-- Tools -->
-  <section class="container">
+  <section class="container tools">
     <h2 class="section-title">Tools & Platforms</h2>
-    <ul>
+    <ul class="tools-list">
       <li>Salesforce CRM</li>
       <li>UiPath RPA</li>
       <li>Excel Macros & Google Sheets</li>
@@ -51,29 +52,29 @@
   </section>
 
   <!-- Projects -->
-  <section class="container">
+  <section class="container projects">
     <h2 class="section-title">Project Highlights</h2>
     <div class="project-grid">
-      <div class="card">
-        <img src="images/dressinn-ecommerce-listing.png" alt="Dressinn Project">
+      <article class="card">
+        <img src="images/dressinn-ecommerce-listing.png" alt="Dressinn Project" />
         <h3>Dressinn – E-commerce Listing</h3>
         <p>Uploaded 500+ fashion products using SOP-based mapping with 98% accuracy.</p>
-      </div>
-      <div class="card">
-        <img src="images/salesforce-crm-management.png" alt="Salesforce CRM">
+      </article>
+      <article class="card">
+        <img src="images/salesforce-crm-management.png" alt="Salesforce CRM" />
         <h3>Salesforce CRM – U.S. Clients</h3>
         <p>Managed 500+ accounts with tagging, automation & daily record updates.</p>
-      </div>
-      <div class="card">
-        <img src="images/studocu-data-validation.png" alt="Studocu Validation">
+      </article>
+      <article class="card">
+        <img src="images/studocu-data-validation.png" alt="Studocu Validation" />
         <h3>Studocu – Data Validation</h3>
         <p>Validated 2000+ academic records with 97%+ accuracy for structured university uploads.</p>
-      </div>
+      </article>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="container">
+  <!-- Call To Action -->
+  <section class="container cta text-center">
     <h2 class="section-title">Need Fast, Accurate Data Support?</h2>
     <p>I lead a trained 5-member team available for remote data projects, CRM management, and content moderation.</p>
     <a href="contact.html" class="btn">Request a Quote</a>
@@ -81,11 +82,13 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Aakash Verma | Rohini, Delhi</p>
-    <p>
-      <a href="tel:+918527879047">+91 85278 79047</a> |
-      <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a>
-    </p>
+    <div class="container footer-content text-center">
+      <p>&copy; 2025 Aakash Verma | Rohini, Delhi</p>
+      <p>
+        <a href="tel:+918527879047">+91 85278 79047</a> |
+        <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a>
+      </p>
+    </div>
   </footer>
 
 </body>
