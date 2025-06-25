@@ -1,108 +1,137 @@
-/* Base Reset */
+/* ========== CSS Variables ========== */
+:root {
+  --primary: #007bff;
+  --dark: #003366;
+  --light: #f7f9fc;
+  --accent: #ffce00;
+  --text: #333;
+  --spacing-lg: 40px;
+  --spacing-md: 20px;
+  --spacing-sm: 10px;
+  --font-main: 'Inter', sans-serif;
+}
+
+/* ========== Base Reset ========== */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f7f9fc;
-  color: #333;
+  font-family: var(--font-main);
+  background-color: var(--light);
+  color: var(--text);
   line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Header and Footer */
+body.dark-mode {
+  background-color: #111;
+  color: #eee;
+}
+
+/* ========== Header and Footer ========== */
 header, footer {
-  background-color: #003366;
+  background: linear-gradient(to right, var(--dark), #001933);
   color: white;
   text-align: center;
-  padding: 20px 10px;
+  padding: var(--spacing-md) var(--spacing-sm);
 }
 
-/* Navigation Buttons */
+/* ========== Navigation Buttons ========== */
 .cta-buttons a {
   display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  background: #007bff;
+  margin: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--primary);
   color: white;
   text-decoration: none;
   border-radius: 6px;
-  transition: background 0.3s ease;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .cta-buttons a:hover {
   background: #0056b3;
+  transform: scale(1.05);
 }
 
-/* Layout Container */
+/* ========== Layout Container ========== */
 .container {
   max-width: 960px;
   margin: auto;
-  padding: 40px 20px;
+  padding: var(--spacing-lg) var(--spacing-md);
 }
 
-/* Section Titles */
+/* ========== Section Titles ========== */
 .section-title {
-  font-size: 26px;
-  margin-bottom: 15px;
-  color: #003366;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin-bottom: var(--spacing-md);
+  color: var(--dark);
+  text-align: center;
 }
 
-/* Project Card */
+/* ========== Project Cards ========== */
 .project {
   background: white;
-  padding: 15px;
-  margin-bottom: 30px;
-  border-left: 4px solid #007bff;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .project img {
   width: 100%;
   border-radius: 6px;
-  margin-bottom: 10px;
+  margin-bottom: var(--spacing-sm);
+  height: auto;
 }
 
-/* Forms */
+/* ========== Forms ========== */
 form input,
 form textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: var(--spacing-sm);
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: inherit;
   font-size: 16px;
 }
 
-/* ✅ Welcome Section */
+/* ========== Welcome Section ========== */
 .welcome-section {
-  background-color: #eaf4ff;
-  padding: 40px 20px;
+  background: linear-gradient(to right, #eaf4ff, #d4eafd);
+  padding: var(--spacing-lg) var(--spacing-md);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 50px;
+  margin-bottom: var(--spacing-lg);
   text-align: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .welcome-section h2 {
   font-size: 30px;
-  color: #003366;
-  margin-bottom: 20px;
+  color: var(--dark);
+  margin-bottom: var(--spacing-md);
 }
 
 .welcome-section p {
   font-size: 16px;
   line-height: 1.8;
-  color: #333;
+  color: var(--text);
   max-width: 800px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto var(--spacing-sm) auto;
 }
 
-/* ✅ Accordion Section */
+/* ========== Accordion Section ========== */
 .accordion {
   border-top: 1px solid #ccc;
 }
@@ -118,7 +147,7 @@ form textarea {
   border: none;
   font-size: 18px;
   padding: 15px;
-  color: #003366;
+  color: var(--dark);
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -130,6 +159,15 @@ form textarea {
 .accordion-content {
   padding: 15px 20px;
   background-color: #f9fbff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.accordion-content.open {
+  max-height: 500px;
+  opacity: 1;
 }
 
 .accordion-content ul {
@@ -141,7 +179,13 @@ form textarea {
   margin-bottom: 8px;
 }
 
-/* Responsive Adjustments */
+/* ========== Scroll Reveal Animation ========== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== Responsive Adjustments ========== */
 @media (max-width: 600px) {
   .section-title {
     font-size: 22px;
@@ -155,5 +199,17 @@ form textarea {
 
   .accordion-toggle {
     font-size: 16px;
+  }
+
+  .container {
+    padding: var(--spacing-md);
+  }
+
+  .welcome-section h2 {
+    font-size: 24px;
+  }
+
+  .project {
+    padding: var(--spacing-sm);
   }
 }
