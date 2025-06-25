@@ -1,98 +1,62 @@
-/* ================================
-   Aakash Verma | Freelance Portfolio CSS
-   Modern, Responsive, and Clean
-================================== */
-
-:root {
-  /* Colors */
-  --primary: #0066ff;
-  --accent: #00b894;
-  --background: #f4f7fb;
-  --text: #1e272e;
-  --muted: #636e72;
-  --btn-hover: #004ecb;
-  --white: #ffffff;
-
-  /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 3rem;
-
-  /* Font Sizes */
-  --font-h2: 2rem;
-  --font-base: 1rem;
-}
-
-/* Reset & Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--background);
-  color: var(--text);
-  line-height: 1.6;
-  font-size: var(--font-base);
-  transition: all 0.3s ease-in-out;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Header */
-header {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: var(--space-lg) 0;
-  text-align: center;
-}
-
+/* Remove unused selector - no nav inside header */
 .header-content nav {
+  /* Remove this or update if nav added inside header */
   margin-top: var(--space-sm);
 }
 
+/* Social Links - add hover effect and spacing */
+.social-links a {
+  color: var(--white);
+  margin: 0 var(--space-xs);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+.social-links a:hover,
+.social-links a:focus {
+  color: var(--accent);
+  outline: none;
+}
+
+/* UL padding adjustment */
+ul {
+  list-style: none;
+  padding-left: 0.5rem; /* slightly less */
+  margin-bottom: var(--space-md);
+}
+
+/* Nav Links - improve active and hover */
 nav a {
   color: var(--white);
   margin: 0 var(--space-sm);
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
+  padding-bottom: 0.25rem;
+  transition: border-color 0.3s ease;
 }
 
 nav a:hover,
+nav a:focus,
 nav a.active {
   border-bottom: 2px solid var(--accent);
+  color: var(--accent);
+  outline: none;
 }
 
-/* Social Links */
-.social-links a {
-  color: var(--white);
-  margin: 0 var(--space-xs);
-  text-decoration: underline;
-}
-
-/* Hero Section */
-.hero {
-  background: var(--white);
-  padding: var(--space-lg) 0;
+/* Project Card Background - make card white with subtle shadow */
+.project-card {
+  background: var(--white); /* changed from var(--background) */
+  padding: var(--space-sm);
+  border-radius: 8px;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07); /* stronger shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.hero h2 {
-  font-size: 2.2rem;
-  color: var(--primary);
-  margin-bottom: var(--space-xs);
-}
-
-.hero p {
-  margin-bottom: var(--space-sm);
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  outline: none;
 }
 
 /* Buttons */
@@ -103,158 +67,43 @@ nav a.active {
   padding: 0.7rem 1.5rem;
   border-radius: 5px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.btn:hover {
-  background-color: var(--btn-hover);
-}
-
-.btn-secondary {
-  background: var(--accent);
-  color: var(--white);
-}
-
-.btn-secondary:hover {
-  background-color: #009f7d;
-}
-
-/* Sections */
-section {
-  padding: var(--space-lg) 0;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: var(--space-md);
-  color: var(--primary);
-  font-size: var(--font-h2);
-}
-
-.section-card {
-  background: var(--white);
-  border-radius: 8px;
-  padding: var(--space-md);
-  margin-bottom: var(--space-md);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-/* Lists */
-ul {
-  list-style: none;
-  padding-left: 1rem;
-}
-
-ul li::before {
-  content: '✔';
-  color: var(--accent);
-  margin-right: var(--space-xs);
-}
-
-/* Project Grid */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-md);
-}
-
-.project-card {
-  background: var(--background);
-  padding: var(--space-sm);
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-bottom: var(--space-sm);
-}
-
-/* Profile */
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid var(--accent);
-  display: block;
-  margin: 0 auto var(--space-sm);
-}
-
-/* Address */
-address {
-  font-style: normal;
-  line-height: 1.8;
-  color: var(--muted);
-}
-
-/* Footer */
-footer {
-  background: var(--primary);
-  color: var(--white);
-  text-align: center;
-  padding: var(--space-md) 0;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: var(--white);
-  text-decoration: underline;
-}
-
-/* Accessibility */
-a:focus,
+.btn:hover,
 .btn:focus {
+  background-color: var(--btn-hover);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
+  outline: none;
+}
+
+/* Optional: Add focus-visible support */
+a:focus-visible,
+.btn:focus-visible {
   outline: 2px dashed var(--accent);
   outline-offset: 2px;
 }
 
-/* Responsive Styles */
+/* Responsive tweaks */
+/* Nav links stack nicely on small screens */
 @media (max-width: 768px) {
   nav a {
     display: block;
     margin: var(--space-xs) 0;
   }
-
-  .hero h2 {
-    font-size: 1.5rem;
-  }
-
+  
   .btn {
     width: 100%;
     text-align: center;
   }
-
+  
   .project-grid {
     grid-template-columns: 1fr;
   }
-
+  
   .profile-pic {
     width: 120px;
     height: 120px;
-  }
-}
-
-/* Optional: Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1e272e;
-    --text: #f4f7fb;
-    --white: #1e272e;
-    --primary: #3399ff;
-    --accent: #55efc4;
-  }
-
-  .section-card,
-  .project-card {
-    background: #2f3640;
-  }
-
-  body {
-    background-color: var(--background);
-    color: var(--text);
   }
 }
