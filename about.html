@@ -4,11 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About – Aakash Verma</title>
+  <meta name="description" content="About Aakash Verma – Experienced Data Validation Specialist with 98%+ accuracy. Learn more about our team, skills, and mission." />
+  <meta property="og:title" content="About – Aakash Verma" />
+  <meta property="og:description" content="Meet Aakash Verma and team – experts in data validation, automation, and e-commerce support." />
+  <link rel="canonical" href="https://yourdomain.com/about.html" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>About Us</h1>
+  <header class="hero-header">
+    <h1>About Aakash Verma</h1>
     <div class="cta-buttons">
       <a href="index.html">🏠 Home</a>
       <a href="services.html">📋 Services</a>
@@ -16,18 +21,61 @@
     </div>
   </header>
 
-  <div class="container">
-    <h2 class="section-title">Who We Are</h2>
-    <p>I am <strong>Aakash Verma</strong>, a Data Validation Specialist with 2+ years of experience in academic validation, CRM platforms, and automation. I lead a small team that delivers quick, accurate remote support for all kinds of data projects.</p>
-    <ul>
-      <li>✔️ 98%+ accuracy in validation tasks</li>
-      <li>✔️ 5 professionals with remote working experience</li>
-      <li>✔️ Expertise in Excel, Google Sheets, Salesforce, UiPath</li>
-    </ul>
-  </div>
+  <section class="hero-section">
+    <img src="images/aakash-profile.jpg" alt="Aakash Verma" class="profile-photo">
+    <h2 class="hero-title">Building Trust Through Accuracy</h2>
+    <p class="hero-subtitle">Delivering clean, validated data with speed and precision for clients worldwide.</p>
+    <a href="resume-aakash-verma.pdf" class="btn-primary" download>📄 Download Resume (PDF)</a>
+  </section>
+
+  <main class="container">
+    <section class="about-intro">
+      <h2 class="section-title">Who We Are</h2>
+      <p><strong>Aakash Verma</strong> is a Data Validation Specialist with 2+ years of experience in academic validation, CRM platforms, automation, and quality control. He leads a team of 5 skilled professionals with a mission to deliver quick, accurate, and scalable remote support.</p>
+    </section>
+
+    <section class="milestones">
+      <h3>📌 Milestones</h3>
+      <ul>
+        <li>🚀 Started freelance services in 2022</li>
+        <li>🌍 Partnered with 10+ international clients</li>
+        <li>💼 Completed 30+ successful data projects</li>
+      </ul>
+    </section>
+
+    <section class="skills">
+      <h3>💡 Core Expertise</h3>
+      <ul class="skill-badges">
+        <li><span class="badge">✔️ Excel</span></li>
+        <li><span class="badge">✔️ Google Sheets</span></li>
+        <li><span class="badge">✔️ Salesforce</span></li>
+        <li><span class="badge">✔️ UiPath</span></li>
+      </ul>
+    </section>
+
+    <section class="why-choose">
+      <h3>🤝 Why Choose Us</h3>
+      <ul>
+        <li>✅ 98%+ validation accuracy</li>
+        <li>✅ Fast turnaround for bulk tasks</li>
+        <li>✅ Dedicated and skilled remote team</li>
+        <li>✅ Transparent communication and reports</li>
+      </ul>
+    </section>
+
+    <section class="testimonials">
+      <h3>💬 Testimonials</h3>
+      <blockquote>“Reliable and accurate. Aakash's team cleaned up our CRM faster than expected.” – U.S. Tech Client</blockquote>
+      <blockquote>“Great experience working with Aakash. Communication and delivery were top-notch.” – European eCommerce Partner</blockquote>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Aakash Verma. All rights reserved. | <a href="index.html">Home</a> | <a href="services.html">Services</a> | <a href="contact.html">Contact</a></p>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
