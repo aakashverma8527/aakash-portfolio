@@ -1,81 +1,196 @@
-<!DOCTYPE html>
-<html lang="en-IN">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - Aakash Verma</title>
-  <meta name="description" content="Aakash Verma – Process Associate with expertise in e-commerce, data entry, and Salesforce CRM. Leading a freelance team for global projects." />
-  <meta name="keywords" content="Aakash Verma, Freelance, Data Entry, Salesforce, CRM, E-commerce, Delhi, Remote Work" />
-  <meta name="author" content="Aakash Verma" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/favicon.ico" />
-</head>
-<body>
+/* ================================
+   Aakash Verma | Freelance Portfolio CSS
+   Modern, Responsive, and Clean
+================================== */
 
-  <header>
-    <nav aria-label="Main Navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+:root {
+  --primary: #0066ff;
+  --accent: #00b894;
+  --background: #f4f7fb;
+  --text: #1e272e;
+  --muted: #636e72;
+  --btn-hover: #004ecb;
+  --white: #ffffff;
+}
 
-  <main class="about-section">
-    <section class="intro">
-      <img src="images/profile.jpg" alt="Aakash Verma" class="profile-pic" />
-      <h1>About Me</h1>
-      <p>
-        I'm <strong>Aakash Verma</strong>, a Process Associate with over 2 years of experience in 
-        <span>e-commerce product listing, content moderation, Salesforce CRM management, and data entry.</span>
-        I’ve worked with reputed organizations like <strong>SunTec India</strong> and <strong>eDataIndia</strong>. 
-        Currently pursuing a B.A. from <strong>University of Delhi</strong> (expected 2025).
-      </p>
-      <a href="resume.pdf" download class="btn">📄 Download Resume</a>
-    </section>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <section class="details">
-      <h2>Professional Details</h2>
-      <address>
-        📍 Location: Rohini, Delhi<br />
-        📧 <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a><br />
-        📞 +91 85278 79047<br />
-        🔄 Shift Preference: Day / Night / Rotational<br />
-        🧭 Preferred Work Locations: Gurgaon, Noida, Remote
-      </address>
-    </section>
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    <section class="skills">
-      <h2>Core Skills & Tools</h2>
-      <ul>
-        <li><strong>Salesforce CRM:</strong> Account updates, lead management, and tagging</li>
-        <li><strong>UiPath Automation:</strong> Basic workflow creation and task automation</li>
-        <li><strong>Excel:</strong> Macros, VLOOKUP, Pivot Tables, Data Cleaning</li>
-        <li><strong>Google Sheets:</strong> Reporting, formula building, automation with App Script</li>
-        <li><strong>Content Moderation:</strong> Platform safety and user-generated content review</li>
-        <li><strong>Typing Speed:</strong> 30+ WPM (90%+ Accuracy)</li>
-      </ul>
-    </section>
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    <section class="team">
-      <h2>My Freelance Team</h2>
-      <p>
-        I lead a 5-member team available for remote or on-site projects. We specialize in:
-      </p>
-      <ul>
-        <li>✅ Bulk product listings & catalog management</li>
-        <li>✅ Salesforce CRM & SOP-based data validation</li>
-        <li>✅ Web research & data collection</li>
-        <li>✅ Business process outsourcing support</li>
-      </ul>
-    </section>
-  </main>
+header {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 2rem 0;
+  text-align: center;
+}
 
-  <footer>
-    <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
-  </footer>
+.header-content nav {
+  margin-top: 1rem;
+}
 
-</body>
-</html>
+nav a {
+  color: var(--white);
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a.active {
+  border-bottom: 2px solid var(--accent);
+}
+
+.social-links a {
+  color: var(--white);
+  margin: 0 0.5rem;
+  text-decoration: underline;
+}
+
+.hero {
+  background: var(--white);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+section {
+  padding: 3rem 0;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+ul li::before {
+  content: '✔';
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+
+.intro, .tools, .projects, .cta, .details, .skills, .team {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--background);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+address {
+  font-style: normal;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+}
