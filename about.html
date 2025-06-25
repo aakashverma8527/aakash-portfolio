@@ -22,13 +22,13 @@
       <a href="index.html">🏠 Home</a>
       <a href="services.html">📋 Services</a>
       <a href="contact.html">📬 Contact</a>
-      <button id="darkToggle" aria-label="Toggle dark mode">🌓</button>
+      <button id="darkToggle" aria-label="Toggle dark mode" aria-pressed="false">🌓</button>
     </nav>
   </header>
 
-  <!-- ✅ Hero Section -->
+  <!-- Hero Section -->
   <section class="hero-section reveal">
-    <img src="images/aakash-profile.jpg" alt="Aakash Verma Profile Photo" class="profile-photo" loading="lazy" />
+    <img src="images/aakash-profile.jpg" alt="Profile photo of Aakash Verma" class="profile-photo" loading="lazy" />
     <h2 class="hero-title">Building Trust Through Accuracy</h2>
     <p class="hero-subtitle">Delivering clean, validated data with speed and precision for clients worldwide.</p>
     <a href="resume-aakash-verma.pdf" class="btn-primary" download>📄 Download Resume (PDF)</a>
@@ -36,13 +36,13 @@
 
   <main class="container">
 
-    <!-- ✅ Team & Values -->
+    <!-- Team & Values -->
     <section class="about-intro reveal">
       <h2 class="section-title">Who We Are</h2>
       <p><strong>Aakash Verma</strong> is a Data Validation Specialist with 2+ years of experience in academic validation, CRM platforms, automation, and quality control. He leads a team of 5 skilled professionals with a mission to deliver quick, accurate, and scalable remote support.</p>
     </section>
 
-    <!-- ✅ Milestones -->
+    <!-- Milestones -->
     <section class="milestones reveal">
       <h3>📌 Milestones</h3>
       <ul>
@@ -52,7 +52,7 @@
       </ul>
     </section>
 
-    <!-- ✅ Skills -->
+    <!-- Skills -->
     <section class="skills reveal">
       <h3>💡 Core Expertise</h3>
       <ul class="skill-badges">
@@ -63,7 +63,7 @@
       </ul>
     </section>
 
-    <!-- ✅ Values -->
+    <!-- Values -->
     <section class="why-choose reveal">
       <h3>🤝 Why Choose Us</h3>
       <ul>
@@ -74,7 +74,7 @@
       </ul>
     </section>
 
-    <!-- ✅ Testimonials -->
+    <!-- Testimonials -->
     <section class="testimonials reveal">
       <h3>💬 Testimonials</h3>
       <blockquote>“Reliable and accurate. Aakash's team cleaned up our CRM faster than expected.” – U.S. Tech Client</blockquote>
@@ -83,27 +83,41 @@
     
   </main>
 
-  <!-- ✅ Footer -->
+  <!-- Footer -->
   <footer>
-    <nav class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
     <p>&copy; <span id="year"></span> Aakash Verma. All rights reserved.</p>
-    <button id="scrollTop">⬆️</button>
+    <button id="scrollTop" type="button" aria-label="Scroll to top">⬆️</button>
   </footer>
 
-  <!-- ✅ Shared JS behavior -->
   <script src="script.js"></script>
   <script>
+    // Auto update year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    document.getElementById("darkToggle")?.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+    // Dark mode toggle with aria-pressed
+    const darkToggle = document.getElementById("darkToggle");
+    darkToggle.addEventListener("click", () => {
+      const isDark = document.body.classList.toggle("dark-mode");
+      darkToggle.setAttribute("aria-pressed", isDark);
+      localStorage.setItem("theme", isDark ? "dark" : "light");
     });
 
+    // Initialize dark mode on load
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+      darkToggle.setAttribute("aria-pressed", "true");
+    } else {
+      darkToggle.setAttribute("aria-pressed", "false");
+    }
+
+    // Scroll to top button behavior
     const scrollBtn = document.getElementById("scrollTop");
     if (scrollBtn) {
       scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -112,6 +126,7 @@
       });
     }
 
+    // IntersectionObserver for reveal effect
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
