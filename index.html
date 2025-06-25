@@ -52,6 +52,7 @@
 
   <main class="container">
 
+    <!-- ✅ Skills -->
     <section id="skills" class="skills-section">
       <h2 class="section-title">Skills & Tools</h2>
       <div class="skills-grid">
@@ -64,17 +65,20 @@
       </div>
     </section>
 
+    <!-- ✅ Welcome -->
     <section id="welcome" class="welcome-section">
       <h2>Welcome to Our Team</h2>
       <p>We are a tech-driven, data-focused remote service provider based in India. With a vision for global-quality delivery, we specialize in data validation, moderation, and catalog support.</p>
       <p>Skilled professionals + smart workflows = 98%+ accuracy and on-time results.</p>
     </section>
 
+    <!-- ✅ About -->
     <section id="about">
       <h2 class="section-title">About Us</h2>
       <p><strong>Aakash Verma</strong> – Data Validation Specialist with 2+ years of experience, leading a 5-member expert team delivering remote data support to global clients.</p>
     </section>
 
+    <!-- ✅ Projects -->
     <section id="projects">
       <h2 class="section-title">Projects Portfolio</h2>
       <div class="projects-grid">
@@ -86,7 +90,6 @@
             <li>97%+ accuracy in course matching</li>
           </ul>
         </div>
-
         <div class="project-card">
           <img src="images/salesforce-crm-management.png" alt="Salesforce CRM" loading="lazy" />
           <h3>Salesforce – CRM Management</h3>
@@ -95,7 +98,6 @@
             <li>Excel automation for deduplication</li>
           </ul>
         </div>
-
         <div class="project-card">
           <img src="images/dressinn-ecommerce-listing.png" alt="Dressinn product listing" loading="lazy" />
           <h3>Dressinn – Product Listing</h3>
@@ -107,6 +109,7 @@
       </div>
     </section>
 
+    <!-- ✅ Testimonials -->
     <section id="testimonials">
       <h2 class="section-title">Trusted By</h2>
       <blockquote>
@@ -116,6 +119,7 @@
       <a href="resume-aakash-verma.pdf" class="btn-secondary" download>Download Resume (PDF)</a>
     </section>
 
+    <!-- ✅ Contact -->
     <section id="contact">
       <h2 class="section-title">Contact</h2>
       <form action="https://formspree.io/f/mayvlbyp" method="POST">
@@ -142,13 +146,24 @@
     <button id="scrollTop">⬆️</button>
   </footer>
 
+  <!-- ✅ External Script for Animations, Dark Mode, Scroll Top -->
+  <script src="script.js"></script>
+
+  <!-- ✅ Backup inline script for fallback -->
   <script>
-    const scrollBtn = document.getElementById("scrollTop");
-    scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
     document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("darkToggle").onclick = () => {
+    document.getElementById("darkToggle")?.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
-    };
+      localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+    });
+
+    const scrollBtn = document.getElementById("scrollTop");
+    if (scrollBtn) {
+      scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+      window.addEventListener("scroll", () => {
+        scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+    }
   </script>
 </body>
 </html>
