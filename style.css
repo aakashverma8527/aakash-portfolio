@@ -39,6 +39,12 @@ header, footer {
   padding: var(--spacing-md) var(--spacing-sm);
 }
 
+.footer-links a {
+  color: white;
+  text-decoration: underline;
+  margin: 0 10px;
+}
+
 /* ========== Navigation Buttons ========== */
 .cta-buttons a {
   display: inline-block;
@@ -72,7 +78,7 @@ header, footer {
 }
 
 /* ========== Project Cards ========== */
-.project {
+.project-card {
   background: white;
   padding: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
@@ -82,16 +88,66 @@ header, footer {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project:hover {
+.project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-.project img {
+.project-card img {
   width: 100%;
   border-radius: 6px;
   margin-bottom: var(--spacing-sm);
   height: auto;
+}
+
+/* ========== Skills, Badges ========== */
+.skills-grid, .skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.badge {
+  background-color: var(--accent);
+  color: black;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* ========== Buttons ========== */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: var(--dark);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #001933;
 }
 
 /* ========== Forms ========== */
@@ -180,9 +236,40 @@ form textarea {
 }
 
 /* ========== Scroll Reveal Animation ========== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== Scroll to Top Button ========== */
+.scroll-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--dark);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+}
+
+.scroll-top.visible {
+  display: block;
+}
+
+.scroll-top:hover {
+  background-color: var(--primary);
 }
 
 /* ========== Responsive Adjustments ========== */
@@ -209,7 +296,7 @@ form textarea {
     font-size: 1.5rem;
   }
 
-  .project {
+  .project-card {
     padding: var(--spacing-sm);
   }
 }
