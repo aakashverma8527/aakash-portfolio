@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact - Aakash Verma</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -18,7 +20,7 @@
       margin: 50px auto;
       background: #fff;
       padding: 40px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
     }
 
@@ -30,15 +32,16 @@
 
     .contact-info {
       margin-bottom: 30px;
-    }
-
-    .contact-info p {
-      margin: 8px 0;
       font-size: 16px;
     }
 
-    .contact-info strong {
-      color: #000;
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+      color: #007bff;
     }
 
     form label {
@@ -53,6 +56,13 @@
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 6px;
+      font-size: 15px;
+      transition: border 0.3s ease;
+    }
+
+    form input:focus, form textarea:focus {
+      border-color: #007bff;
+      outline: none;
     }
 
     form button {
@@ -62,6 +72,8 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
     }
 
     form button:hover {
@@ -75,20 +87,20 @@
     }
   </style>
 </head>
-<body>
 
+<body>
   <div class="contact-container">
     <h2>Contact Me</h2>
 
     <div class="contact-info">
-      <p><strong>Name:</strong> Aakash Verma</p>
-      <p><strong>Email:</strong> <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+918527879047">+91 85278 79047</a></p>
-      <p><strong>Location:</strong> Rohini, Delhi, India</p>
-      <p><strong>Available for:</strong> Remote, Gurgaon, Noida (Day/Night/Rotational shifts)</p>
+      <p><i class="fas fa-user"></i><strong>Name:</strong> Aakash Verma</p>
+      <p><i class="fas fa-envelope"></i><strong>Email:</strong> <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a></p>
+      <p><i class="fas fa-phone"></i><strong>Phone:</strong> <a href="tel:+918527879047">+91 85278 79047</a></p>
+      <p><i class="fas fa-map-marker-alt"></i><strong>Location:</strong> Rohini, Delhi, India</p>
+      <p><i class="fas fa-briefcase"></i><strong>Available for:</strong> Remote, Gurgaon, Noida (Day/Night/Rotational shifts)</p>
     </div>
 
-    <form action="#" method="post">
+    <form action="https://formspree.io/f/yourformid" method="POST">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
@@ -98,9 +110,21 @@
       <label for="message">Your Message</label>
       <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
 
+      <!-- Honeypot Anti-Spam -->
+      <input type="text" name="_gotcha" style="display:none">
+
       <button type="submit">Send Message</button>
     </form>
   </div>
 
+  <!-- Optional JavaScript confirmation -->
+  <script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you! Your message has been sent.");
+      form.reset();
+    });
+  </script>
 </body>
 </html>
