@@ -12,11 +12,11 @@
   <!-- Header -->
   <header>
     <nav class="container" aria-label="Primary Navigation">
-      <ul class="nav-list">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+      <ul class="nav-list" role="menubar">
+        <li role="none"><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li role="none"><a href="about.html">About</a></li>
+        <li role="none"><a href="services.html">Services</a></li>
+        <li role="none"><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -27,7 +27,7 @@
       <h1>Aakash Verma</h1>
       <p class="hero-subtitle">Process Associate | Salesforce | E-commerce | Data Entry | Content Moderator</p>
       <p class="hero-quote">“Driven by process, powered by precision.”</p>
-      <a href="contact.html" class="btn">Hire Me</a>
+      <a href="contact.html" class="btn" role="button">Hire Me</a>
     </div>
   </section>
 
@@ -56,17 +56,17 @@
     <h2 class="section-title">Project Highlights</h2>
     <div class="project-grid">
       <article class="card">
-        <img src="images/dressinn-ecommerce-listing.png" alt="Dressinn Project" />
+        <img src="images/dressinn-ecommerce-listing.png" alt="Dressinn ecommerce product listing dashboard" loading="lazy" />
         <h3>Dressinn – E-commerce Listing</h3>
         <p>Uploaded 500+ fashion products using SOP-based mapping with 98% accuracy.</p>
       </article>
       <article class="card">
-        <img src="images/salesforce-crm-management.png" alt="Salesforce CRM" />
+        <img src="images/salesforce-crm-management.png" alt="Salesforce CRM dashboard interface" loading="lazy" />
         <h3>Salesforce CRM – U.S. Clients</h3>
         <p>Managed 500+ accounts with tagging, automation & daily record updates.</p>
       </article>
       <article class="card">
-        <img src="images/studocu-data-validation.png" alt="Studocu Validation" />
+        <img src="images/studocu-data-validation.png" alt="Studocu academic records validation interface" loading="lazy" />
         <h3>Studocu – Data Validation</h3>
         <p>Validated 2000+ academic records with 97%+ accuracy for structured university uploads.</p>
       </article>
@@ -77,7 +77,7 @@
   <section class="container cta text-center">
     <h2 class="section-title">Need Fast, Accurate Data Support?</h2>
     <p>I lead a trained 5-member team available for remote data projects, CRM management, and content moderation.</p>
-    <a href="contact.html" class="btn">Request a Quote</a>
+    <a href="contact.html" class="btn" role="button">Request a Quote</a>
   </section>
 
   <!-- Footer -->
