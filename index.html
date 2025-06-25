@@ -5,92 +5,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aakash Verma – Data Validation Specialist</title>
   <meta name="description" content="Aakash Verma – Data Validation Specialist. Explore our team's remote services in data validation, e-commerce, and CRM projects with 98%+ accuracy." />
+  <meta property="og:title" content="Aakash Verma – Data Validation Specialist" />
+  <meta property="og:description" content="Trusted remote team offering data validation, e-commerce listing, and CRM data QA." />
+  <meta property="og:image" content="images/preview.png" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="canonical" href="https://yourdomain.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <h1>Reliable Data Solutions from a Trusted Remote Team</h1>
+  <header class="hero">
+    <div class="hero-overlay">
+      <h1>Reliable Data Solutions</h1>
+      <p>By Aakash Verma & Remote QA Team</p>
+      <a href="#contact" class="btn-primary">Let's Connect</a>
+    </div>
     <nav class="cta-buttons">
-      <a href="index.html">🏠 Home</a>
-      <a href="about.html">📘 About</a>
-      <a href="services.html">📋 Services</a>
-      <a href="contact.html">📬 Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <button id="darkToggle">🌙</button>
     </nav>
   </header>
 
   <main class="container">
-    <!-- ✅ Welcome Section -->
+
+    <section id="skills" class="skills-section">
+      <h2 class="section-title">Skills & Tools</h2>
+      <div class="skills-grid">
+        <span class="badge">Excel</span>
+        <span class="badge">Google Sheets</span>
+        <span class="badge">Data QA</span>
+        <span class="badge">Content Moderation</span>
+        <span class="badge">CSV Management</span>
+        <span class="badge">E-commerce</span>
+      </div>
+    </section>
+
     <section id="welcome" class="welcome-section">
       <h2>Welcome to Our Team</h2>
-      <p>
-        Welcome to our team — a technology-driven, data-focused remote service provider based in India. Founded with a vision to deliver global-quality solutions,
-        we specialize in data validation, content moderation, and e-commerce support.
-      </p>
-      <p>
-        Our team of skilled professionals and advanced tools ensures your business gains a competitive edge. 
-        We continuously refine our processes to exceed expectations and build long-term partnerships.
-      </p>
-      <p>
-        We look forward to the opportunity to serve you with commitment, quality, and integrity.
-      </p>
+      <p>We are a tech-driven, data-focused remote service provider based in India. With a vision for global-quality delivery, we specialize in data validation, moderation, and catalog support.</p>
+      <p>Skilled professionals + smart workflows = 98%+ accuracy and on-time results.</p>
     </section>
 
-    <!-- ✅ About Section -->
     <section id="about">
       <h2 class="section-title">About Us</h2>
-      <p>
-        <strong>Aakash Verma</strong> – I am a Data Validation Specialist with 2+ years of experience. I lead a dedicated team of 5 professionals, delivering 
-        98%+ accuracy and fast turnaround for remote data-focused projects across various industries.
-      </p>
+      <p><strong>Aakash Verma</strong> – Data Validation Specialist with 2+ years of experience, leading a 5-member expert team delivering remote data support to global clients.</p>
     </section>
 
-    <!-- ✅ Projects Section -->
     <section id="projects">
       <h2 class="section-title">Projects Portfolio</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="images/studocu-data-validation.png" alt="Studocu data project" loading="lazy" />
+          <h3>Studocu – Course Validation</h3>
+          <ul>
+            <li>2000+ academic records cleaned</li>
+            <li>97%+ accuracy in course matching</li>
+          </ul>
+        </div>
 
-      <div class="project">
-        <img src="images/studocu-data-validation.png" alt="Studocu course data validation project" loading="lazy" />
-        <h3>✅ Studocu – University & Course Data Validation</h3>
-        <ul>
-          <li>Verified and cleaned 2000+ academic records</li>
-          <li>Matched courses/institutions with platform dashboard</li>
-          <li>Achieved 97%+ validation accuracy</li>
-        </ul>
-      </div>
+        <div class="project-card">
+          <img src="images/salesforce-crm-management.png" alt="Salesforce CRM" loading="lazy" />
+          <h3>Salesforce – CRM Management</h3>
+          <ul>
+            <li>500+ accounts updated</li>
+            <li>Excel automation for deduplication</li>
+          </ul>
+        </div>
 
-      <div class="project">
-        <img src="images/salesforce-crm-management.png" alt="Salesforce CRM account management project" loading="lazy" />
-        <h3>✅ Salesforce CRM Management – U.S. Clients</h3>
-        <ul>
-          <li>Created and updated 500+ client accounts</li>
-          <li>Performed deduplication and automated tasks using Excel macros</li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <img src="images/dressinn-ecommerce-listing.png" alt="Dressinn fashion product catalog listing" loading="lazy" />
-        <h3>✅ Dressinn E-commerce Listing</h3>
-        <ul>
-          <li>Uploaded and optimized 500+ fashion product listings</li>
-          <li>Standardized metadata and cleaned product attributes</li>
-        </ul>
+        <div class="project-card">
+          <img src="images/dressinn-ecommerce-listing.png" alt="Dressinn product listing" loading="lazy" />
+          <h3>Dressinn – Product Listing</h3>
+          <ul>
+            <li>500+ SKUs uploaded</li>
+            <li>Metadata cleaned & optimized</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- ✅ Contact Section -->
+    <section id="testimonials">
+      <h2 class="section-title">Trusted By</h2>
+      <blockquote>
+        “Reliable and accurate! Aakash's team helped us clean thousands of rows of data for our CRM launch.” — US Marketing Director
+      </blockquote>
+      <p class="mini-badge">Trusted by 10+ international teams</p>
+      <a href="resume-aakash-verma.pdf" class="btn-secondary" download>Download Resume (PDF)</a>
+    </section>
+
     <section id="contact">
       <h2 class="section-title">Contact</h2>
+      <form action="https://formspree.io/f/mayvlbyp" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
       <p>Email: <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer">View Profile</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank">View Profile</a></p>
+      <p class="availability">📍 Based in India | 🕒 Available 9am–7pm IST</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <p>&copy; <span id="year"></span> Aakash Verma. All rights reserved.</p>
+    <button id="scrollTop">⬆️</button>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Scroll to top button
+    const scrollBtn = document.getElementById("scrollTop");
+    scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+    // Auto year update
+    document.getElementById("year").textContent = new Date().getFullYear();
+    // Dark mode toggle
+    document.getElementById("darkToggle").onclick = () => {
+      document.body.classList.toggle("dark-mode");
+    };
+  </script>
 </body>
 </html>
