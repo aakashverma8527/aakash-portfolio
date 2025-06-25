@@ -1,6 +1,6 @@
 // script.js – Modular Interactive Portfolio Enhancements
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   initAccordion();
   initDarkMode();
   initScrollToTop();
@@ -11,40 +11,45 @@ window.addEventListener("DOMContentLoaded", () => {
 function initAccordion() {
   const accordionToggles = document.querySelectorAll(".accordion-toggle");
 
-  accordionToggles.forEach((button) => {
+  accordionToggles.forEach((button, index) => {
     const content = button.nextElementSibling;
     if (!content || !content.classList.contains("accordion-content")) return;
 
+    const contentId = content.id || `accordion-${index}`;
+    content.id = contentId;
+
     // Set ARIA attributes
     button.setAttribute("aria-expanded", "false");
-    button.setAttribute("aria-controls", content.id || `accordion-${Math.random().toString(36).substr(2, 6)}`);
+    button.setAttribute("aria-controls", contentId);
     button.setAttribute("tabindex", "0");
+    button.setAttribute("role", "button");
 
-    button.addEventListener("click", () => toggleAccordion(button));
+    button.addEventListener("click", () => toggleAccordion(button, content));
     button.addEventListener("keydown", (e) => {
       if (["Enter", " "].includes(e.key)) {
         e.preventDefault();
-        toggleAccordion(button);
+        toggleAccordion(button, content);
       }
     });
   });
 }
 
-function toggleAccordion(button) {
-  const content = button.nextElementSibling;
+function toggleAccordion(button, content) {
   const isOpen = content.classList.contains("open");
 
+  // Close all open items
   document.querySelectorAll(".accordion-content.open").forEach((el) => {
     el.classList.remove("open");
-    el.previousElementSibling.setAttribute("aria-expanded", "false");
+    const prevBtn = el.previousElementSibling;
+    if (prevBtn?.classList.contains("accordion-toggle")) {
+      prevBtn.setAttribute("aria-expanded", "false");
+    }
   });
 
+  // Open current if not already open
   if (!isOpen) {
     content.classList.add("open");
     button.setAttribute("aria-expanded", "true");
-  } else {
-    content.classList.remove("open");
-    button.setAttribute("aria-expanded", "false");
   }
 }
 
@@ -57,10 +62,9 @@ function initDarkMode() {
   const savedTheme = localStorage.getItem("theme") || (prefersDark ? "dark" : "light");
 
   document.body.classList.toggle("dark-mode", savedTheme === "dark");
-
+  toggle.setAttribute("aria-pressed", savedTheme === "dark");
   toggle.setAttribute("role", "button");
   toggle.setAttribute("tabindex", "0");
-  toggle.setAttribute("aria-pressed", savedTheme === "dark");
 
   function updateTheme() {
     const isDark = document.body.classList.toggle("dark-mode");
@@ -108,7 +112,6 @@ function initRevealOnScroll() {
   const elements = document.querySelectorAll(".reveal");
   if (!elements.length) return;
 
-  // Respect prefers-reduced-motion
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     elements.forEach(el => el.classList.add("visible"));
     return;
@@ -123,7 +126,7 @@ function initRevealOnScroll() {
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.15 });
 
   elements.forEach(el => observer.observe(el));
 }
