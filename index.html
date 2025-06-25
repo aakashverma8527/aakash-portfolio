@@ -1,97 +1,117 @@
 <!-- 🧠 HERO Section -->
-<header class="hero">
-  <div class="hero-overlay" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/data-bg.jpg') no-repeat center/cover;">
-    <h1 data-aos="fade-up">Reliable Data Solutions</h1>
-    <p data-aos="fade-up" data-aos-delay="100">By Aakash Verma & Remote QA Team</p>
-    <p class="subtagline" data-aos="fade-up" data-aos-delay="200">Helping businesses ensure clean and trusted data since 2022.</p>
-    <a href="#contact" class="btn-primary" data-aos="zoom-in" data-aos-delay="300">Let's Connect</a>
+<header class="hero" role="banner" lang="en">
+  <div class="hero-overlay">
+    <h1 data-aos="fade-up" tabindex="0">Reliable Data Solutions</h1>
+    <p data-aos="fade-up" data-aos-delay="100" tabindex="0">By Aakash Verma & Remote QA Team</p>
+    <p class="subtagline" data-aos="fade-up" data-aos-delay="200" tabindex="0">Helping businesses ensure clean and trusted data since 2022.</p>
+    <a href="#contact" class="btn-primary" data-aos="zoom-in" data-aos-delay="300" role="button" tabindex="0" aria-label="Contact us">Let's Connect</a>
   </div>
-  ...
 </header>
 
+<!-- CSS for hero-overlay background moved from inline to class -->
+<style>
+  .hero-overlay {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/data-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 3rem 1rem;
+    color: white;
+    text-align: center;
+  }
+</style>
+
 <!-- 🛠️ SKILLS Section -->
-<section id="skills" class="skills-section">
-  <h2 class="section-title">Skills & Tools</h2>
+<section id="skills" class="skills-section" aria-labelledby="skills-title">
+  <h2 id="skills-title" class="section-title">Skills & Tools</h2>
   <div class="skills-categories">
     <div>
       <h3>🧰 Tools</h3>
-      <span class="badge"><i class="fa fa-file-excel"></i> Excel</span>
-      <span class="badge"><i class="fa fa-table"></i> Google Sheets</span>
-      <span class="badge"><i class="fa fa-database"></i> CSV Management</span>
+      <span class="badge" role="listitem"><i class="fa fa-file-excel" aria-hidden="true"></i> Excel</span>
+      <span class="badge" role="listitem"><i class="fa fa-table" aria-hidden="true"></i> Google Sheets</span>
+      <span class="badge" role="listitem"><i class="fa fa-database" aria-hidden="true"></i> CSV Management</span>
     </div>
     <div>
       <h3>🔍 QA Services</h3>
-      <span class="badge"><i class="fa fa-check-circle"></i> Data Validation</span>
-      <span class="badge"><i class="fa fa-shield-alt"></i> Content Moderation</span>
+      <span class="badge" role="listitem"><i class="fa fa-check-circle" aria-hidden="true"></i> Data Validation</span>
+      <span class="badge" role="listitem"><i class="fa fa-shield-alt" aria-hidden="true"></i> Content Moderation</span>
     </div>
     <div>
       <h3>🛒 Platforms</h3>
-      <span class="badge"><i class="fa fa-store"></i> E-commerce</span>
-      <span class="badge"><i class="fa fa-users-cog"></i> CRM</span>
+      <span class="badge" role="listitem"><i class="fa fa-store" aria-hidden="true"></i> E-commerce</span>
+      <span class="badge" role="listitem"><i class="fa fa-users-cog" aria-hidden="true"></i> CRM</span>
     </div>
   </div>
 </section>
 
 <!-- 🤝 WELCOME Section -->
-<section id="welcome" class="welcome-section">
-  <h2>Why Choose Us?</h2>
+<section id="welcome" class="welcome-section" aria-labelledby="welcome-title">
+  <h2 id="welcome-title">Why Choose Us?</h2>
   <p>We help fast-growing businesses reduce errors and scale efficiently with clean, validated data.</p>
-  <p class="quote">“Their team improved our data quality overnight. Total game changer.” — Startup Ops Lead</p>
+  <p class="quote" tabindex="0">“Their team improved our data quality overnight. Total game changer.” — Startup Ops Lead</p>
 </section>
 
 <!-- 💼 PROJECTS Section -->
-<section id="projects">
-  <h2 class="section-title">Projects Portfolio</h2>
+<section id="projects" aria-labelledby="projects-title">
+  <h2 id="projects-title" class="section-title">Projects Portfolio</h2>
   <div class="projects-grid">
-    <div class="project-card" data-aos="fade-up">
-      <img src="images/studocu-data-validation.png" alt="Studocu course data validation project screenshot" />
+    <article class="project-card" data-aos="fade-up" tabindex="0" aria-label="Studocu Course Validation Project">
+      <img src="images/studocu-data-validation.png" alt="Screenshot of Studocu course data validation project" loading="lazy" width="400" height="250" />
       <h3>Studocu – Course Validation</h3>
       <ul>
         <li>2000+ academic records cleaned</li>
         <li>✅ 97% Accuracy | ⏱️ 48-Hour Delivery | 🌍 Remote</li>
       </ul>
-    </div>
-    ...
+    </article>
+    <!-- Add other project cards here similarly -->
   </div>
 </section>
 
 <!-- ⭐ TESTIMONIALS Section -->
-<section id="testimonials">
-  <h2 class="section-title">Trusted By</h2>
-  <blockquote data-aos="fade-right">“Reliable and accurate! Aakash's team helped us clean thousands of rows of data for our CRM launch.” — US Marketing Director</blockquote>
-  <blockquote data-aos="fade-right" data-aos-delay="200">“CleanDataCo helped us automate QA at scale — saving hours weekly.” — Sam R., Data Team Lead</blockquote>
-  <div class="logos">
-    <img src="images/client1-logo.png" alt="Client 1 Logo" />
-    <img src="images/client2-logo.png" alt="Client 2 Logo" />
+<section id="testimonials" aria-labelledby="testimonials-title">
+  <h2 id="testimonials-title" class="section-title">Trusted By</h2>
+  <blockquote data-aos="fade-right" tabindex="0">“Reliable and accurate! Aakash's team helped us clean thousands of rows of data for our CRM launch.” — US Marketing Director</blockquote>
+  <blockquote data-aos="fade-right" data-aos-delay="200" tabindex="0">“CleanDataCo helped us automate QA at scale — saving hours weekly.” — Sam R., Data Team Lead</blockquote>
+  <div class="logos" aria-label="Client logos">
+    <img src="images/client1-logo.png" alt="Logo of Client 1" loading="lazy" width="120" height="60" />
+    <img src="images/client2-logo.png" alt="Logo of Client 2" loading="lazy" width="120" height="60" />
   </div>
-  <p class="mini-badge">Trusted by 10+ international teams</p>
+  <p class="mini-badge" tabindex="0">Trusted by 10+ international teams</p>
 </section>
 
 <!-- 📞 CONTACT Section -->
-<section id="contact">
-  ...
-  <label for="budget">Project Budget (optional)</label>
-  <select name="budget" id="budget">
-    <option value="">Select Budget</option>
-    <option>&lt; $500</option>
-    <option>$500–$2K</option>
-    <option>$2K+</option>
-  </select>
-  <p class="note">We usually reply within 1 business hour.</p>
+<section id="contact" aria-labelledby="contact-title">
+  <h2 id="contact-title" class="section-title">Contact Us</h2>
+  <form action="#" method="post" aria-describedby="budget-note">
+    <label for="budget">Project Budget (optional)</label>
+    <select name="budget" id="budget" aria-label="Select your project budget">
+      <option value="">Select Budget</option>
+      <option value="under-500">&lt; $500</option>
+      <option value="500-2k">$500–$2K</option>
+      <option value="above-2k">$2K+</option>
+    </select>
+    <p id="budget-note" class="note">We usually reply within 1 business hour.</p>
+    <!-- Add more contact form inputs as needed -->
+  </form>
 </section>
 
 <!-- 🔚 FOOTER Section -->
-<footer>
-  ...
-  <div class="trust-icons">
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-    <a href="resume-aakash-verma.pdf"><i class="fas fa-file-alt"></i></a>
-    <a href="mailto:aakashverma852787@outlook.com"><i class="fas fa-envelope"></i></a>
+<footer role="contentinfo">
+  <div class="trust-icons" aria-label="Social media and contact links">
+    <a href="#" aria-label="LinkedIn Profile" tabindex="0"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+    <a href="resume-aakash-verma.pdf" aria-label="Download Resume" tabindex="0"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+    <a href="mailto:aakashverma852787@outlook.com" aria-label="Send Email" tabindex="0"><i class="fas fa-envelope" aria-hidden="true"></i></a>
   </div>
-  <a href="privacy.html" class="small-link">🔒 Privacy Policy</a>
+  <a href="privacy.html" class="small-link" tabindex="0">🔒 Privacy Policy</a>
 </footer>
 
 <!-- 💫 AOS Animations -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>
+  AOS.init({
+    duration: 700,
+    easing: 'ease-in-out',
+    once: true,
+  });
+</script>
