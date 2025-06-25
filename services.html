@@ -31,24 +31,113 @@
       <p class="intro">We offer a wide range of data services to support your business growth and efficiency. Explore our offerings below:</p>
 
       <div class="accordion">
+        <!-- 📊 Data Validation -->
+        <div class="accordion-item">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="validation">📊 Data Validation</button>
+          <div class="accordion-content" id="validation">
+            <ul>
+              <li>Manual & automated validation</li>
+              <li>Duplicate and error checks</li>
+              <li>Schema compliance</li>
+            </ul>
+          </div>
+        </div>
 
-        <!-- ACCORDION ITEMS INCLUDED FROM YOUR PROMPT (unchanged structure) -->
-        <!-- 📊 Data Services -->
         <!-- 📥 Data Collection -->
+        <div class="accordion-item">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="collection">📥 Data Collection</button>
+          <div class="accordion-content" id="collection">
+            <ul>
+              <li>Web scraping & data mining</li>
+              <li>Survey & form response capture</li>
+              <li>Social media & CRM sourcing</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- 🏢 BPO -->
+        <div class="accordion-item">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="bpo">🏢 BPO</button>
+          <div class="accordion-content" id="bpo">
+            <ul>
+              <li>Customer service outsourcing</li>
+              <li>CRM data population</li>
+              <li>Lead generation & nurturing</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- 🧾 Data Entry -->
+        <div class="accordion-item">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="entry">🧾 Data Entry</button>
+          <div class="accordion-content" id="entry">
+            <ul>
+              <li>Bulk manual entry</li>
+              <li>eCommerce product uploading</li>
+              <li>Form processing</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- 📢 Marketing -->
+        <div class="accordion-item">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="marketing">📢 Marketing</button>
+          <div class="accordion-content" id="marketing">
+            <ul>
+              <li>Email marketing support</li>
+              <li>Data-driven campaign targeting</li>
+              <li>List cleansing & segmentation</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- ⚙️ Data Processing -->
+        <div class="accordion-item">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="processing">⚙️ Data Processing</button>
+          <div class="accordion-content" id="processing">
+            <ul>
+              <li>Excel & spreadsheet transformation</li>
+              <li>Reformatting & normalization</li>
+              <li>Image & text classification</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- 🧠 Annotation -->
+        <div class="accordion-item">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="annotation">🧠 Annotation</button>
+          <div class="accordion-content" id="annotation">
+            <ul>
+              <li>Image & video labeling</li>
+              <li>Text sentiment tagging</li>
+              <li>Bounding boxes, polygons, etc.</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- 📂 Management -->
+        <div class="accordion-item">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="management">📂 Project Management</button>
+          <div class="accordion-content" id="management">
+            <ul>
+              <li>Agile-based task oversight</li>
+              <li>Progress tracking</li>
+              <li>Quality assurance workflows</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- 🔧 Engineering -->
-
-        <!-- (Copy your existing accordion-item blocks here — they are already complete) -->
-
-        <!-- START: Injecting all your given service categories -->
-        <!-- For brevity, omitted here – copy your full content exactly from your prompt inside this <div class="accordion"> -->
-        <!-- END: Service Categories -->
-        
+        <div class="accordion-item">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="engineering">🔧 Data Engineering</button>
+          <div class="accordion-content" id="engineering">
+            <ul>
+              <li>ETL pipelines</li>
+              <li>Database cleanup scripts</li>
+              <li>Basic automation with Python/Sheets</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -60,13 +149,15 @@
       <a href="contact.html">Contact</a>
     </nav>
     <p>&copy; <span id="year"></span> Aakash Verma. All rights reserved.</p>
-    <button id="scrollTop">⬆️</button>
+    <button id="scrollTop" class="scroll-top">⬆️</button>
   </footer>
 
   <script src="script.js"></script>
   <script>
-    // Year + scroll button
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll button behavior
     const scrollBtn = document.getElementById("scrollTop");
     if (scrollBtn) {
       scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -75,11 +166,16 @@
       });
     }
 
-    // Dark mode toggle
-    document.getElementById("darkToggle").addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
-    });
+    // Dark mode
+    const darkToggle = document.getElementById("darkToggle");
+    if (darkToggle) {
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.body.classList.add("dark-mode");
+      darkToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+      });
+    }
   </script>
 </body>
 </html>
