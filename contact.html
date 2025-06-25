@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Aakash Verma</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Font Awesome CDN with optional integrity -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+    integrity="sha512-somehashhere" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <meta name="description" content="Get in touch with Aakash Verma, freelance Process Associate based in Delhi. Available for remote and hybrid roles.">
 </head>
 <body>
@@ -16,8 +18,8 @@
       <h1>Aakash Verma</h1>
       <p>Process Associate | Salesforce | E-commerce | Data Entry | Content Moderator</p>
       <div class="social-links">
-        <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/aakashverma" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/aakashverma" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
   </header>
@@ -28,7 +30,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-      <a href="contact.html" class="active">Contact</a>
+      <a href="contact.html" class="active" aria-current="page">Contact</a>
     </div>
   </nav>
 
@@ -37,19 +39,19 @@
     <h2>Contact Me</h2>
 
     <div class="contact-info">
-      <p><i class="fas fa-user"></i> <strong>Name:</strong> Aakash Verma</p>
-      <p><i class="fas fa-envelope"></i> <strong>Email:</strong> 
+      <p><i class="fas fa-user" aria-hidden="true"></i> <strong>Name:</strong> Aakash Verma</p>
+      <p><i class="fas fa-envelope" aria-hidden="true"></i> <strong>Email:</strong> 
         <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a>
       </p>
-      <p><i class="fas fa-phone"></i> <strong>Phone:</strong> 
+      <p><i class="fas fa-phone" aria-hidden="true"></i> <strong>Phone:</strong> 
         <a href="tel:+918527879047">+91 85278 79047</a>
       </p>
-      <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Rohini, Delhi, India</p>
-      <p><i class="fas fa-briefcase"></i> <strong>Available for:</strong> Remote, Gurgaon, Noida (Day/Night/Rotational Shifts)</p>
+      <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <strong>Location:</strong> Rohini, Delhi, India</p>
+      <p><i class="fas fa-briefcase" aria-hidden="true"></i> <strong>Available for:</strong> Remote, Gurgaon, Noida (Day/Night/Rotational Shifts)</p>
     </div>
 
     <!-- Contact Form -->
-    <form action="https://formspree.io/f/yourformid" method="POST">
+    <form action="https://formspree.io/f/youractualformid" method="POST">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
@@ -60,7 +62,7 @@
       <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
 
       <!-- Honeypot Field (anti-bot) -->
-      <input type="text" name="_gotcha" style="display:none">
+      <input type="text" name="_gotcha" aria-hidden="true" tabindex="-1" style="display:none" />
 
       <button type="submit" class="btn">Send Message</button>
     </form>
