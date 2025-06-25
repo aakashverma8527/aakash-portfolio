@@ -1,3 +1,8 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
@@ -7,6 +12,7 @@ body {
   line-height: 1.6;
 }
 
+/* Header and Footer */
 header, footer {
   background-color: #003366;
   color: white;
@@ -14,12 +20,7 @@ header, footer {
   padding: 20px 10px;
 }
 
-.container {
-  max-width: 960px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
+/* Navigation Buttons */
 .cta-buttons a {
   display: inline-block;
   margin: 10px;
@@ -35,18 +36,28 @@ header, footer {
   background: #0056b3;
 }
 
+/* Layout Container */
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* Section Titles */
 .section-title {
   font-size: 26px;
   margin-bottom: 15px;
+  color: #003366;
 }
 
+/* Project Card */
 .project {
   background: white;
   padding: 15px;
   margin-bottom: 30px;
   border-left: 4px solid #007bff;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .project img {
@@ -55,26 +66,32 @@ header, footer {
   margin-bottom: 10px;
 }
 
-form input, form textarea {
+/* Forms */
+form input,
+form textarea {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 16px;
 }
 
-/* ✅ NEW: Welcome Section Styling */
+/* ✅ Welcome Section */
 .welcome-section {
   background-color: #eaf4ff;
   padding: 40px 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .welcome-section h2 {
   font-size: 30px;
   color: #003366;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .welcome-section p {
@@ -83,5 +100,60 @@ form input, form textarea {
   color: #333;
   max-width: 800px;
   margin: 0 auto 20px auto;
-  text-align: center;
-} 
+}
+
+/* ✅ Accordion Section */
+.accordion {
+  border-top: 1px solid #ccc;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-toggle {
+  width: 100%;
+  text-align: left;
+  background-color: #ffffff;
+  border: none;
+  font-size: 18px;
+  padding: 15px;
+  color: #003366;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.accordion-toggle:hover {
+  background-color: #f0f4ff;
+}
+
+.accordion-content {
+  padding: 15px 20px;
+  background-color: #f9fbff;
+}
+
+.accordion-content ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.accordion-content li {
+  margin-bottom: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 22px;
+  }
+
+  .cta-buttons a {
+    display: block;
+    margin: 10px auto;
+    width: fit-content;
+  }
+
+  .accordion-toggle {
+    font-size: 16px;
+  }
+}
