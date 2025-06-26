@@ -12,6 +12,7 @@ function initMenuToggle() {
     menuBtn.setAttribute("aria-expanded", isExpanded.toString());
   });
 
+  // Click outside to close menu
   document.addEventListener("click", (e) => {
     if (!menuBtn.contains(e.target) && !nav.contains(e.target)) {
       nav.classList.remove("active");
@@ -40,7 +41,10 @@ function initFormValidation() {
   const clearFeedback = () => {
     errorDiv.textContent = "";
     errorDiv.removeAttribute("aria-live");
-    if (successDiv) successDiv.textContent = "";
+    if (successDiv) {
+      successDiv.textContent = "";
+      successDiv.removeAttribute("aria-live");
+    }
   };
 
   form.addEventListener("input", clearFeedback);
