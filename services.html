@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Aakash Verma</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     :root {
       --primary: #0d47a1;
@@ -24,6 +23,7 @@
       font-family: 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
+      line-height: 1.6;
     }
 
     header {
@@ -40,176 +40,111 @@
       align-items: center;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
-
-    nav a {
+    h1 a {
       color: white;
       text-decoration: none;
-      font-weight: 500;
-      position: relative;
     }
 
-    .mega-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      color: var(--text);
-      display: none;
-      width: 100%;
+    main {
       padding: 2rem;
-      box-shadow: var(--shadow);
-      z-index: 1000;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    #services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
+      margin-top: 2rem;
     }
 
-    .mega-column h4 {
-      font-size: 1.1rem;
+    .service {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+    }
+
+    .service h3 {
+      color: var(--primary);
       margin-bottom: 0.5rem;
-      color: var(--primary);
-    }
-
-    .mega-column ul {
-      list-style: none;
-    }
-
-    .mega-column li {
-      margin: 0.3rem 0;
-    }
-
-    .mega-column li a {
-      color: var(--text);
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .mega-column li a:hover,
-    .mega-column li a:focus {
-      color: var(--primary);
-      text-decoration: underline;
-      outline: none;
-    }
-
-    .nav-item:hover .mega-menu,
-    .nav-item:focus-within .mega-menu {
-      display: grid;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-      }
-      .mega-menu {
-        position: static;
-        display: none;
-        grid-template-columns: 1fr;
-      }
-      .nav-item:focus-within .mega-menu,
-      .nav-item:hover .mega-menu {
-        display: grid;
-      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="nav-container">
-      <h1><a href="index.html" style="color: white; text-decoration: none;">Aakash Verma</a></h1>
-      <nav>
-        <ul>
-          <li class="nav-item">
-            <a href="#" aria-haspopup="true" tabindex="0">Data ▾</a>
-            <div class="mega-menu">
-              <div class="mega-column">
-                <h4>Core Data Services</h4>
-                <ul>
-                  <li><a href="#">Data Collection Services</a></li>
-                  <li><a href="#">Data Extraction Services</a></li>
-                  <li><a href="#">Data Mining Services</a></li>
-                  <li><a href="#">Web Research Services</a></li>
-                  <li><a href="#">List Building Services</a></li>
-                  <li><a href="#">Data Appending Services</a></li>
-                  <li><a href="#">LinkedIn Data Mining Services</a></li>
-                  <li><a href="#">Website Data Scraping Services</a></li>
-                </ul>
-              </div>
-              <div class="mega-column">
-                <h4>Business Process Outsourcing (BPO)</h4>
-                <ul>
-                  <li><a href="#">Healthcare BPO</a></li>
-                  <li><a href="#">Healthcare RCM Services</a></li>
-                  <li><a href="#">Mortgage BPO</a></li>
-                </ul>
-              </div>
-              <div class="mega-column">
-                <h4>Data Entry Services</h4>
-                <ul>
-                  <li><a href="#">Document Data Entry Services</a></li>
-                  <li><a href="#">Typing and Transcription Services</a></li>
-                  <li><a href="#">Mailing Lists Data Entry Services</a></li>
-                </ul>
-              </div>
-              <div class="mega-column">
-                <h4>Marketing & Sales Support</h4>
-                <ul>
-                  <li><a href="#">Mailing List Compilation Services</a></li>
-                  <li><a href="#">Contact Discovery Services</a></li>
-                  <li><a href="#">CRM Data Entry Services</a></li>
-                  <li><a href="#">Salesforce Data Entry Services</a></li>
-                </ul>
-              </div>
-              <div class="mega-column">
-                <h4>Data Processing Services</h4>
-                <ul>
-                  <li><a href="#">Forms Processing Services</a></li>
-                  <li><a href="#">Market Research Data Processing Services</a></li>
-                  <li><a href="#">Invoice Processing Services</a></li>
-                  <li><a href="#">Survey Data Processing</a></li>
-                  <li><a href="#">Word Processing & Formatting Services</a></li>
-                </ul>
-              </div>
-              <div class="mega-column">
-                <h4>Data Annotation Service</h4>
-                <ul>
-                  <li><a href="#">2D and 3D Image Annotation</a></li>
-                  <li><a href="#">Video Annotation</a></li>
-                  <li><a href="#">Text Annotation</a></li>
-                </ul>
-              </div>
-              <div class="mega-column">
-                <h4>Data Management Services</h4>
-                <ul>
-                  <li><a href="#">Data Cleansing Services</a></li>
-                  <li><a href="#">Database Maintenance Services</a></li>
-                  <li><a href="#">Data Standardization Services</a></li>
-                  <li><a href="#">Data Enrichment Services</a></li>
-                  <li><a href="#">ESG Data Management & Reporting Services</a></li>
-                </ul>
-              </div>
-              <div class="mega-column">
-                <h4>Data Engineering Services</h4>
-                <ul>
-                  <li><a href="#">Data Strategy and Consulting</a></li>
-                  <li><a href="#">Business Intelligence</a></li>
-                  <li><a href="#">Data Migration</a></li>
-                  <li><a href="#">Data Visualization Services</a></li>
-                </ul>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </nav>
+      <h1><a href="index.html">Aakash Verma</a></h1>
     </div>
   </header>
-  <main class="container" style="padding: 2rem;">
-    <h2>Explore Our Comprehensive Data Services</h2>
-    <p>Choose a category from the mega menu to explore in-depth service offerings tailored to your business needs.</p>
+  <main>
+    <h2>Our Services</h2>
+    <section id="services">
+      <div class="service">
+        <h3>Data Collection Services</h3>
+        <p>Our Data Collection Services help businesses gather accurate, relevant, and structured data from diverse sources such as websites, databases, surveys, and social media. Whether you're conducting market research or building a customer database, we ensure timely and high-quality data delivery. Ideal for startups, research firms, and enterprises seeking informed decision-making through organized datasets.</p>
+      </div>
+
+      <div class="service">
+        <h3>Data Extraction Services</h3>
+        <p>We extract valuable information from complex sources—PDFs, images, online portals, and legacy systems—into usable formats like Excel or databases. This service is perfect for clients who need quick access to hidden or unstructured data for analysis, reporting, or system integration. Ideal for finance, legal, healthcare, and eCommerce sectors.</p>
+      </div>
+
+      <div class="service">
+        <h3>Data Mining Services</h3>
+        <p>Our Data Mining Services uncover patterns, trends, and insights from large datasets, empowering strategic decisions. We use advanced techniques to support customer segmentation, sales forecasting, and competitive analysis. Best suited for marketing teams, analysts, and business leaders aiming to transform raw data into actionable intelligence.</p>
+      </div>
+
+      <div class="service">
+        <h3>Web Research Services</h3>
+        <p>We perform deep internet research to provide clients with up-to-date data on industries, competitors, markets, and more. Our experts curate and verify data from trusted online sources, helping you stay ahead with insights that matter. Ideal for consultants, researchers, and business development teams.</p>
+      </div>
+
+      <div class="service">
+        <h3>List Building Services</h3>
+        <p>Our List Building Services deliver customized contact lists based on your target audience criteria. We compile names, emails, phone numbers, and company details for outreach or lead generation. Perfect for sales teams, marketing agencies, and recruitment professionals looking to scale campaigns efficiently.</p>
+      </div>
+
+      <div class="service">
+        <h3>Data Appending Services</h3>
+        <p>Enrich your existing customer or lead databases by adding missing fields like email addresses, phone numbers, or company names. Our Data Appending Services help improve campaign accuracy and CRM completeness. Great for businesses aiming to boost personalization and reduce bounce rates.</p>
+      </div>
+
+      <div class="service">
+        <h3>LinkedIn Data Mining Services</h3>
+        <p>We extract and organize LinkedIn profile data to help businesses identify prospects, partners, or talent. From job titles and industries to locations and contact info, our service supports precision targeting for B2B outreach. Ideal for recruiters, sales professionals, and agencies focused on LinkedIn-based engagement.</p>
+      </div>
+
+      <div class="service">
+        <h3>Website Data Scraping Services</h3>
+        <p>Our Website Data Scraping Services automate the extraction of structured data from websites at scale. We collect product listings, pricing, reviews, and more, supporting price comparison, trend analysis, or content aggregation. A must-have for eCommerce brands, market analysts, and digital platforms.</p>
+      </div>
+
+      <div class="service">
+        <h3>Healthcare BPO</h3>
+        <p>Our Healthcare BPO services streamline medical billing, insurance claims processing, patient data management, and more. We help healthcare providers reduce administrative burden and ensure compliance with HIPAA and other regulations. Ideal for clinics, hospitals, and medical billing firms seeking efficiency and accuracy.</p>
+      </div>
+
+      <div class="service">
+        <h3>CRM Data Entry Services</h3>
+        <p>We specialize in accurate, timely CRM Data Entry for platforms like Salesforce, HubSpot, and Zoho. From lead input to contact updates, we keep your CRM clean, current, and campaign-ready. This service benefits sales, marketing, and support teams aiming for better workflow and client engagement.</p>
+      </div>
+
+      <div class="service">
+        <h3>2D and 3D Image Annotation</h3>
+        <p>Our Image Annotation services label images with 2D bounding boxes, polygons, and 3D cuboids for AI/ML model training. Perfect for autonomous driving, medical imaging, and object detection projects. We support scalable, high-quality annotations for tech companies, researchers, and AI startups.</p>
+      </div>
+
+      <div class="service">
+        <h3>ESG Data Management & Reporting Services</h3>
+        <p>We help organizations track, manage, and report ESG (Environmental, Social, Governance) metrics aligned with global standards. Our service supports sustainability efforts, stakeholder transparency, and regulatory compliance. Ideal for corporations, investors, and consultancies focused on ESG performance improvement.</p>
+      </div>
+    </section>
   </main>
 </body>
 </html>
