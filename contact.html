@@ -1,82 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Aakash Verma</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Font Awesome CDN with optional integrity -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
-    integrity="sha512-somehashhere" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <meta name="description" content="Get in touch with Aakash Verma, freelance Process Associate based in Delhi. Available for remote and hybrid roles.">
-</head>
-<body>
+:root {
+  --primary: #0066ff;
+  --accent: #ff6f61;
+  --white: #ffffff;
+  --background: #f9f9f9;
+  --text-dark: #1a1a1a;
+  --text-muted: #555555;
+  --btn-hover: #0056d2;
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.07);
+  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+}
 
-  <!-- Header -->
-  <header>
-    <div class="container header-content">
-      <h1>Aakash Verma</h1>
-      <p>Process Associate | Salesforce | E-commerce | Data Entry | Content Moderator</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/aakashverma" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
-    </div>
-  </header>
+/* ⚙️ Utility Classes */
+.interactive {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.hover-fade:hover,
+.hover-fade:focus {
+  color: var(--accent);
+  font-weight: 600;
+  outline: none;
+}
+.outline-visible:focus-visible {
+  outline: 2px dashed var(--accent);
+  outline-offset: 2px;
+}
 
-  <!-- Navigation -->
-  <nav role="navigation" aria-label="Main Navigation">
-    <div class="container">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html" class="active" aria-current="page">Contact</a>
-    </div>
-  </nav>
+/* 🔗 Social Links */
+.social-links a {
+  color: var(--white);
+  margin: 0 var(--space-xs);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+.social-links a:hover,
+.social-links a:focus {
+  color: var(--accent);
+}
 
-  <!-- Contact Section -->
-  <main class="contact-container container">
-    <h2>Contact Me</h2>
+/* 🧭 Navigation */
+nav a {
+  color: var(--white);
+  margin: 0 var(--space-sm);
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+  transition: border-color 0.3s ease;
+}
+nav a:hover,
+nav a:focus,
+nav a.active {
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
+}
 
-    <div class="contact-info">
-      <p><i class="fas fa-user" aria-hidden="true"></i> <strong>Name:</strong> Aakash Verma</p>
-      <p><i class="fas fa-envelope" aria-hidden="true"></i> <strong>Email:</strong> 
-        <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a>
-      </p>
-      <p><i class="fas fa-phone" aria-hidden="true"></i> <strong>Phone:</strong> 
-        <a href="tel:+918527879047">+91 85278 79047</a>
-      </p>
-      <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <strong>Location:</strong> Rohini, Delhi, India</p>
-      <p><i class="fas fa-briefcase" aria-hidden="true"></i> <strong>Available for:</strong> Remote, Gurgaon, Noida (Day/Night/Rotational Shifts)</p>
-    </div>
+/* 🔳 Project Cards */
+.project-card {
+  background: var(--white);
+  padding: var(--space-sm);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+.project-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--space-sm);
+  border-radius: 6px;
+  display: block;
+}
 
-    <!-- Contact Form -->
-    <form action="https://formspree.io/f/youractualformid" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+/* 🔘 Buttons */
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.btn:hover,
+.btn:focus {
+  background-color: var(--btn-hover);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
+}
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+/* 🎯 Scoped Focus Styling */
+a:focus-visible,
+.btn:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px dashed var(--accent);
+  outline-offset: 2px;
+}
 
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+/* 📝 Contact Form */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.contact-form label {
+  font-weight: 600;
+  margin-top: var(--space-xs);
+}
+.contact-form button {
+  align-self: flex-start;
+}
 
-      <!-- Honeypot Field (anti-bot) -->
-      <input type="text" name="_gotcha" aria-hidden="true" tabindex="-1" style="display:none" />
+/* 💬 Testimonials */
+.testimonials blockquote {
+  font-style: italic;
+  border-left: 4px solid var(--accent);
+  padding-left: var(--space-sm);
+  margin-top: var(--space-md);
+  color: var(--text-muted);
+}
+.testimonials cite {
+  display: block;
+  margin-top: var(--space-xs);
+  font-weight: 600;
+  color: var(--text-dark);
+}
 
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </main>
+/* 📃 General Lists */
+ul {
+  list-style: none;
+  padding-left: 0.5rem;
+  margin-bottom: var(--space-md);
+}
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2025 Aakash Verma | Rohini, Delhi |
-        <a href="tel:+918527879047">+91 85278 79047</a> |
-        <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a>
-      </p>
-    </div>
-  </footer>
+/* 📱 Responsive Tweaks */
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: var(--space-xs) 0;
+  }
 
-</body>
-</html>
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+}
