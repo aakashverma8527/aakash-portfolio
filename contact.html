@@ -1,175 +1,82 @@
-:root {
-  --primary: #0066ff;
-  --accent: #ff6f61;
-  --white: #ffffff;
-  --background: #f9f9f9;
-  --text-dark: #1a1a1a;
-  --text-muted: #555555;
-  --btn-hover: #0056d2;
-  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.07);
-  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Aakash Verma</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <meta name="description" content="Get in touch with Aakash Verma for freelance CRM, data entry, and automation services." />
+</head>
+<body>
 
-/* ⚙️ Utility Classes */
-.interactive {
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-.hover-fade:hover,
-.hover-fade:focus {
-  color: var(--accent);
-  font-weight: 600;
-  outline: none;
-}
-.outline-visible:focus-visible {
-  outline: 2px dashed var(--accent);
-  outline-offset: 2px;
-}
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <h1>Contact</h1>
+      <p>Let’s build something reliable together.</p>
+    </div>
+  </header>
 
-/* 🔗 Social Links */
-.social-links a {
-  color: var(--white);
-  margin: 0 var(--space-xs);
-  text-decoration: underline;
-  transition: color 0.3s ease;
-}
-.social-links a:hover,
-.social-links a:focus {
-  color: var(--accent);
-}
+  <!-- Contact Section -->
+  <section class="contact-form" id="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>I typically respond within 1–2 business days. You can also reach me directly via phone or email.</p>
 
-/* 🧭 Navigation */
-nav a {
-  color: var(--white);
-  margin: 0 var(--space-sm);
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  padding-bottom: 0.25rem;
-  transition: border-color 0.3s ease;
-}
-nav a:hover,
-nav a:focus,
-nav a.active {
-  border-bottom: 2px solid var(--accent);
-  color: var(--accent);
-}
+      <!-- 📧 Contact Info -->
+      <div class="contact-info">
+        <p><a href="tel:+918527879047">📞 +91 85278 79047</a></p>
+        <p><a href="mailto:aakashverma852787@outlook.com">✉️ aakashverma852787@outlook.com</a></p>
+      </div>
 
-/* 🔳 Project Cards */
-.project-card {
-  background: var(--white);
-  padding: var(--space-sm);
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: var(--shadow-light);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.project-card:hover,
-.project-card:focus-within {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-}
-.project-card img {
-  width: 100%;
-  height: auto;
-  margin-bottom: var(--space-sm);
-  border-radius: 6px;
-  display: block;
-}
+      <!-- 📍 Optional Google Maps -->
+      <iframe
+        title="Office Location - Delhi"
+        src="https://www.google.com/maps?q=Rohini,+Delhi,+India&output=embed"
+        width="100%"
+        height="250"
+        style="border:0; margin-top:1rem;"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
 
-/* 🔘 Buttons */
-.btn {
-  display: inline-block;
-  background: var(--primary);
-  color: var(--white);
-  padding: 0.7rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-.btn:hover,
-.btn:focus {
-  background-color: var(--btn-hover);
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
-}
+      <!-- 📝 Contact Form -->
+      <form id="contact-form" action="submit-form.php" method="POST" novalidate>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required aria-label="Full Name" />
 
-/* 🎯 Scoped Focus Styling */
-a:focus-visible,
-.btn:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px dashed var(--accent);
-  outline-offset: 2px;
-}
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required aria-label="Email Address" />
 
-/* 📝 Contact Form */
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  margin-top: var(--space-sm);
-}
-.contact-form input,
-.contact-form textarea {
-  padding: 0.6rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 1rem;
-}
-.contact-form label {
-  font-weight: 600;
-  margin-top: var(--space-xs);
-}
-.contact-form button {
-  align-self: flex-start;
-}
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required aria-label="Your message"></textarea>
 
-/* 💬 Testimonials */
-.testimonials blockquote {
-  font-style: italic;
-  border-left: 4px solid var(--accent);
-  padding-left: var(--space-sm);
-  margin-top: var(--space-md);
-  color: var(--text-muted);
-}
-.testimonials cite {
-  display: block;
-  margin-top: var(--space-xs);
-  font-weight: 600;
-  color: var(--text-dark);
-}
+        <!-- 🛡️ Honeypot Field (Spam Trap) -->
+        <div style="display: none;">
+          <label for="website">Leave this field empty</label>
+          <input type="text" id="website" name="website" />
+        </div>
 
-/* 📃 General Lists */
-ul {
-  list-style: none;
-  padding-left: 0.5rem;
-  margin-bottom: var(--space-md);
-}
+        <!-- ⚠️ Error / Success Message Area -->
+        <div id="form-error" aria-live="assertive" role="alert" style="color: red;"></div>
 
-/* 📱 Responsive Tweaks */
-@media (max-width: 768px) {
-  nav a {
-    display: block;
-    margin: var(--space-xs) 0;
-  }
+        <button type="submit" class="btn">Send Message</button>
 
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
+        <!-- 🔐 Privacy Note -->
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+          🔒 Your info is safe with me — no spam, ever.
+        </p>
+      </form>
+    </div>
+  </section>
 
-  .project-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-sm);
-  }
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p>&copy; 2025 Aakash Verma | Rohini, Delhi</p>
+    </div>
+  </footer>
 
-  .profile-pic {
-    width: 120px;
-    height: 120px;
-  }
-}
+</body>
+</html>
