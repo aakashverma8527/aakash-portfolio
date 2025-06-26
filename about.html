@@ -4,22 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Aakash Verma</title>
-  <meta name="description" content="Learn about Aakash Verma, a freelance Process Associate from Delhi specializing in Salesforce CRM, UiPath, Excel, and e-commerce QA." />
+  <meta name="description" content="Meet Aakash Verma — a freelance Process Associate from Delhi, skilled in Salesforce CRM, UiPath, and e-commerce quality assurance." />
+  <meta property="og:title" content="About | Aakash Verma" />
+  <meta property="og:description" content="Freelance Process Associate from Delhi with expertise in CRM, automation, and data workflows." />
+  <meta property="og:image" content="profile.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Header & Navigation -->
-  <header>
-    <div class="container header-content">
-      <h1><a href="index.html" aria-label="Go to Aakash Verma homepage">Aakash Verma</a></h1>
-      <nav aria-label="Main Navigation">
-        <ul class="nav-list">
+  <header role="banner" class="site-header">
+    <div class="container">
+      <h1><a href="index.html" aria-label="Homepage">Aakash Verma</a></h1>
+      <nav role="navigation" aria-label="Main menu">
+        <ul class="nav">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active" aria-current="page">About</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -27,59 +30,54 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <section class="hero" aria-labelledby="about-heading">
+  <main role="main">
+    <section class="hero">
       <div class="container">
-        <h2 id="about-heading">About Me</h2>
-        <p>I’m Aakash Verma, a freelance Process Associate based in Delhi, specializing in Salesforce CRM, UiPath automation, Excel workflows, and e-commerce quality assurance.</p>
+        <h2>About Me</h2>
+        <p>Hello! I’m <strong>Aakash Verma</strong>, a Process Associate and freelance data expert from Delhi. I help businesses streamline operations through Salesforce CRM, UiPath automation, and high-accuracy e-commerce workflows.</p>
       </div>
     </section>
 
-    <section class="container section-card" aria-labelledby="experience-heading">
-      <h3 id="experience-heading">👨‍💼 Work Experience</h3>
-      <p>With over 2 years of experience, I've worked on data-driven projects for firms like SunTec India and eDataIndia. I currently lead a trained 5-member freelance team, delivering accurate results in client processes, e-commerce support, and CRM maintenance.</p>
+    <section class="container info-section">
+      <article>
+        <h3>🧩 Background</h3>
+        <p>With 2+ years of hands-on experience, I’ve collaborated with teams on global projects involving data validation, SOP-based automation, and client operations for platforms like SunTec India and eDataIndia.</p>
+      </article>
+
+      <article>
+        <h3>💡 Skills Snapshot</h3>
+        <ul>
+          <li>Salesforce CRM Workflows</li>
+          <li>UiPath Automation</li>
+          <li>Excel Dashboards & Macros</li>
+          <li>E-commerce Catalog QA</li>
+          <li>Google Sheets Reporting</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>🎓 Education</h3>
+        <p>BA Candidate, University of Delhi (Expected 2025)<br /> Certified Data Associate V2 – National Apprenticeship Program</p>
+      </article>
+
+      <article>
+        <h3>📍 Location</h3>
+        <p>Rohini, Delhi – Open to remote work or on-site projects across NCR (Noida, Gurgaon) in day, night, or rotational shifts.</p>
+      </article>
     </section>
 
-    <section class="container section-card" aria-labelledby="skills-heading">
-      <h3 id="skills-heading">💡 Key Skills</h3>
-      <ul>
-        <li>Salesforce CRM & Data Management</li>
-        <li>UiPath Automation Workflows</li>
-        <li>Excel Macros & Google Sheets Reporting</li>
-        <li>E-commerce Product QA & Listing</li>
-        <li>Content Moderation & SOP Compliance</li>
-      </ul>
-    </section>
-
-    <section class="container section-card" aria-labelledby="education-heading">
-      <h3 id="education-heading">🎓 Education</h3>
-      <p>Currently pursuing a B.A. from the University of Delhi (expected 2025). Certified as a Data Associate V2 under the National Apprenticeship Program.</p>
-    </section>
-
-    <section class="container section-card" aria-labelledby="location-heading">
-      <h3 id="location-heading">📍 Location & Availability</h3>
-      <p>Based in Rohini, Delhi. Open to freelance opportunities in Delhi NCR (Noida, Gurgaon) and remote roles. Available in day, night, and rotational shifts.</p>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="cta text-center" aria-labelledby="cta-heading">
+    <section class="cta text-center">
       <div class="container">
-        <h2 id="cta-heading">Let’s Collaborate</h2>
-        <p>Looking to optimize your data, automate processes, or improve quality? I'm here to help!</p>
-        <a href="contact.html" class="btn" role="button" aria-label="Contact Aakash Verma">Hire Me</a>
+        <h2>Let’s Work Together</h2>
+        <p>Need efficient CRM workflows or QA support? I'm just a click away.</p>
+        <a href="contact.html" class="btn" aria-label="Contact Aakash">Hire Me</a>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer role="contentinfo">
     <div class="container">
-      <p>© 2025 Aakash Verma • Rohini, Delhi</p>
-      <p>
-        <a href="tel:+918527879047" aria-label="Call Aakash Verma">+91 85278 79047</a> • 
-        <a href="mailto:aakashverma852787@outlook.com" aria-label="Email Aakash Verma">aakashverma852787@outlook.com</a>
-      </p>
+      <p>&copy; 2025 Aakash Verma • <a href="tel:+918527879047">+91 85278 79047</a> • <a href="mailto:aakashverma852787@outlook.com">Email Me</a></p>
     </div>
   </footer>
 
