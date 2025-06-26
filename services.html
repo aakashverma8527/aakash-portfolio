@@ -2,99 +2,164 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Our Services | Aakash Verma</title>
-  <meta name="description" content="Explore freelance services by Aakash Verma including catalog management, Salesforce CRM, and data validation for clients across Delhi and beyond." />
-  <meta name="keywords" content="Salesforce CRM, UiPath automation, data entry Delhi, freelance catalog specialist, Excel macros India, e-commerce product listing" />
-  <meta name="author" content="Aakash Verma" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Aakash Verma</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --bg: #f9f9f9;
+      --text: #333;
+      --hover: #e3f2fd;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      color: var(--text);
+      display: none;
+      width: 100%;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .mega-column {
+      flex: 1 1 200px;
+    }
+
+    .mega-column h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .mega-column ul {
+      list-style: none;
+    }
+
+    .mega-column li {
+      margin: 0.3rem 0;
+    }
+
+    .mega-column li a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-item:hover .mega-menu,
+    .nav-item:focus-within .mega-menu {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+      .mega-menu {
+        position: static;
+        display: none;
+        flex-direction: column;
+      }
+      .nav-item:focus-within .mega-menu,
+      .nav-item:hover .mega-menu {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Header & Navigation -->
   <header>
-    <div class="container header-content">
-      <h1><a href="index.html" aria-label="Go to homepage">Aakash Verma</a></h1>
-      <nav aria-label="Main Navigation">
+    <div class="nav-container">
+      <h1><a href="index.html" style="color: white; text-decoration: none;">Aakash Verma</a></h1>
+      <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html" class="active" aria-current="page">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <a href="#" aria-haspopup="true">Data ▾</a>
+            <div class="mega-menu">
+              <div class="mega-column">
+                <h4>Core Data Services</h4>
+                <ul>
+                  <li><a href="#">Data Collection Services</a></li>
+                  <li><a href="#">Data Extraction Services</a></li>
+                  <li><a href="#">Data Mining Services</a></li>
+                  <li><a href="#">Web Research Services</a></li>
+                  <li><a href="#">List Building Services</a></li>
+                  <li><a href="#">Data Appending Services</a></li>
+                  <li><a href="#">LinkedIn Data Mining Services</a></li>
+                  <li><a href="#">Website Data Scraping Services</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h4>Extended Services</h4>
+                <ul>
+                  <li><a href="#">Business Process Outsourcing (BPO)</a></li>
+                  <li><a href="#">Data Entry Services</a></li>
+                  <li><a href="#">Marketing & Sales Support</a></li>
+                  <li><a href="#">Data Processing Services</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h4>Advanced Solutions</h4>
+                <ul>
+                  <li><a href="#">Data Annotation Service</a></li>
+                  <li><a href="#">Data Management Services</a></li>
+                  <li><a href="#">Data Engineering Services</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h2 id="services-heading">Our Services</h2>
-        <p>We offer reliable and efficient freelancing support across multiple domains.</p>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="container" aria-labelledby="services-heading">
-      <div class="services-grid">
-
-        <div class="section-card">
-          <h3><span aria-hidden="true">🛒</span> E-commerce Catalog Management</h3>
-          <p>Created and optimized 500+ product listings for Delhi-based fashion brands on Amazon, Walmart, and Dressinn. Includes category mapping, image formatting, and SEO-ready descriptions.</p>
-        </div>
-
-        <div class="section-card">
-          <h3><span aria-hidden="true">📋</span> Data Entry & Validation</h3>
-          <p>Performed high-volume data entry with SOP-based accuracy checks. Validated over 2000+ records across platforms with a 98% audit pass rate for clients in education and retail.</p>
-        </div>
-
-        <div class="section-card">
-          <h3><span aria-hidden="true">📊</span> CRM Management (Salesforce)</h3>
-          <p>Maintained 500+ U.S. client accounts via Salesforce CRM, handling lead tagging, record syncing, and automated workflows — reducing manual efforts by 40%.</p>
-        </div>
-
-        <div class="section-card">
-          <h3><span aria-hidden="true">🧾</span> MIS Reporting & Excel Automation</h3>
-          <p>Built custom Excel dashboards and automated reporting systems using macros and Google Sheets API. Used in daily operations for e-commerce and staffing clients in NCR.</p>
-        </div>
-
-        <div class="section-card">
-          <h3><span aria-hidden="true">🤖</span> Automation with UiPath</h3>
-          <p>Developed UiPath bots to automate repetitive back-office tasks — invoice processing, email parsing, and CRM syncing — improving task turnaround time by 50%.</p>
-        </div>
-
-        <div class="section-card">
-          <h3><span aria-hidden="true">🌐</span> Content Moderation</h3>
-          <p>Reviewed and moderated thousands of user-generated posts for marketplaces and ed-tech platforms. Ensured compliance with brand guidelines and safety policies.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Call-to-Action Section -->
-    <section class="cta text-center" aria-labelledby="cta-heading">
-      <div class="container">
-        <h2 id="cta-heading">Need help with a similar project?</h2>
-        <p>I’m available for freelance or contract-based work — solo or with my 5-member remote team. Let’s collaborate!</p>
-        <a href="contact.html" class="btn" role="button">Get in Touch</a>
-      </div>
-    </section>
+  <main class="container" style="padding: 2rem;">
+    <h2>Explore Our Data Services</h2>
+    <p>Select from the categories in the navigation menu to learn more about each service we offer.</p>
   </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <address>
-        © 2025 Aakash Verma • Rohini, Delhi • 
-        <a href="tel:+918527879047">+91 85278 79047</a> • 
-        <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a>
-      </address>
-    </div>
-  </footer>
-
-  <!-- Script -->
-  <script src="script.js" defer></script>
 </body>
 </html>
