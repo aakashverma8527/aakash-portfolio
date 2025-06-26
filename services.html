@@ -2,118 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Aakash Verma</title>
-  <meta name="description" content="Get in touch with Aakash Verma, freelance Process Associate based in Delhi. Available for remote and hybrid roles." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Services | Aakash Verma</title>
+  <meta name="description" content="Explore freelance services by Aakash Verma including catalog management, Salesforce CRM, and data validation for clients across Delhi and beyond." />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header & Navigation -->
   <header>
     <div class="container header-content">
       <h1><a href="index.html" aria-label="Go to homepage">Aakash Verma</a></h1>
-      <p>Process Associate | Salesforce | E-commerce | Data Entry | Content Moderator</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank">LinkedIn</a>
-        <a href="https://github.com/aakashverma" target="_blank">GitHub</a>
-      </div>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <!-- Navigation -->
-  <nav role="navigation" aria-label="Main Navigation">
-    <div class="container">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html" class="active" aria-current="page">Contact</a>
-    </div>
-  </nav>
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2 id="services-heading">Our Services</h2>
+        <p>We offer reliable and efficient freelancing support across multiple domains.</p>
+      </div>
+    </section>
 
-  <!-- Main Contact Content -->
-  <main class="contact-container container" style="padding-block: var(--space-md); max-width: 700px;">
-    <h2 id="contact-heading">Contact Me</h2>
-
-    <section aria-labelledby="contact-heading">
-      <!-- Contact Info -->
-      <div class="contact-info" style="margin-bottom: var(--space-md);">
-        <a href="mailto:aakashverma852787@outlook.com" class="contact-block">
-          <p><i class="fas fa-envelope"></i> <strong>Email:</strong> aakashverma852787@outlook.com</p>
-        </a>
-        <a href="tel:+918527879047" class="contact-block">
-          <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 85278 79047</p>
-        </a>
-        <a href="https://www.google.com/maps/place/Rohini,+Delhi" class="contact-block" target="_blank">
-          <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Rohini, Delhi, India</p>
-        </a>
-        <p><i class="fas fa-briefcase"></i> <strong>Available for:</strong> Remote, Gurgaon, Noida (Day/Night/Rotational Shifts)</p>
+    <!-- Services Section with ARIA landmark -->
+    <section class="container" aria-labelledby="services-heading">
+      <div class="section-card">
+        <h3><span aria-hidden="true">🛒</span> E-commerce Catalog Management</h3>
+        <p>Created and optimized 500+ product listings for Delhi-based fashion brands on Amazon, Walmart, and Dressinn. Includes category mapping, image formatting, and SEO-ready descriptions.</p>
       </div>
 
-      <!-- Contact Form -->
-      <form id="contact-form" action="https://formspree.io/f/youractualformid" method="POST" novalidate>
-        <fieldset>
-          <legend>Send a Message</legend>
+      <div class="section-card">
+        <h3><span aria-hidden="true">📋</span> Data Entry & Validation</h3>
+        <p>Performed high-volume data entry with SOP-based accuracy checks. Validated over 2000+ records across platforms with a 98% audit pass rate for clients in education and retail.</p>
+      </div>
 
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+      <div class="section-card">
+        <h3><span aria-hidden="true">📊</span> CRM Management (Salesforce)</h3>
+        <p>Maintained 500+ U.S. client accounts via Salesforce CRM, handling lead tagging, record syncing, and automated workflows — reducing manual efforts by 40%.</p>
+      </div>
 
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      <div class="section-card">
+        <h3><span aria-hidden="true">🧾</span> MIS Reporting & Excel Automation</h3>
+        <p>Built custom Excel dashboards and automated reporting systems using macros and Google Sheets API. Used in daily operations for e-commerce and staffing clients in NCR.</p>
+      </div>
 
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+      <div class="section-card">
+        <h3><span aria-hidden="true">🤖</span> Automation with UiPath</h3>
+        <p>Developed UiPath bots to automate repetitive back-office tasks — invoice processing, email parsing, and CRM syncing — improving task turnaround time by 50%.</p>
+      </div>
 
-          <!-- Honeypot Field -->
-          <input type="text" name="_gotcha" style="display: none;" aria-hidden="true" tabindex="-1" />
+      <div class="section-card">
+        <h3><span aria-hidden="true">🌐</span> Content Moderation</h3>
+        <p>Reviewed and moderated thousands of user-generated posts for marketplaces and ed-tech platforms. Ensured compliance with brand guidelines and safety policies.</p>
+      </div>
+    </section>
 
-          <button type="submit" class="btn">Send Message</button>
-
-          <p id="form-status" style="margin-top: var(--space-sm); color: var(--accent); font-weight: 600;"></p>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: var(--space-xs);">
-            Your info is safe with me — no spam, ever.
-          </p>
-        </fieldset>
-      </form>
+    <!-- Call-to-Action Section -->
+    <section class="cta text-center" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading">Need help with a similar project?</h2>
+        <p>I’m available for freelance or contract-based work — solo or with my 5-member remote team. Let’s collaborate!</p>
+        <a href="contact.html" class="btn" role="button">Get in Touch</a>
+      </div>
     </section>
   </main>
 
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2025 Aakash Verma • Rohini, Delhi • <a href="tel:+918527879047">+91 85278 79047</a> • <a href="mailto:aakashverma852787@outlook.com">Email Me</a></p>
+      <p>&copy; 2025 Aakash Verma | Process Associate & Freelance Team</p>
     </div>
   </footer>
-
-  <!-- Form Feedback Script -->
-  <script>
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      status.textContent = "Sending...";
-
-      const formData = new FormData(form);
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          status.textContent = "✅ Thank you! Your message has been sent.";
-          form.reset();
-        } else {
-          status.textContent = "❌ Oops! Something went wrong.";
-        }
-      } catch (err) {
-        status.textContent = "❌ Network error. Please try again later.";
-      }
-    });
-  </script>
 
 </body>
 </html>
