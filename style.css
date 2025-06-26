@@ -1,141 +1,149 @@
-/* ==== Root Variables ==== */
+/* ===========================================
+   🌐 CSS Variables & Global Settings
+=========================================== */
 :root {
-  --primary: #007acc;
-  --btn-hover: #005fa3;
-  --accent: #00c1a4;
+  /* Colors */
+  --primary: #0066ff;
+  --accent: #ff6f61;
+  --background: #f9f9f9;
   --white: #ffffff;
-  --dark: #1a1a1a;
+  --text-dark: #1a1a1a;
+  --text-muted: #555555;
+  --btn-hover: #0056d2;
+
+  /* Shadows */
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.07);
+  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+  /* Spacing */
+  --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 2rem;
-  --space-lg: 4rem;
-  --max-width: 960px;
+  --space-lg: 3rem;
+
+  /* Typography */
+  --font-h1: 2.5rem;
+  --font-h2: 2rem;
+  --font-h3: 1.5rem;
+  --font-body: 1rem;
   --font-family: 'Inter', sans-serif;
+
+  /* Breakpoints */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
 }
 
-/* ==== Global Reset ==== */
-* {
+/* ===========================================
+   🔄 Reset & Base Styles
+=========================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-family);
-  background-color: #f9f9f9;
-  color: var(--dark);
+  font-size: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--background);
   line-height: 1.6;
 }
 
-/* ==== Container ==== */
+/* ===========================================
+   📐 Layout Utilities
+=========================================== */
 .container {
-  max-width: var(--max-width);
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0 var(--space-sm);
+  padding: var(--space-sm);
 }
 
-/* ==== Typography ==== */
-h1, h2, h3, h4 {
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-/* ==== Header/Nav ==== */
-.site-header {
-  background: var(--primary);
-  padding: var(--space-sm) 0;
-  color: var(--white);
-}
-
-.site-header h1 a {
-  color: var(--white);
-  text-decoration: none;
-}
-
-.nav {
-  display: flex;
-  gap: var(--space-sm);
-  list-style: none;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.nav a {
-  color: var(--white);
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.nav a:hover,
-.nav a[aria-current="page"] {
-  background-color: var(--btn-hover);
-}
-
-/* ==== Hero Section ==== */
-.hero {
-  background-color: #eef5f9;
-  padding: var(--space-lg) 0;
+.text-center {
   text-align: center;
 }
 
-.hero .profile-img {
-  margin-top: var(--space-sm);
-  border-radius: 50%;
-  object-fit: cover;
+.section-lg {
+  padding: var(--space-lg) 0;
 }
 
-/* ==== Highlights Section ==== */
-.highlight-section {
-  padding: var(--space-md) 0;
+.section-sm {
+  padding: var(--space-sm) 0;
 }
 
-.highlights {
-  list-style: none;
-  padding-left: 0;
-  line-height: 1.8;
-}
-
-.highlights li {
-  margin-bottom: 0.8rem;
-}
-
-/* ==== CTA Section ==== */
-.cta {
-  background-color: var(--primary);
+/* ===========================================
+   🧭 Navigation Styles
+=========================================== */
+header {
+  background: var(--primary);
   color: var(--white);
-  padding: var(--space-lg) var(--space-sm);
+  padding: var(--space-sm) 0;
+  text-align: center;
 }
 
-.cta .btn {
-  margin-top: var(--space-sm);
+header h1 a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: var(--font-h1);
 }
 
-/* ==== Button Base Style ==== */
+nav {
+  background: var(--text-dark);
+  padding: var(--space-xs) 0;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: var(--space-sm);
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  padding: var(--space-xs);
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links .active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  outline: none;
+}
+
+.nav-links a:focus-visible {
+  outline: 2px dashed var(--accent);
+  outline-offset: 2px;
+}
+
+/* ===========================================
+   🧾 Button Styles
+=========================================== */
 .btn,
 .resume-btn {
   display: inline-block;
   padding: 0.6rem 1.2rem;
-  background-color: var(--primary);
+  background: var(--primary);
   color: var(--white);
   border-radius: 6px;
   font-weight: 600;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  text-align: center;
+  cursor: pointer;
 }
 
 .btn:hover,
@@ -147,46 +155,148 @@ p {
   outline: none;
 }
 
-/* ==== Footer Layout & Actions ==== */
-footer {
-  background-color: var(--dark);
-  color: var(--white);
-  padding: var(--space-md) 0;
-  margin-top: var(--space-lg);
+.btn:focus-visible,
+.resume-btn:focus-visible {
+  outline: 2px dashed var(--accent);
+  outline-offset: 2px;
 }
 
-footer p,
-footer a {
+/* ===========================================
+   🦸 Hero Section
+=========================================== */
+.hero {
+  text-align: center;
+  background: var(--accent);
   color: var(--white);
-  font-size: 0.95rem;
+  padding: var(--space-lg) var(--space-sm);
 }
 
-.footer-actions {
+.hero h2 {
+  font-size: var(--font-h2);
+  margin-bottom: var(--space-xs);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto var(--space-sm);
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--white);
+  box-shadow: var(--shadow-light);
+  margin-bottom: var(--space-sm);
+}
+
+/* ===========================================
+   📦 Service / Project Cards
+=========================================== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-sm);
+}
+
+.project-card {
+  background: var(--white);
+  padding: var(--space-sm);
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.project-card .icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-xs);
+}
+
+/* ===========================================
+   💬 Form Styles
+=========================================== */
+.contact-form-wrapper form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: var(--space-sm);
   margin-top: var(--space-sm);
 }
 
-@media (min-width: 600px) {
-  .footer-actions {
-    flex-direction: row;
-    justify-content: center;
-  }
+.contact-form-wrapper input,
+.contact-form-wrapper textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
 }
 
-/* ==== Social Links Styling ==== */
-.social-links {
+.contact-form-wrapper label {
+  font-weight: 600;
+}
+
+.contact-form-wrapper button {
+  align-self: flex-start;
+}
+
+/* ===========================================
+   📢 Call to Action
+=========================================== */
+.cta {
+  background-color: #e6f0ff;
+  text-align: center;
+  padding: var(--space-lg) var(--space-sm);
+}
+
+/* ===========================================
+   🦶 Footer
+=========================================== */
+footer {
+  background: #333;
+  color: var(--white);
+  text-align: center;
+  padding: var(--space-md) var(--space-sm);
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+}
+
+/* Footer layout */
+.footer-actions {
+  margin-top: var(--space-sm);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: var(--space-sm);
 }
 
+.social-links {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
 .social-links a {
+  color: var(--white);
   display: inline-flex;
   align-items: center;
-  color: var(--white);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -203,13 +313,22 @@ footer a {
   outline: none;
 }
 
-footer a:hover,
-footer a:focus {
-  color: var(--accent);
-  text-decoration: underline;
-}
+/* ===========================================
+   📱 Responsive Design
+=========================================== */
+@media (max-width: var(--bp-md)) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.resume-btn:focus-visible {
-  outline: 2px dashed var(--accent);
-  outline-offset: 2px;
+  .btn,
+  .resume-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-actions {
+    flex-direction: column;
+  }
 }
