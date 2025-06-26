@@ -1,5 +1,3 @@
-// script.js
-
 // ==== Toggle Mobile Navigation ====
 function initMenuToggle() {
   const menuBtn = document.getElementById("menu-toggle");
@@ -7,53 +5,83 @@ function initMenuToggle() {
 
   if (!menuBtn || !nav) return;
 
-  menuBtn.setAttribute("aria-expanded", "false"); // Initial state
+  menuBtn.setAttribute("aria-expanded", "false");
 
   menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("active");
-
-    // Accessibility: Update aria-expanded on the button, not nav
-    const expanded = nav.classList.contains("active");
-    menuBtn.setAttribute("aria-expanded", expanded.toString());
-  });
-}
-
-// ==== Contact Form Validation ====
-function initFormValidation() {
-  const form = document.getElementById("contact-form");
-  const errorDiv = document.getElementById("form-error");
-
-  if (!form || !errorDiv) return;
-
-  // Clear error message on user input
-  form.addEventListener("input", () => {
-    errorDiv.textContent = "";
+    const isExpanded = nav.classList.toggle("active");
+    menuBtn.setAttribute("aria-expanded", isExpanded.toString());
   });
 
-  form.addEventListener("submit", (e) => {
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!name || !email || !message) {
-      e.preventDefault();
-      errorDiv.textContent = "Please fill out all fields.";
-      errorDiv.style.color = "red";
-    } else if (!emailRegex.test(email)) {
-      e.preventDefault();
-      errorDiv.textContent = "Please enter a valid email address.";
-      errorDiv.style.color = "red";
-    } else {
-      errorDiv.textContent = "";
+  document.addEventListener("click", (e) => {
+    if (!menuBtn.contains(e.target) && !nav.contains(e.target)) {
+      nav.classList.remove("active");
+      menuBtn.setAttribute("aria-expanded", "false");
     }
   });
 }
 
-// ==== Portfolio Image Hover Preview ====
+// ==== Contact Form Validation with Field-Specific Errors ====
+function initFormValidation() {
+  const wrapper = document.querySelector(".contact-form-wrapper");
+  if (!wrapper) return;
+
+  const form = wrapper.querySelector("#contact-form");
+  const errorDiv = wrapper.querySelector("#form-error");
+  const successDiv = wrapper.querySelector("#form-success");
+
+  if (!form || !errorDiv) return;
+
+  const showError = (message) => {
+    errorDiv.textContent = message;
+    errorDiv.style.color = "red";
+    errorDiv.setAttribute("aria-live", "assertive");
+  };
+
+  const clearFeedback = () => {
+    errorDiv.textContent = "";
+    errorDiv.removeAttribute("aria-live");
+    if (successDiv) successDiv.textContent = "";
+  };
+
+  form.addEventListener("input", clearFeedback);
+
+  form.addEventListener("submit", (e) => {
+    const name = form.name?.value.trim();
+    const email = form.email?.value.trim();
+    const message = form.message?.value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!name) {
+      e.preventDefault();
+      showError("Name is required.");
+    } else if (!email) {
+      e.preventDefault();
+      showError("Email is required.");
+    } else if (!emailRegex.test(email)) {
+      e.preventDefault();
+      showError("Invalid email format.");
+    } else if (!message) {
+      e.preventDefault();
+      showError("Message is required.");
+    } else {
+      clearFeedback();
+      if (successDiv) {
+        successDiv.textContent = "Sending message...";
+        successDiv.style.color = "green";
+        successDiv.setAttribute("aria-live", "polite");
+      }
+    }
+  });
+}
+
+// ==== Portfolio Image Hover Effect ====
 function initImageHover() {
   const images = document.querySelectorAll(".portfolio-img");
+  if (!images.length) {
+    console.debug("No .portfolio-img elements found. Skipping hover logic.");
+    return;
+  }
 
   images.forEach((img) => {
     img.addEventListener("mouseenter", () => img.classList.add("hovered"));
@@ -61,9 +89,9 @@ function initImageHover() {
   });
 }
 
-// ==== Initialize all functions after DOM Content Loaded ====
+// ==== DOMContentLoaded Bootstrapping ====
 document.addEventListener("DOMContentLoaded", () => {
-  initMenuToggle();
-  initFormValidation();
-  initImageHover();
+  if (document.getElementById("menu-toggle")) initMenuToggle();
+  if (document.querySelector(".contact-form-wrapper")) initFormValidation();
+  if (document.querySelector(".portfolio-img")) initImageHover();
 });
