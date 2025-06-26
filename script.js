@@ -1,101 +1,50 @@
-// ==== Toggle Mobile Navigation ====
-function initMenuToggle() {
-  const menuBtn = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav-links");
+/* ============================================================================
+   📱 Mobile Navigation Toggle (Burger Menu)
+============================================================================ */
+document.addEventListener('DOMContentLoaded', function () {
+  const burger = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-links');
 
-  if (!menuBtn || !nav) return;
+  if (burger && navMenu) {
+    burger.addEventListener('click', function () {
+      const isExpanded = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('is-open');
+    });
 
-  menuBtn.setAttribute("aria-expanded", "false");
-
-  menuBtn.addEventListener("click", () => {
-    const isExpanded = nav.classList.toggle("active");
-    menuBtn.setAttribute("aria-expanded", isExpanded.toString());
-  });
-
-  // Click outside to close menu
-  document.addEventListener("click", (e) => {
-    if (!menuBtn.contains(e.target) && !nav.contains(e.target)) {
-      nav.classList.remove("active");
-      menuBtn.setAttribute("aria-expanded", "false");
-    }
-  });
-}
-
-// ==== Contact Form Validation with Field-Specific Errors ====
-function initFormValidation() {
-  const wrapper = document.querySelector(".contact-form-wrapper");
-  if (!wrapper) return;
-
-  const form = wrapper.querySelector("#contact-form");
-  const errorDiv = wrapper.querySelector("#form-error");
-  const successDiv = wrapper.querySelector("#form-success");
-
-  if (!form || !errorDiv) return;
-
-  const showError = (message) => {
-    errorDiv.textContent = message;
-    errorDiv.style.color = "red";
-    errorDiv.setAttribute("aria-live", "assertive");
-  };
-
-  const clearFeedback = () => {
-    errorDiv.textContent = "";
-    errorDiv.removeAttribute("aria-live");
-    if (successDiv) {
-      successDiv.textContent = "";
-      successDiv.removeAttribute("aria-live");
-    }
-  };
-
-  form.addEventListener("input", clearFeedback);
-
-  form.addEventListener("submit", (e) => {
-    const name = form.name?.value.trim();
-    const email = form.email?.value.trim();
-    const message = form.message?.value.trim();
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!name) {
-      e.preventDefault();
-      showError("Name is required.");
-    } else if (!email) {
-      e.preventDefault();
-      showError("Email is required.");
-    } else if (!emailRegex.test(email)) {
-      e.preventDefault();
-      showError("Invalid email format.");
-    } else if (!message) {
-      e.preventDefault();
-      showError("Message is required.");
-    } else {
-      clearFeedback();
-      if (successDiv) {
-        successDiv.textContent = "Sending message...";
-        successDiv.style.color = "green";
-        successDiv.setAttribute("aria-live", "polite");
+    // Close menu on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('is-open')) {
+        burger.setAttribute('aria-expanded', 'false');
+        navMenu.classList.remove('is-open');
+        burger.focus();
       }
-    }
-  });
-}
-
-// ==== Portfolio Image Hover Effect ====
-function initImageHover() {
-  const images = document.querySelectorAll(".portfolio-img");
-  if (!images.length) {
-    console.debug("No .portfolio-img elements found. Skipping hover logic.");
-    return;
+    });
   }
+});
 
-  images.forEach((img) => {
-    img.addEventListener("mouseenter", () => img.classList.add("hovered"));
-    img.addEventListener("mouseleave", () => img.classList.remove("hovered"));
+/* ============================================================================
+   🌀 AOS (Animate On Scroll) Initialization
+============================================================================ */
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  AOS.init({
+    duration: 800,
+    once: true
   });
 }
 
-// ==== DOMContentLoaded Bootstrapping ====
-document.addEventListener("DOMContentLoaded", () => {
-  if (document.getElementById("menu-toggle")) initMenuToggle();
-  if (document.querySelector(".contact-form-wrapper")) initFormValidation();
-  if (document.querySelector(".portfolio-img")) initImageHover();
+/* ============================================================================
+   🔗 Smooth Scrolling for Internal Links
+============================================================================ */
+document.addEventListener('click', function (e) {
+  const link = e.target.closest('a[href^="#"]');
+  if (link) {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.focus({ preventScroll: true });
+    }
+  }
 });
