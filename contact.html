@@ -2,81 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | Aakash Verma</title>
+  <meta name="description" content="Contact Aakash Verma for Salesforce CRM, data entry, automation, and content moderation freelance services in Delhi or remote." />
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-  <meta name="description" content="Get in touch with Aakash Verma for freelance CRM, data entry, and automation services." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- Header -->
   <header>
     <div class="container header-content">
-      <h1>Contact</h1>
-      <p>Let’s build something reliable together.</p>
+      <h1><a href="index.html" aria-label="Go to homepage">Aakash Verma</a></h1>
+      <p>Freelance CRM & Data Specialist</p>
     </div>
   </header>
 
-  <!-- Contact Section -->
-  <section class="contact-form" id="contact">
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Main navigation">
     <div class="container">
-      <h2>Get in Touch</h2>
-      <p>I typically respond within 1–2 business days. You can also reach me directly via phone or email.</p>
-
-      <!-- 📧 Contact Info -->
-      <div class="contact-info">
-        <p><a href="tel:+918527879047">📞 +91 85278 79047</a></p>
-        <p><a href="mailto:aakashverma852787@outlook.com">✉️ aakashverma852787@outlook.com</a></p>
-      </div>
-
-      <!-- 📍 Optional Google Maps -->
-      <iframe
-        title="Office Location - Delhi"
-        src="https://www.google.com/maps?q=Rohini,+Delhi,+India&output=embed"
-        width="100%"
-        height="250"
-        style="border:0; margin-top:1rem;"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
-
-      <!-- 📝 Contact Form -->
-      <form id="contact-form" action="submit-form.php" method="POST" novalidate>
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required aria-label="Full Name" />
-
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required aria-label="Email Address" />
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required aria-label="Your message"></textarea>
-
-        <!-- 🛡️ Honeypot Field (Spam Trap) -->
-        <div style="display: none;">
-          <label for="website">Leave this field empty</label>
-          <input type="text" id="website" name="website" />
-        </div>
-
-        <!-- ⚠️ Error / Success Message Area -->
-        <div id="form-error" aria-live="assertive" role="alert" style="color: red;"></div>
-
-        <button type="submit" class="btn">Send Message</button>
-
-        <!-- 🔐 Privacy Note -->
-        <p style="font-size: 0.9rem; margin-top: 0.5rem;">
-          🔒 Your info is safe with me — no spam, ever.
-        </p>
-      </form>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+      </ul>
     </div>
-  </section>
+  </nav>
+
+  <!-- Contact Form -->
+  <main>
+    <section class="contact-form-wrapper" id="contact-section">
+      <div class="container">
+        <h2>Get in Touch</h2>
+        <p>Let’s work together! Fill out the form below and I’ll get back to you shortly.</p>
+
+        <form id="contact-form" method="POST" action="submit-form.php" novalidate>
+          <label for="name">Full Name:</label>
+          <input type="text" name="name" id="name" placeholder="John Doe" required />
+
+          <label for="email">Email Address:</label>
+          <input type="email" name="email" id="email" placeholder="you@example.com" required />
+
+          <label for="message">Message:</label>
+          <textarea name="message" id="message" rows="5" placeholder="How can I help you?" required></textarea>
+
+          <!-- Honeypot Field -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" aria-hidden="true" />
+
+          <button type="submit" class="btn">Send Message</button>
+
+          <div id="form-error" aria-live="assertive" style="margin-top: 1rem; color: red;"></div>
+          <div id="form-success" aria-live="polite" style="margin-top: 1rem; color: green;"></div>
+
+          <p style="font-size: 0.9rem; margin-top: 1rem;">🔒 Your info is safe with me — no spam, ever.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Optional: Embedded Map -->
+    <section class="container" style="margin-top: 2rem;">
+      <h3 class="text-center">Office Location (Remote Support Available)</h3>
+      <div class="text-center">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14020.813118618308!2d77.1024904!3d28.7352336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01553b3ff6cd%3A0x8b16d31218dce17d!2sRohini%2C%20Delhi!5e0!3m2!1sen!2sin!4v1687080493722!5m2!1sen!2sin"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Rohini, Delhi Location"></iframe>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
-    <div class="container text-center">
-      <p>&copy; 2025 Aakash Verma | Rohini, Delhi</p>
+    <div class="container">
+      <p>&copy; 2025 Aakash Verma — <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a> • 
+        <a href="tel:+918527879047">+91 85278 79047</a></p>
     </div>
   </footer>
 
+  <script src="script.js" defer></script>
 </body>
 </html>
