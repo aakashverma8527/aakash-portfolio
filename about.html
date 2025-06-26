@@ -4,19 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Aakash Verma</title>
-  <meta name="description" content="Learn more about Aakash Verma – Freelance Process Associate from Delhi specializing in Salesforce CRM, e-commerce support, and data validation." />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Learn about Aakash Verma, a freelance Process Associate from Delhi specializing in Salesforce CRM, UiPath, Excel, and e-commerce QA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Header & Navigation -->
   <header>
     <div class="container header-content">
-      <h1><a href="index.html" aria-label="Go to homepage">Aakash Verma</a></h1>
+      <h1><a href="index.html" aria-label="Go to Aakash Verma homepage">Aakash Verma</a></h1>
       <nav aria-label="Main Navigation">
-        <ul>
+        <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html" class="active" aria-current="page">About</a></li>
           <li><a href="services.html">Services</a></li>
@@ -26,70 +27,61 @@
     </div>
   </header>
 
-  <!-- About Section -->
+  <!-- Main Content -->
   <main>
-    <section class="hero">
+    <section class="hero" aria-labelledby="about-heading">
       <div class="container">
-        <h2>About Me</h2>
-        <p>I’m Aakash Verma — a dedicated Process Associate and freelance data specialist based in Delhi.</p>
+        <h2 id="about-heading">About Me</h2>
+        <p>I’m Aakash Verma, a freelance Process Associate based in Delhi, specializing in Salesforce CRM, UiPath automation, Excel workflows, and e-commerce quality assurance.</p>
       </div>
     </section>
 
-    <section class="container">
-      <div class="section-card">
-        <h3>📌 Background</h3>
-        <p>I bring 2+ years of hands-on experience working in roles involving Salesforce CRM, content moderation, and e-commerce data management. With a strong eye for detail and SOP-based workflows, I’ve consistently delivered high-accuracy results across projects.</p>
-      </div>
-
-      <div class="section-card">
-        <h3>🎯 Key Skills</h3>
-        <ul>
-          <li>Salesforce CRM Data Handling</li>
-          <li>UiPath Process Automation</li>
-          <li>E-commerce Listing & Catalog QA</li>
-          <li>Excel Macros & Google Sheets</li>
-          <li>Content Moderation Dashboards</li>
-        </ul>
-      </div>
-
-      <div class="section-card">
-        <h3>👨‍💼 Experience</h3>
-        <p><strong>Current:</strong> Freelancing with a trained 5-member team on global projects<br>
-           <strong>Past:</strong> SunTec India, eDataIndia — roles in process accuracy, MIS, and client operations</p>
-      </div>
-
-      <div class="section-card">
-        <h3>🎓 Education</h3>
-        <p>BA, University of Delhi (Expected 2025)<br>
-        Certified Data Associate V2 – National Apprenticeship Program</p>
-      </div>
-
-      <div class="section-card">
-        <h3>📍 Location & Availability</h3>
-        <p>Based in Rohini, Delhi – Available for Remote, Noida, and Gurgaon-based freelance opportunities in day, night, or rotational shifts.</p>
-      </div>
+    <section class="container section-card" aria-labelledby="experience-heading">
+      <h3 id="experience-heading">👨‍💼 Work Experience</h3>
+      <p>With over 2 years of experience, I've worked on data-driven projects for firms like SunTec India and eDataIndia. I currently lead a trained 5-member freelance team, delivering accurate results in client processes, e-commerce support, and CRM maintenance.</p>
     </section>
 
-    <!-- CTA Section -->
+    <section class="container section-card" aria-labelledby="skills-heading">
+      <h3 id="skills-heading">💡 Key Skills</h3>
+      <ul>
+        <li>Salesforce CRM & Data Management</li>
+        <li>UiPath Automation Workflows</li>
+        <li>Excel Macros & Google Sheets Reporting</li>
+        <li>E-commerce Product QA & Listing</li>
+        <li>Content Moderation & SOP Compliance</li>
+      </ul>
+    </section>
+
+    <section class="container section-card" aria-labelledby="education-heading">
+      <h3 id="education-heading">🎓 Education</h3>
+      <p>Currently pursuing a B.A. from the University of Delhi (expected 2025). Certified as a Data Associate V2 under the National Apprenticeship Program.</p>
+    </section>
+
+    <section class="container section-card" aria-labelledby="location-heading">
+      <h3 id="location-heading">📍 Location & Availability</h3>
+      <p>Based in Rohini, Delhi. Open to freelance opportunities in Delhi NCR (Noida, Gurgaon) and remote roles. Available in day, night, and rotational shifts.</p>
+    </section>
+
+    <!-- Call to Action -->
     <section class="cta text-center" aria-labelledby="cta-heading">
       <div class="container">
-        <h2 id="cta-heading">Let’s Work Together</h2>
-        <p>I’d love to help your business improve its data accuracy and workflow efficiency.</p>
-        <a href="contact.html" class="btn" role="button">Hire Me</a>
+        <h2 id="cta-heading">Let’s Collaborate</h2>
+        <p>Looking to optimize your data, automate processes, or improve quality? I'm here to help!</p>
+        <a href="contact.html" class="btn" role="button" aria-label="Contact Aakash Verma">Hire Me</a>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <div class="container">
-      <p>© 2025 Aakash Verma • Rohini, Delhi • 
-        <a href="tel:+918527879047">+91 85278 79047</a> • 
-        <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a>
+      <p>© 2025 Aakash Verma • Rohini, Delhi</p>
+      <p>
+        <a href="tel:+918527879047" aria-label="Call Aakash Verma">+91 85278 79047</a> • 
+        <a href="mailto:aakashverma852787@outlook.com" aria-label="Email Aakash Verma">aakashverma852787@outlook.com</a>
       </p>
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
 </body>
 </html>
