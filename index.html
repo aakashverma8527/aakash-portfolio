@@ -6,8 +6,6 @@
   <title>Aakash Verma | Freelance Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  
-  <!-- ✅ Updated Meta for SEO -->
   <meta name="description" content="Aakash Verma – Salesforce CRM freelancer in Delhi helping businesses streamline data processes, improve accuracy, and boost productivity with 2+ years of hands-on experience." />
   <meta name="keywords" content="Salesforce CRM freelancer in Delhi, data entry specialist India, UiPath automation expert, e-commerce listing support, freelance content moderation services" />
   <meta name="author" content="Aakash Verma" />
@@ -20,7 +18,6 @@
     <div class="container header-content">
       <h1 itemprop="name">Aakash Verma</h1>
       <p itemprop="jobTitle">Process Associate | Salesforce CRM | E-commerce | Data Entry | Content Moderator</p>
-      
       <ul class="social-links">
         <li><a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
         <li><a href="https://github.com/aakashverma" target="_blank" rel="noopener noreferrer">GitHub</a></li>
@@ -54,9 +51,7 @@
   <section class="intro">
     <div class="container">
       <h2>Who I Am</h2>
-      <p>
-        I help businesses reduce processing time by up to 30% through optimized Salesforce CRM workflows, e-commerce product accuracy, and SOP-driven data validation. Based in Delhi, I bring hands-on expertise and a results-first approach to every project.
-      </p>
+      <p>I help businesses reduce processing time by up to 30% through optimized Salesforce CRM workflows, e-commerce product accuracy, and SOP-driven data validation. Based in Delhi, I bring hands-on expertise and a results-first approach to every project.</p>
     </div>
   </section>
 
@@ -75,29 +70,25 @@
   </section>
 
   <!-- Projects Section -->
-  <section class="projects">
+  <section class="projects" aria-labelledby="projects-heading">
     <div class="container">
-      <h2>Project Highlights</h2>
+      <h2 id="projects-heading">Project Highlights</h2>
       <div class="project-grid">
-
         <article class="project-card">
           <img src="images/dressinn-ecommerce-listing-accuracy.png" alt="E-commerce product upload for Dressinn with mapped attributes and accurate tags" loading="lazy" />
           <h3>Dressinn – E-commerce Listing</h3>
           <p>Uploaded 500+ fashion SKUs using SOP-based Excel templates. Improved product tag precision by 40% using bulk-edit tools and catalog validation.</p>
         </article>
-
         <article class="project-card">
           <img src="images/salesforce-crm-data-management.png" alt="Salesforce CRM dashboard showing client accounts and automation flows" loading="lazy" />
           <h3>Salesforce CRM – U.S. Clients</h3>
           <p>Maintained 500+ client records with tagging, segmentation, and Excel-to-Salesforce automation. Achieved 98% data consistency using Flow automation and report scheduling.</p>
         </article>
-
         <article class="project-card">
           <img src="images/studocu-university-data-validation.png" alt="Validated academic record entries for Studocu university dashboard" loading="lazy" />
           <h3>Studocu – Data Validation</h3>
           <p>Reviewed and validated 2,000+ academic documents for upload using standardized rubrics. Achieved 97% accuracy rate and reduced manual QA time by 25%.</p>
         </article>
-
       </div>
     </div>
   </section>
@@ -111,7 +102,7 @@
     </div>
   </section>
 
-  <!-- Testimonials (Optional Placeholder) -->
+  <!-- Testimonials -->
   <section class="testimonials">
     <div class="container">
       <h2>What Clients Say</h2>
@@ -123,10 +114,10 @@
   </section>
 
   <!-- Contact Form -->
-  <section class="contact-form" id="contact-form">
+  <section class="contact-form" id="contact-form" aria-labelledby="contact-heading">
     <div class="container">
-      <h2>Get in Touch</h2>
-      <form action="submit-form.php" method="POST">
+      <h2 id="contact-heading">Get in Touch</h2>
+      <form action="https://formspree.io/f/your-id" method="POST">
         <label for="name">Full Name:</label>
         <input type="text" id="name" name="name" required />
 
@@ -138,6 +129,7 @@
 
         <button type="submit" class="btn">Send Message</button>
       </form>
+      <noscript><p>Please enable JavaScript to use the contact form.</p></noscript>
     </div>
   </section>
 
@@ -151,5 +143,7 @@
     </div>
   </footer>
 
+  <!-- Script -->
+  <script src="script.js" defer></script>
 </body>
 </html>
