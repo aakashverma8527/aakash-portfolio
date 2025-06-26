@@ -11,6 +11,7 @@
       --bg: #f9f9f9;
       --text: #333;
       --hover: #e3f2fd;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
     * {
@@ -61,14 +62,11 @@
       display: none;
       width: 100%;
       padding: 2rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow);
       z-index: 1000;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-    }
-
-    .mega-column {
-      flex: 1 1 200px;
     }
 
     .mega-column h4 {
@@ -88,11 +86,19 @@
     .mega-column li a {
       color: var(--text);
       text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .mega-column li a:hover,
+    .mega-column li a:focus {
+      color: var(--primary);
+      text-decoration: underline;
+      outline: none;
     }
 
     .nav-item:hover .mega-menu,
     .nav-item:focus-within .mega-menu {
-      display: flex;
+      display: grid;
     }
 
     @media (max-width: 768px) {
@@ -102,11 +108,11 @@
       .mega-menu {
         position: static;
         display: none;
-        flex-direction: column;
+        grid-template-columns: 1fr;
       }
       .nav-item:focus-within .mega-menu,
       .nav-item:hover .mega-menu {
-        display: flex;
+        display: grid;
       }
     }
   </style>
@@ -118,7 +124,7 @@
       <nav>
         <ul>
           <li class="nav-item">
-            <a href="#" aria-haspopup="true">Data ▾</a>
+            <a href="#" aria-haspopup="true" tabindex="0">Data ▾</a>
             <div class="mega-menu">
               <div class="mega-column">
                 <h4>Core Data Services</h4>
@@ -134,20 +140,65 @@
                 </ul>
               </div>
               <div class="mega-column">
-                <h4>Extended Services</h4>
+                <h4>Business Process Outsourcing (BPO)</h4>
                 <ul>
-                  <li><a href="#">Business Process Outsourcing (BPO)</a></li>
-                  <li><a href="#">Data Entry Services</a></li>
-                  <li><a href="#">Marketing & Sales Support</a></li>
-                  <li><a href="#">Data Processing Services</a></li>
+                  <li><a href="#">Healthcare BPO</a></li>
+                  <li><a href="#">Healthcare RCM Services</a></li>
+                  <li><a href="#">Mortgage BPO</a></li>
                 </ul>
               </div>
               <div class="mega-column">
-                <h4>Advanced Solutions</h4>
+                <h4>Data Entry Services</h4>
                 <ul>
-                  <li><a href="#">Data Annotation Service</a></li>
-                  <li><a href="#">Data Management Services</a></li>
-                  <li><a href="#">Data Engineering Services</a></li>
+                  <li><a href="#">Document Data Entry Services</a></li>
+                  <li><a href="#">Typing and Transcription Services</a></li>
+                  <li><a href="#">Mailing Lists Data Entry Services</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h4>Marketing & Sales Support</h4>
+                <ul>
+                  <li><a href="#">Mailing List Compilation Services</a></li>
+                  <li><a href="#">Contact Discovery Services</a></li>
+                  <li><a href="#">CRM Data Entry Services</a></li>
+                  <li><a href="#">Salesforce Data Entry Services</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h4>Data Processing Services</h4>
+                <ul>
+                  <li><a href="#">Forms Processing Services</a></li>
+                  <li><a href="#">Market Research Data Processing Services</a></li>
+                  <li><a href="#">Invoice Processing Services</a></li>
+                  <li><a href="#">Survey Data Processing</a></li>
+                  <li><a href="#">Word Processing & Formatting Services</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h4>Data Annotation Service</h4>
+                <ul>
+                  <li><a href="#">2D and 3D Image Annotation</a></li>
+                  <li><a href="#">Video Annotation</a></li>
+                  <li><a href="#">Text Annotation</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h4>Data Management Services</h4>
+                <ul>
+                  <li><a href="#">Data Cleansing Services</a></li>
+                  <li><a href="#">Database Maintenance Services</a></li>
+                  <li><a href="#">Data Standardization Services</a></li>
+                  <li><a href="#">Data Enrichment Services</a></li>
+                  <li><a href="#">ESG Data Management & Reporting Services</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h4>Data Engineering Services</h4>
+                <ul>
+                  <li><a href="#">Data Strategy and Consulting</a></li>
+                  <li><a href="#">Business Intelligence</a></li>
+                  <li><a href="#">Data Migration</a></li>
+                  <li><a href="#">Data Visualization Services</a></li>
                 </ul>
               </div>
             </div>
@@ -156,10 +207,9 @@
       </nav>
     </div>
   </header>
-
   <main class="container" style="padding: 2rem;">
-    <h2>Explore Our Data Services</h2>
-    <p>Select from the categories in the navigation menu to learn more about each service we offer.</p>
+    <h2>Explore Our Comprehensive Data Services</h2>
+    <p>Choose a category from the mega menu to explore in-depth service offerings tailored to your business needs.</p>
   </main>
 </body>
 </html>
