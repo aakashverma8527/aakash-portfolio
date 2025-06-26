@@ -1,218 +1,95 @@
-/* 🎨 CSS Variables */
-:root {
-  --primary: #0066ff;
-  --accent: #ff6f61;
-  --white: #ffffff;
-  --background: #f9f9f9;
-  --text-dark: #1a1a1a;
-  --text-muted: #555555;
-  --btn-hover: #0056d2;
-  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.07);
-  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --font-h1: 2.5rem;
-  --font-h2: 2rem;
-  --font-h3: 1.5rem;
-  --font-body: 1rem;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Aakash Verma</title>
+  <meta name="description" content="Learn more about Aakash Verma – Freelance Process Associate from Delhi specializing in Salesforce CRM, e-commerce support, and data validation." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-/* ✨ Utility Classes */
-.interactive {
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-.hover-fade:hover,
-.hover-fade:focus {
-  color: var(--accent);
-  outline: none;
-}
-.outline-visible:focus-visible {
-  outline: 2px dashed var(--accent);
-  outline-offset: 2px;
-}
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-.text-center { text-align: center; }
-.transition-shadow { transition: box-shadow 0.3s ease; }
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container header-content">
+      <h1><a href="index.html" aria-label="Go to homepage">Aakash Verma</a></h1>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active" aria-current="page">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-/* 📐 Typography */
-h1 { font-size: var(--font-h1); font-weight: 700; }
-h2 { font-size: var(--font-h2); font-weight: 600; }
-h3 { font-size: var(--font-h3); font-weight: 600; }
-body { font-size: var(--font-body); color: var(--text-dark); background: var(--background); font-family: 'Inter', sans-serif; }
+  <!-- About Section -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>I’m Aakash Verma — a dedicated Process Associate and freelance data specialist based in Delhi.</p>
+      </div>
+    </section>
 
-/* 🔗 Social Links */
-.social-links a {
-  color: var(--white);
-  margin: 0 var(--space-xs);
-  text-decoration: underline;
-}
-.social-links a:hover,
-.social-links a:focus {
-  color: var(--accent);
-}
+    <section class="container">
+      <div class="section-card">
+        <h3>📌 Background</h3>
+        <p>I bring 2+ years of hands-on experience working in roles involving Salesforce CRM, content moderation, and e-commerce data management. With a strong eye for detail and SOP-based workflows, I’ve consistently delivered high-accuracy results across projects.</p>
+      </div>
 
-/* 🧭 Navigation */
-nav a {
-  color: var(--white);
-  margin: 0 var(--space-sm);
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  padding-bottom: 0.25rem;
-  transition: border-color 0.3s ease;
-}
-nav a:hover,
-nav a:focus,
-nav a.active {
-  border-bottom: 2px solid var(--accent);
-  color: var(--accent);
-}
+      <div class="section-card">
+        <h3>🎯 Key Skills</h3>
+        <ul>
+          <li>Salesforce CRM Data Handling</li>
+          <li>UiPath Process Automation</li>
+          <li>E-commerce Listing & Catalog QA</li>
+          <li>Excel Macros & Google Sheets</li>
+          <li>Content Moderation Dashboards</li>
+        </ul>
+      </div>
 
-/* 🔳 Project Cards */
-.project-card {
-  background: var(--white);
-  padding: var(--space-sm);
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: var(--shadow-light);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.project-card:hover,
-.project-card:focus-within {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-}
-.project-card img {
-  width: 100%;
-  height: auto;
-  margin-bottom: var(--space-sm);
-  border-radius: 6px;
-}
+      <div class="section-card">
+        <h3>👨‍💼 Experience</h3>
+        <p><strong>Current:</strong> Freelancing with a trained 5-member team on global projects<br>
+           <strong>Past:</strong> SunTec India, eDataIndia — roles in process accuracy, MIS, and client operations</p>
+      </div>
 
-/* 🔘 Buttons */
-.btn {
-  display: inline-block;
-  background: var(--primary);
-  color: var(--white);
-  padding: 0.7rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-}
-.btn:hover,
-.btn:focus {
-  background-color: var(--btn-hover);
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
-  transform: scale(1.02);
-}
+      <div class="section-card">
+        <h3>🎓 Education</h3>
+        <p>BA, University of Delhi (Expected 2025)<br>
+        Certified Data Associate V2 – National Apprenticeship Program</p>
+      </div>
 
-/* 🧠 Focus Management */
-a:focus-visible,
-.btn:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px dashed var(--accent);
-  outline-offset: 2px;
-}
+      <div class="section-card">
+        <h3>📍 Location & Availability</h3>
+        <p>Based in Rohini, Delhi – Available for Remote, Noida, and Gurgaon-based freelance opportunities in day, night, or rotational shifts.</p>
+      </div>
+    </section>
 
-/* 📝 Contact Form */
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  margin-top: var(--space-sm);
-}
-.contact-form input,
-.contact-form textarea {
-  padding: 0.6rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 1rem;
-}
-.contact-form label {
-  font-weight: 600;
-  margin-top: var(--space-xs);
-}
-.contact-form button {
-  align-self: flex-start;
-}
+    <!-- CTA Section -->
+    <section class="cta text-center" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading">Let’s Work Together</h2>
+        <p>I’d love to help your business improve its data accuracy and workflow efficiency.</p>
+        <a href="contact.html" class="btn" role="button">Hire Me</a>
+      </div>
+    </section>
+  </main>
 
-/* 💬 Testimonials */
-.testimonials blockquote {
-  font-style: italic;
-  border-left: 4px solid var(--accent);
-  padding-left: var(--space-sm);
-  margin-top: var(--space-md);
-  color: var(--text-muted);
-}
-.testimonials cite {
-  display: block;
-  margin-top: var(--space-xs);
-  font-weight: 600;
-  color: var(--text-dark);
-}
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Aakash Verma • Rohini, Delhi • 
+        <a href="tel:+918527879047">+91 85278 79047</a> • 
+        <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a>
+      </p>
+    </div>
+  </footer>
 
-/* 🔧 General Lists */
-ul {
-  list-style: none;
-  padding-left: 0.5rem;
-  margin-bottom: var(--space-md);
-}
-
-/* 📱 Responsive Tweaks */
-@media (max-width: 768px) {
-  nav a {
-    display: block;
-    margin: var(--space-xs) 0;
-  }
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-  .project-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-sm);
-  }
-  .profile-pic {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-/* 🌙 Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #121212;
-    --white: #1e1e1e;
-    --text-dark: #f2f2f2;
-    --text-muted: #aaa;
-    --primary: #3399ff;
-    --accent: #ff9671;
-    --btn-hover: #0073e6;
-    --shadow-light: 0 4px 12px rgba(255, 255, 255, 0.05);
-    --shadow-hover: 0 8px 20px rgba(255, 255, 255, 0.15);
-  }
-
-  body {
-    background-color: var(--background);
-    color: var(--text-dark);
-  }
-
-  .project-card {
-    background-color: var(--white);
-  }
-
-  nav a {
-    color: var(--text-dark);
-  }
-
-  nav a:hover,
-  nav a.active {
-    color: var(--accent);
-  }
-}
+  <script src="script.js" defer></script>
+</body>
+</html>
