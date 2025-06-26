@@ -1,85 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Aakash Verma</title>
-  <meta name="description" content="Contact Aakash Verma for Salesforce CRM, data entry, automation, and content moderation freelance services in Delhi or remote." />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Get in touch with Aakash Verma — Freelance Process Associate and data expert. Reach out for CRM, automation, and QA support." />
+  <link rel="canonical" href="https://aakashverma.in/contact.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact | Aakash Verma" />
+  <meta property="og:description" content="Reach out to Aakash Verma for CRM automation and freelance data workflows." />
+  <meta property="og:image" content="https://aakashverma.in/images/profile.jpg" />
+  <meta property="og:url" content="https://aakashverma.in/contact.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <div class="container header-content">
-      <h1><a href="index.html" aria-label="Go to homepage">Aakash Verma</a></h1>
-      <p>Freelance CRM & Data Specialist</p>
+    <div class="container">
+      <h1><a href="index.html">Aakash Verma</a></h1>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <!-- Navigation -->
-  <nav role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Contact Form -->
   <main>
-    <section class="contact-form-wrapper" id="contact-section">
+    <!-- Hero Section -->
+    <section class="hero text-center" data-aos="fade-up">
       <div class="container">
-        <h2>Get in Touch</h2>
-        <p>Let’s work together! Fill out the form below and I’ll get back to you shortly.</p>
-
-        <form id="contact-form" method="POST" action="submit-form.php" novalidate>
-          <label for="name">Full Name:</label>
-          <input type="text" name="name" id="name" placeholder="John Doe" required />
-
-          <label for="email">Email Address:</label>
-          <input type="email" name="email" id="email" placeholder="you@example.com" required />
-
-          <label for="message">Message:</label>
-          <textarea name="message" id="message" rows="5" placeholder="How can I help you?" required></textarea>
-
-          <!-- Honeypot Field -->
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" aria-hidden="true" />
-
-          <button type="submit" class="btn">Send Message</button>
-
-          <div id="form-error" aria-live="assertive" style="margin-top: 1rem; color: red;"></div>
-          <div id="form-success" aria-live="polite" style="margin-top: 1rem; color: green;"></div>
-
-          <p style="font-size: 0.9rem; margin-top: 1rem;">🔒 Your info is safe with me — no spam, ever.</p>
-        </form>
+        <h2>Let’s Connect</h2>
+        <p>Have a project or need help with CRM, data QA, or automation? Fill out the form below or reach me via email.</p>
       </div>
     </section>
 
-    <!-- Optional: Embedded Map -->
-    <section class="container" style="margin-top: 2rem;">
-      <h3 class="text-center">Office Location (Remote Support Available)</h3>
-      <div class="text-center">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14020.813118618308!2d77.1024904!3d28.7352336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01553b3ff6cd%3A0x8b16d31218dce17d!2sRohini%2C%20Delhi!5e0!3m2!1sen!2sin!4v1687080493722!5m2!1sen!2sin"
-          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Rohini, Delhi Location"></iframe>
-      </div>
+    <!-- Contact Form Section -->
+    <section class="container section-lg contact-form-wrapper">
+      <form action="#" method="POST" data-aos="fade-up" aria-label="Contact Form">
+        <div>
+          <label for="name">Full Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" required aria-required="true" placeholder="Your full name" />
+        </div>
+
+        <div>
+          <label for="email">Email Address <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required aria-required="true" placeholder="your@email.com" />
+        </div>
+
+        <div>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Optional subject" />
+        </div>
+
+        <div>
+          <label for="message">Message <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Write your message..."></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Aakash Verma — <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a> • 
-        <a href="tel:+918527879047">+91 85278 79047</a></p>
+    <div class="container text-center">
+      <p>&copy; 2025 Aakash Verma • 
+        <a href="tel:+918527879047">+91 85278 79047</a> • 
+        <a href="mailto:aakashverma852787@outlook.com">Email Me</a>
+      </p>
+
+      <div class="footer-actions">
+        <a href="resume.pdf" class="btn resume-btn" target="_blank" rel="noopener" aria-label="Download Resume PDF">Download Resume</a>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="24" height="24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.5h5v14H0v-14zm7.5 0h4.7v2h.07c.66-1.2 2.27-2.47 4.68-2.47 5 0 5.92 3.3 5.92 7.6V22.5h-5v-6.6c0-1.57-.03-3.6-2.2-3.6s-2.53 1.7-2.53 3.47v6.73h-5V8.5z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/aakashverma8527" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="24" height="24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.37 0 0 5.4 0 12.07c0 5.34 3.44 9.86 8.2 11.46.6.11.82-.26.82-.58v-2.04c-3.34.74-4.04-1.63-4.04-1.63-.55-1.42-1.35-1.8-1.35-1.8-1.1-.75.08-.73.08-.73 1.2.08 1.84 1.23 1.84 1.23 1.07 1.87 2.8 1.33 3.48 1.01.11-.79.42-1.33.76-1.64-2.66-.31-5.47-1.35-5.47-6a4.7 4.7 0 0 1 1.26-3.25 4.4 4.4 0 0 1 .12-3.21s1-.32 3.3 1.23a11.3 11.3 0 0 1 6 0C17.7 4.67 18.7 5 18.7 5a4.4 4.4 0 0 1 .12 3.2 4.7 4.7 0 0 1 1.26 3.26c0 4.66-2.82 5.67-5.5 5.97.44.38.82 1.1.82 2.22v3.3c0 .32.22.7.83.58A12.06 12.06 0 0 0 24 12.07C24 5.4 18.63 0 12 0z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+
 </body>
 </html>
