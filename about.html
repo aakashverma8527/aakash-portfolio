@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Aakash Verma</title>
-  <meta name="description" content="Meet Aakash Verma — a freelance Process Associate from Delhi, skilled in Salesforce CRM, UiPath, and e-commerce quality assurance." />
+  <meta name="description" content="Meet Aakash Verma — a freelance Process Associate from Delhi, skilled in Salesforce CRM, UiPath automation, and e-commerce quality assurance.">
+
+  <link rel="canonical" href="https://aakashverma.in/about.html" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="About | Aakash Verma" />
   <meta property="og:description" content="Freelance Process Associate from Delhi with expertise in CRM, automation, and data workflows." />
-  <meta property="og:image" content="profile.jpg" />
+  <meta property="og:image" content="https://aakashverma.in/images/profile.jpg" />
+  <meta property="og:url" content="https://aakashverma.in/about.html" />
   <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aakash Verma",
+    "jobTitle": "Freelance Process Associate",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rohini",
+      "addressRegion": "Delhi",
+      "addressCountry": "India"
+    },
+    "email": "aakashverma852787@outlook.com",
+    "telephone": "+91-8527879047",
+    "url": "https://aakashverma.in/about.html",
+    "sameAs": [
+      "https://www.linkedin.com/in/aakash-verma-3b1187272",
+      "https://github.com/aakashverma8527"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Delhi"
+    }
+  }
+  </script>
+
+  <!-- Fonts and AOS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header role="banner" class="site-header">
+  <header class="site-header">
     <div class="container">
-      <h1><a href="index.html" aria-label="Homepage">Aakash Verma</a></h1>
-      <nav role="navigation" aria-label="Main menu">
+      <h1><a href="index.html">Aakash Verma</a></h1>
+      <nav aria-label="Main navigation">
         <ul class="nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html" aria-current="page">About</a></li>
@@ -30,22 +66,28 @@
     </div>
   </header>
 
-  <main role="main">
-    <section class="hero">
-      <div class="container">
+  <main>
+    <section class="hero" data-aos="fade-up">
+      <div class="container text-center">
         <h2>About Me</h2>
-        <p>Hello! I’m <strong>Aakash Verma</strong>, a Process Associate and freelance data expert from Delhi. I help businesses streamline operations through Salesforce CRM, UiPath automation, and high-accuracy e-commerce workflows.</p>
+        <p>Hi! I’m <strong>Aakash Verma</strong>, a Process Associate and freelance data expert from Delhi. I help businesses streamline operations using Salesforce CRM, UiPath, and e-commerce QA workflows.</p>
+        <img src="images/profile.jpg" alt="Aakash Verma profile photo" class="profile-img" width="120" height="120" loading="lazy" />
       </div>
     </section>
 
     <section class="container info-section">
-      <article>
-        <h3>🧩 Background</h3>
-        <p>With 2+ years of hands-on experience, I’ve collaborated with teams on global projects involving data validation, SOP-based automation, and client operations for platforms like SunTec India and eDataIndia.</p>
+      <article data-aos="fade-up">
+        <h3>Background</h3>
+        <p>I have 2+ years of experience in data validation, content moderation, Salesforce CRM, and MIS reporting at SunTec India and eDataIndia. My work is driven by SOPs, automation, and a focus on accuracy.</p>
       </article>
 
-      <article>
-        <h3>💡 Skills Snapshot</h3>
+      <article data-aos="fade-up">
+        <h3>Freelancing Journey</h3>
+        <p>I began with small data QA projects, and now lead a 5-member team. We manage global client tasks in catalog QA, Salesforce workflows, and UiPath automation with precision and timeliness.</p>
+      </article>
+
+      <article data-aos="fade-up">
+        <h3>Skills Snapshot</h3>
         <ul>
           <li>Salesforce CRM Workflows</li>
           <li>UiPath Automation</li>
@@ -55,31 +97,60 @@
         </ul>
       </article>
 
-      <article>
-        <h3>🎓 Education</h3>
-        <p>BA Candidate, University of Delhi (Expected 2025)<br /> Certified Data Associate V2 – National Apprenticeship Program</p>
+      <article data-aos="fade-up">
+        <h3>Education</h3>
+        <p>BA, University of Delhi (Expected 2025)<br>Certified Data Associate V2 – National Apprenticeship Program</p>
       </article>
 
-      <article>
-        <h3>📍 Location</h3>
-        <p>Rohini, Delhi – Open to remote work or on-site projects across NCR (Noida, Gurgaon) in day, night, or rotational shifts.</p>
+      <article data-aos="fade-up">
+        <h3>Location</h3>
+        <p>Based in Rohini, Delhi – Available for remote work and NCR-based projects (Gurgaon, Noida) across all shifts.</p>
       </article>
     </section>
 
-    <section class="cta text-center">
+    <section class="cta text-center" data-aos="fade-up">
       <div class="container">
         <h2>Let’s Work Together</h2>
-        <p>Need efficient CRM workflows or QA support? I'm just a click away.</p>
-        <a href="contact.html" class="btn" aria-label="Contact Aakash">Hire Me</a>
+        <p>Need help with CRM processes or QA automation? Let’s connect and build something impactful.</p>
+        <a href="contact.html" class="btn">Hire Me</a>
       </div>
     </section>
   </main>
 
-  <footer role="contentinfo">
-    <div class="container">
-      <p>&copy; 2025 Aakash Verma • <a href="tel:+918527879047">+91 85278 79047</a> • <a href="mailto:aakashverma852787@outlook.com">Email Me</a></p>
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p>&copy; 2025 Aakash Verma • 
+        <a href="tel:+918527879047">+91 85278 79047</a> • 
+        <a href="mailto:aakashverma852787@outlook.com">Email Me</a>
+      </p>
+
+      <div class="footer-actions">
+        <a href="resume.pdf" class="btn resume-btn" target="_blank" rel="noopener" aria-label="Download Resume PDF">
+          Download Resume
+        </a>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="24" height="24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.5h5v14H0v-14zm7.5 0h4.7v2h.07c.66-1.2 2.27-2.47 4.68-2.47 5 0 5.92 3.3 5.92 7.6V22.5h-5v-6.6c0-1.57-.03-3.6-2.2-3.6s-2.53 1.7-2.53 3.47v6.73h-5V8.5z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/aakashverma8527" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="24" height="24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.37 0 0 5.4 0 12.07c0 5.34 3.44 9.86 8.2 11.46.6.11.82-.26.82-.58v-2.04c-3.34.74-4.04-1.63-4.04-1.63-.55-1.42-1.35-1.8-1.35-1.8-1.1-.75.08-.73.08-.73 1.2.08 1.84 1.23 1.84 1.23 1.07 1.87 2.8 1.33 3.48 1.01.11-.79.42-1.33.76-1.64-2.66-.31-5.47-1.35-5.47-6a4.7 4.7 0 0 1 1.26-3.25 4.4 4.4 0 0 1 .12-3.21s1-.32 3.3 1.23a11.3 11.3 0 0 1 6 0C17.7 4.67 18.7 5 18.7 5a4.4 4.4 0 0 1 .12 3.2 4.7 4.7 0 0 1 1.26 3.26c0 4.66-2.82 5.67-5.5 5.97.44.38.82 1.1.82 2.22v3.3c0 .32.22.7.83.58A12.06 12.06 0 0 0 24 12.07C24 5.4 18.63 0 12 0z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      AOS.init({ duration: 800, once: true });
+    }
+  </script>
 </body>
 </html>
