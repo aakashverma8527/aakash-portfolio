@@ -12,6 +12,10 @@
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 2rem;
+  --font-h1: 2.5rem;
+  --font-h2: 2rem;
+  --font-h3: 1.5rem;
+  --font-body: 1rem;
 }
 
 /* ✨ Utility Classes */
@@ -28,6 +32,16 @@
   outline: 2px dashed var(--accent);
   outline-offset: 2px;
 }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.transition-shadow { transition: box-shadow 0.3s ease; }
+
+/* 📐 Typography */
+h1 { font-size: var(--font-h1); font-weight: 700; }
+h2 { font-size: var(--font-h2); font-weight: 600; }
+h3 { font-size: var(--font-h3); font-weight: 600; }
+body { font-size: var(--font-body); color: var(--text-dark); background: var(--background); font-family: 'Inter', sans-serif; }
 
 /* 🔗 Social Links */
 .social-links a {
@@ -86,15 +100,16 @@ nav a.active {
   padding: 0.7rem 1.5rem;
   border-radius: 5px;
   text-decoration: none;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 .btn:hover,
 .btn:focus {
   background-color: var(--btn-hover);
   box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
+  transform: scale(1.02);
 }
 
-/* 🧠 Focus Management (targeted) */
+/* 🧠 Focus Management */
 a:focus-visible,
 .btn:focus-visible,
 input:focus-visible,
@@ -166,5 +181,38 @@ ul {
   .profile-pic {
     width: 120px;
     height: 120px;
+  }
+}
+
+/* 🌙 Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --white: #1e1e1e;
+    --text-dark: #f2f2f2;
+    --text-muted: #aaa;
+    --primary: #3399ff;
+    --accent: #ff9671;
+    --btn-hover: #0073e6;
+    --shadow-light: 0 4px 12px rgba(255, 255, 255, 0.05);
+    --shadow-hover: 0 8px 20px rgba(255, 255, 255, 0.15);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--text-dark);
+  }
+
+  .project-card {
+    background-color: var(--white);
+  }
+
+  nav a {
+    color: var(--text-dark);
+  }
+
+  nav a:hover,
+  nav a.active {
+    color: var(--accent);
   }
 }
