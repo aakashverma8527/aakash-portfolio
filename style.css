@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. RESET & BASE TYPOGRAPHY
-   ========================================================================== */
+/* ========== RESET & BASE TYPOGRAPHY ========== */
 *,
 *::before,
 *::after {
@@ -22,38 +20,15 @@ body {
 }
 
 /* Headings */
-h1 {
-  font-size: 2.25rem;
-  margin-bottom: 1rem;
-}
+h1 { font-size: 2.25rem; margin-bottom: 1rem; }
+h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
 
-h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-/* ==========================================================================
-   2. ACCESSIBILITY & UTILITY CLASSES
-   ========================================================================== */
-.visually-hidden {
-  position: absolute !important;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Skip Link */
+/* ========== ACCESSIBILITY ========== */
 .skip-link {
   position: absolute;
   top: -40px;
-  left: 16px;
+  left: 1rem;
   background: #0066cc;
   color: white;
   padding: 8px 12px;
@@ -61,26 +36,26 @@ h3 {
   text-decoration: none;
 }
 .skip-link:focus {
-  top: 16px;
+  top: 10px;
 }
 
-/* Reduce motion */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
-    animation: none !important;
     transition: none !important;
+    animation: none !important;
     scroll-behavior: auto !important;
   }
 }
 
-/* Utility Spacing */
-.mb-1 { margin-bottom: 1rem; }
-.pt-2 { padding-top: 2rem; }
-.pb-2 { padding-bottom: 2rem; }
-
-/* ==========================================================================
-   3. LINKS & BUTTONS
-   ========================================================================== */
+/* ========== LINKS & BUTTONS ========== */
 a {
   color: #0066cc;
   text-decoration: none;
@@ -91,42 +66,46 @@ a:hover {
   outline-offset: 2px;
 }
 
-button,
-.btn {
+.btn,
+button {
   font: inherit;
-  padding: 0.75rem 1.25rem;
+  padding: 0.6rem 1.25rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.25rem;
 }
 
 .btn-primary {
-  background: #0066cc;
+  background-color: #0066cc;
   color: white;
 }
 .btn-primary:hover,
 .btn-primary:focus {
-  background: #005bb5;
+  background-color: #005bb5;
   outline: 2px solid #ffcc00;
 }
 
 .btn-secondary {
-  background: #f1f1f1;
+  background-color: #e0e0e0;
   color: #222;
 }
 .btn-secondary:hover,
 .btn-secondary:focus {
-  background: #e2e2e2;
+  background-color: #d2d2d2;
   outline: 2px solid #ffcc00;
 }
 
-/* ==========================================================================
-   4. NAVIGATION
-   ========================================================================== */
+/* ========== NAVIGATION ========== */
 header {
-  background: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 nav {
   display: flex;
@@ -134,10 +113,15 @@ nav {
   align-items: center;
   padding: 1rem 1.5rem;
 }
+nav h1,
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 1.5rem;
+  list-style: none;
+  gap: 1.25rem;
 }
 .nav-links a {
   padding-bottom: 4px;
@@ -146,113 +130,120 @@ nav {
 .nav-links a.active {
   border-bottom-color: #0066cc;
 }
-
-/* Mobile toggle */
 .nav-toggle {
   display: none;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: #0066cc;
 }
 
-/* ==========================================================================
-   5. HERO SECTION
-   ========================================================================== */
+/* ========== HERO SECTION ========== */
 .hero {
-  text-align: center;
-  padding: 4rem 1rem;
   background: #eaf3fc;
+  padding: 4rem 1rem;
+  text-align: center;
 }
-.hero img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
+.hero .cta-buttons {
   margin-top: 1rem;
 }
 
-/* ==========================================================================
-   6. SERVICES GRID
-   ========================================================================== */
+/* ========== SECTION LAYOUTS ========== */
+section {
+  padding: 2.5rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+}
+section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+section p {
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* ========== SERVICES GRID ========== */
 .services-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
-  padding: 2rem 1rem;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .service-card {
   background: white;
-  padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+  padding: 1.5rem;
   width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+.service-card img.icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
 }
 .service-card h3 {
   margin-bottom: 0.5rem;
 }
-
-/* ==========================================================================
-   7. FORM STYLING
-   ========================================================================== */
-.contact-form {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
+.service-card ul {
+  margin-left: 1rem;
+  list-style: disc;
+  font-size: 0.95rem;
 }
-.contact-form label {
+
+/* ========== FORM STYLING ========== */
+.contact-form-section form {
+  max-width: 600px;
+  margin: auto;
+}
+form label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin: 1rem 0 0.25rem;
   font-weight: 600;
 }
-.contact-form input,
-.contact-form textarea {
+form input,
+form textarea {
   width: 100%;
   padding: 0.75rem;
-  margin-bottom: 1.25rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   font: inherit;
 }
-.contact-form input:focus,
-.contact-form textarea:focus {
+form input:focus,
+form textarea:focus {
   border-color: #0066cc;
   outline: 2px solid #ffcc00;
 }
-
-/* ==========================================================================
-   8. SOCIAL ICONS & FOOTER
-   ========================================================================== */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem 0;
+.btn-submit {
+  margin-top: 1rem;
 }
-.social-icons a img {
+
+/* ========== SOCIAL LINKS ========== */
+.social-links {
+  text-align: center;
+  margin: 2rem auto;
+}
+.social-links img {
   width: 32px;
   height: 32px;
-  loading: lazy;
+  margin: 0 0.5rem;
 }
 
+/* ========== FOOTER ========== */
 footer {
   background: #f0f0f0;
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
   text-align: center;
   font-size: 0.9rem;
   color: #555;
 }
 
-/* ==========================================================================
-   9. RESPONSIVE DESIGN
-   ========================================================================== */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
   html {
     font-size: 90%;
@@ -260,15 +251,19 @@ footer {
 
   .nav-toggle {
     display: block;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #0066cc;
   }
 
   .nav-links {
     display: none;
-    flex-direction: column;
-    background: white;
     position: absolute;
     top: 60px;
     right: 1rem;
+    flex-direction: column;
+    background: white;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -282,28 +277,18 @@ footer {
     flex-direction: column;
     align-items: center;
   }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.75rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-  h3 {
-    font-size: 1.125rem;
-  }
-
-  .hero {
-    padding: 2rem 1rem;
-  }
 
   .service-card {
     width: 90%;
   }
+}
 
-  .contact-form {
-    padding: 1rem;
+@media (max-width: 480px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.125rem; }
+
+  .hero {
+    padding: 2rem 1rem;
   }
 }
