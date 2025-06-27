@@ -1,106 +1,57 @@
 <!DOCTYPE html>
-<html lang="en-IN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Aakash Verma – Freelance Process Associate</title>
-  <meta name="description" content="Contact Aakash Verma – Freelance Process Associate from Delhi. Reach out for CRM, data, or automation projects.">
-  <link rel="canonical" href="https://aakashverma.in/contact.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Contact Aakash Verma" />
-  <meta property="og:description" content="Let’s connect for data workflow, CRM, or automation collaboration." />
-  <meta property="og:url" content="https://aakashverma.in/contact.html" />
-  <meta property="og:image" content="https://aakashverma.in/assets/aakash-verma-profile.jpg" />
-  <meta property="og:type" content="website" />
-
-  <!-- Fonts & Styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <title>Contact | Naksh</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <div class="container header-content">
-      <a href="index.html" class="site-name">Aakash Verma</a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>Let’s Connect</h1>
+    <p>Have a project in mind or just want to say hello? Drop me a message!</p>
   </header>
 
-  <!-- Hero -->
-  <section class="hero center" data-aos="fade-up">
-    <div class="container">
-      <h1>Let’s Connect</h1>
-      <p>Whether it's CRM, data structuring, or automation — I’d love to collaborate with you!</p>
-    </div>
-  </section>
-
   <!-- Contact Form -->
-  <section class="contact-form-section" data-aos="fade-up">
-    <div class="container">
-      <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form" aria-label="Contact Form">
-        <div class="form-group">
-          <label for="name">Full Name*</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" />
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address*</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true" />
-        </div>
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="(Optional)" />
-        </div>
-        <div class="form-group">
-          <label for="message">Message*</label>
-          <textarea id="message" name="message" rows="5" placeholder="Your message here..." required aria-required="true"></textarea>
-        </div>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
+  <section class="contact-form">
+    <form action="https://formspree.io/f/your-id" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Social Links -->
+  <section class="social-media">
+    <h2>Connect With Me</h2>
+    <div class="social-icons">
+      <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+        <img src="github-icon.png" alt="GitHub" />
+      </a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+        <img src="linkedin-icon.png" alt="LinkedIn" />
+      </a>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Optional: Map or Calendly -->
+  <section class="booking">
+    <h2>Prefer to schedule a call?</h2>
+    <!-- Embed Calendly -->
+    <iframe src="https://calendly.com/yourhandle/30min" width="100%" height="400" frameborder="0"></iframe>
+  </section>
+
   <footer>
-    <div class="container footer-content">
-      <p><strong>Email:</strong> <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+918527879047">+91 85278 79047</a></p>
-      <a href="assets/resume.pdf" class="btn" download="Aakash-Verma-Resume.pdf" rel="noopener noreferrer">Download Resume</a>
-      <div class="social-icons">
-        <a href="https://github.com/aakashverma8527" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg role="img" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-            <title>GitHub</title>
-            <path d="M12 0C5.37 0 0 5.37...Z" /> <!-- Replace with full path -->
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg role="img" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-            <title>LinkedIn</title>
-            <path d="M4.98 3.5C4.98 5...Z" /> <!-- Replace with full path -->
-          </svg>
-        </a>
-      </div>
-      <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
-    </div>
+    <p>&copy; 2025 Naksh | Portfolio Site</p>
   </footer>
 
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
