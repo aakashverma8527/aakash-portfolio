@@ -3,55 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Naksh</title>
+  <meta name="description" content="Contact Aakash Verma – Send a message, connect via LinkedIn or GitHub, or schedule a quick call." />
+  <meta property="og:title" content="Contact | Aakash Verma" />
+  <meta property="og:description" content="Get in touch with Aakash Verma to collaborate or discuss your project. Reach out via message, LinkedIn, GitHub, or book a call." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.webp" />
+  <title>Contact | Aakash Verma</title>
+  <link rel="preload" href="style.css" as="style" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Let’s Connect</h1>
-    <p>Have a project in mind or just want to say hello? Drop me a message!</p>
+
+  <!-- Skip to main content -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <header class="page-header">
+    <nav class="nav-bar" aria-label="Main navigation" role="navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="page-title">
+      <h1>Let’s Connect</h1>
+      <p>Have a project in mind or just want to say hello? Drop me a message!</p>
+    </div>
   </header>
 
-  <!-- Contact Form -->
-  <section class="contact-form">
-    <form action="https://formspree.io/f/your-id" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required />
+  <!-- Main Content -->
+  <main id="main">
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" required />
+    <!-- Contact Form -->
+    <section class="contact-form" aria-labelledby="form-heading">
+      <h2 id="form-heading" class="visually-hidden">Contact Form</h2>
+      <form action="https://formspree.io/f/your-id" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
 
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required />
 
-      <button type="submit" class="btn-primary">Send Message</button>
-    </form>
-  </section>
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-  <!-- Social Links -->
-  <section class="social-media">
-    <h2>Connect With Me</h2>
-    <div class="social-icons">
-      <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
-        <img src="github-icon.png" alt="GitHub" />
-      </a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-        <img src="linkedin-icon.png" alt="LinkedIn" />
-      </a>
-    </div>
-  </section>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </section>
 
-  <!-- Optional: Map or Calendly -->
-  <section class="booking">
-    <h2>Prefer to schedule a call?</h2>
-    <!-- Embed Calendly -->
-    <iframe src="https://calendly.com/yourhandle/30min" width="100%" height="400" frameborder="0"></iframe>
-  </section>
+    <!-- Social Links -->
+    <section class="social-media" aria-labelledby="social-heading">
+      <h2 id="social-heading">Connect With Me</h2>
+      <div class="social-icons">
+        <a href="https://github.com/aakashverma8527" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <img src="github-icon.webp" alt="GitHub icon" loading="lazy" />
+        </a>
+        <a href="https://linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="linkedin-icon.webp" alt="LinkedIn icon" loading="lazy" />
+        </a>
+      </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Naksh | Portfolio Site</p>
+    <!-- Calendly Booking -->
+    <section class="booking" aria-labelledby="booking-heading">
+      <h2 id="booking-heading">Prefer to Schedule a Call?</h2>
+      <iframe
+        src="https://calendly.com/yourhandle/30min"
+        width="100%"
+        height="400"
+        frameborder="0"
+        loading="lazy"
+        title="Schedule a call with Aakash Verma"
+      ></iframe>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Aakash Verma | Portfolio Site</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script defer>
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
