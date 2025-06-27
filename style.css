@@ -1,56 +1,70 @@
-/* =========================
-   BASE RESET & TYPOGRAPHY
-========================= */
-* {
+/* ==========================================================================
+   1. RESET & BASE TYPOGRAPHY
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
+  font-size: 100%;
 }
-body {
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  background-color: #f7f9fb;
-  color: #333;
-  padding: 1rem;
-}
-h1, h2, h3 {
-  color: #1c1c1c;
-  margin-bottom: 0.5em;
-}
-h1 { font-size: 2.25rem; }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.25rem; }
 
-/* =========================
-   ACCESSIBILITY & UTILITY
-========================= */
+body {
+  font-family: 'Segoe UI', 'Inter', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   2. ACCESSIBILITY & UTILITY CLASSES
+   ========================================================================== */
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
 }
+
+/* Skip Link */
 .skip-link {
   position: absolute;
   top: -40px;
-  left: 0;
-  background: #000;
-  color: #fff;
-  padding: 0.75em 1em;
+  left: 16px;
+  background: #0066cc;
+  color: white;
+  padding: 8px 12px;
   z-index: 1000;
+  text-decoration: none;
 }
 .skip-link:focus {
-  top: 0;
+  top: 16px;
 }
+
+/* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
@@ -59,202 +73,237 @@ h3 { font-size: 1.25rem; }
   }
 }
 
-/* =========================
-   LINKS & BUTTONS
-========================= */
+/* Utility Spacing */
+.mb-1 { margin-bottom: 1rem; }
+.pt-2 { padding-top: 2rem; }
+.pb-2 { padding-bottom: 2rem; }
+
+/* ==========================================================================
+   3. LINKS & BUTTONS
+   ========================================================================== */
 a {
   color: #0066cc;
   text-decoration: none;
 }
-a:focus, a:hover {
-  text-decoration: underline;
-}
-a:focus-visible {
-  outline: 3px solid #ffcc00;
+a:focus,
+a:hover {
+  outline: 2px solid #ffcc00;
   outline-offset: 2px;
 }
-.btn-primary,
-.btn-secondary {
-  display: inline-block;
-  padding: 0.75em 1.5em;
+
+button,
+.btn {
+  font: inherit;
+  padding: 0.75rem 1.25rem;
   border: none;
   border-radius: 5px;
-  text-align: center;
   cursor: pointer;
-  font-weight: 600;
+  transition: background 0.3s ease;
 }
+
 .btn-primary {
-  background-color: #0066cc;
+  background: #0066cc;
   color: white;
 }
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #005bb5;
+  outline: 2px solid #ffcc00;
+}
+
 .btn-secondary {
-  background-color: #0a2540;
-  color: white;
+  background: #f1f1f1;
+  color: #222;
 }
-.btn-primary:focus,
+.btn-secondary:hover,
 .btn-secondary:focus {
-  outline: 3px solid #ffcc00;
-  outline-offset: 2px;
+  background: #e2e2e2;
+  outline: 2px solid #ffcc00;
 }
 
-/* =========================
-   NAVIGATION BAR
-========================= */
-.nav-bar ul {
+/* ==========================================================================
+   4. NAVIGATION
+   ========================================================================== */
+header {
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+nav {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+.nav-links {
   list-style: none;
-  justify-content: center;
-  background-color: #ffffff;
-  padding: 1em;
-  border-bottom: 1px solid #ddd;
+  display: flex;
+  gap: 1.5rem;
 }
-.nav-bar li {
-  margin: 0 1em;
+.nav-links a {
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
 }
-.nav-bar a[aria-current="page"] {
-  font-weight: bold;
-  border-bottom: 2px solid #0066cc;
+.nav-links a.active {
+  border-bottom-color: #0066cc;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* Mobile toggle */
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #0066cc;
+}
+
+/* ==========================================================================
+   5. HERO SECTION
+   ========================================================================== */
 .hero {
   text-align: center;
-  margin-bottom: 2em;
+  padding: 4rem 1rem;
+  background: #eaf3fc;
 }
-.hero-img {
+.hero img {
   width: 100%;
-  max-height: 400px;
+  max-height: 300px;
   object-fit: cover;
-}
-.hero-text h1 {
-  font-size: 2.5rem;
+  border-radius: 8px;
   margin-top: 1rem;
 }
 
-/* =========================
-   GRID LAYOUT / SERVICES
-========================= */
+/* ==========================================================================
+   6. SERVICES GRID
+   ========================================================================== */
 .services-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2em;
+  gap: 2rem;
   justify-content: center;
-}
-.service-card {
-  flex: 1 1 300px;
-  background-color: #fff;
-  padding: 1.5em;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-.service-card:hover {
-  transform: translateY(-4px);
-}
-.service-card img.icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 1em;
-  object-fit: contain;
+  padding: 2rem 1rem;
 }
 
-/* =========================
-   CONTACT FORM
-========================= */
-.contact-form form {
+.service-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+.service-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   7. FORM STYLING
+   ========================================================================== */
+.contact-form {
   max-width: 600px;
-  margin: auto;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 0.75em;
-  margin-bottom: 1em;
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
+  font: inherit;
 }
-input:focus, textarea:focus {
-  outline: 3px solid #ffcc00;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0066cc;
+  outline: 2px solid #ffcc00;
 }
 
-/* =========================
-   SOCIAL MEDIA ICONS
-========================= */
+/* ==========================================================================
+   8. SOCIAL ICONS & FOOTER
+   ========================================================================== */
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 2em;
-  margin-top: 1em;
+  gap: 1rem;
+  margin: 2rem 0;
 }
-.social-icons img {
+.social-icons a img {
   width: 32px;
   height: 32px;
+  loading: lazy;
 }
 
-/* =========================
-   REUSABLE UTILITY CLASSES
-========================= */
-.text-center { text-align: center; }
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
-.pt-2 { padding-top: 2rem; }
-.pb-2 { padding-bottom: 2rem; }
-
-/* =========================
-   WHY ME SECTION
-========================= */
-.why-me {
-  text-align: center;
-  margin: 3rem auto;
-  max-width: 700px;
-}
-.why-me ul {
-  list-style: none;
-  padding: 0;
-}
-.why-me li {
-  margin-bottom: 0.75em;
-  font-size: 1.1rem;
-}
-
-/* =========================
-   FOOTER
-========================= */
 footer {
+  background: #f0f0f0;
+  padding: 1.5rem;
   text-align: center;
-  padding: 2em 1em;
-  background-color: #e9eef3;
-  margin-top: 3em;
+  font-size: 0.9rem;
+  color: #555;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
+/* ==========================================================================
+   9. RESPONSIVE DESIGN
+   ========================================================================== */
 @media (max-width: 768px) {
-  .nav-bar ul {
-    flex-direction: column;
-    align-items: center;
+  html {
+    font-size: 90%;
   }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
   .services-grid {
     flex-direction: column;
-    align-items: stretch;
-  }
-  .hero-text h1 {
-    font-size: 2rem;
+    align-items: center;
   }
 }
 
 @media (max-width: 480px) {
-  body {
-    font-size: 0.95rem;
+  h1 {
+    font-size: 1.75rem;
   }
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.5rem; }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.125rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
   .service-card {
-    padding: 1em;
+    width: 90%;
+  }
+
+  .contact-form {
+    padding: 1rem;
   }
 }
