@@ -1,50 +1,49 @@
-/* ============================================================================
-   📱 Mobile Navigation Toggle (Burger Menu)
-============================================================================ */
-document.addEventListener('DOMContentLoaded', function () {
-  const burger = document.querySelector('.nav-toggle');
-  const navMenu = document.querySelector('.nav-links');
+// Navigation Toggle for Mobile
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-bar ul');
 
-  if (burger && navMenu) {
-    burger.addEventListener('click', function () {
-      const isExpanded = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', !isExpanded);
-      navMenu.classList.toggle('is-open');
-    });
-
-    // Close menu on Escape key
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && navMenu.classList.contains('is-open')) {
-        burger.setAttribute('aria-expanded', 'false');
-        navMenu.classList.remove('is-open');
-        burger.focus();
-      }
-    });
-  }
-});
-
-/* ============================================================================
-   🌀 AOS (Animate On Scroll) Initialization
-============================================================================ */
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  AOS.init({
-    duration: 800,
-    once: true
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
   });
 }
 
-/* ============================================================================
-   🔗 Smooth Scrolling for Internal Links
-============================================================================ */
-document.addEventListener('click', function (e) {
-  const link = e.target.closest('a[href^="#"]');
-  if (link) {
-    const targetId = link.getAttribute('href').substring(1);
-    const target = document.getElementById(targetId);
+// Smooth Scroll on Anchor Click
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute('href'));
     if (target) {
-      e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      target.focus({ preventScroll: true });
     }
-  }
+  });
 });
+
+// Basic Contact Form Validation
+const form = document.querySelector('form');
+if (form) {
+  form.addEventListener('submit', e => {
+    const name = form.querySelector('#name');
+    const email = form.querySelector('#email');
+    const message = form.querySelector('#message');
+
+    if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+      e.preventDefault();
+      alert('Please fill out all fields before submitting the form.');
+    }
+  });
+}
+
+// Simple Scroll Reveal Animation
+const revealElements = document.querySelectorAll('.reveal');
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.85;
+  revealElements.forEach(el => {
+    const elTop = el.getBoundingClientRect().top;
+    if (elTop < triggerBottom) {
+      el.classList.add('visible');
+    }
+  });
+};
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll(); // Initial trigger
