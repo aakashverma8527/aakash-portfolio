@@ -1,86 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta Information -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aakash Verma is a freelance web developer and data automation expert skilled in HTML, CSS, UiPath, Salesforce CRM, and process automation." />
-  <meta name="author" content="Aakash Verma" />
-
-  <!-- Open Graph Metadata -->
-  <meta property="og:title" content="About Aakash Verma – Web Developer & Data Automation Specialist" />
-  <meta property="og:description" content="Explore Aakash Verma’s expertise in frontend development, automation tools like UiPath, and structured data operations." />
-  <meta property="og:image" content="images/aakash-profile.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com/about.html" />
-
-  <title>About Aakash Verma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Aakash Verma</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Skip Link -->
-  <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
-
-  <!-- Header with Navigation -->
+  <!-- Navigation -->
   <header>
-    <nav aria-label="Main navigation">
-      <div class="logo" aria-label="Aakash Verma Logo">Aakash Verma</div>
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+    <nav class="navbar">
+      <div class="logo">Aakash Verma</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active" aria-current="page">About</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <main id="main-content">
-    <!-- Profile Intro Section -->
-    <section class="profile" aria-labelledby="intro-heading">
-      <img
-        src="images/aakash-profile.jpg"
-        alt="Professional photo of Aakash Verma"
-        class="profile-img"
-        loading="lazy"
-      />
-      <h1 id="intro-heading">Hi, I'm Aakash Verma</h1>
-      <p>
-        I'm a freelance web developer and data automation specialist with a passion for building clean, accessible websites and streamlining business processes. I create structured, user-friendly web interfaces using modern HTML, CSS, and JavaScript.
-      </p>
-      <p>
-        Beyond development, I specialize in automation tools like UiPath and Excel Macros, helping businesses simplify CRM workflows, improve data accuracy, and scale operations. My work blends logic, design, and performance — all under clear SOPs and reliable delivery.
-      </p>
-    </section>
+  <!-- About Section -->
+  <section class="container about-section">
+    <h1 class="section-title">About Me</h1>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="profile.jpg.jpg" alt="Aakash Verma">
+      </div>
+      <div class="about-text">
+        <p><strong>Hi, I'm Aakash Verma</strong> — a detail-oriented and results-driven Process Associate with 2+ years of experience in content moderation, e-commerce listing, Salesforce CRM, and data validation. I’ve worked with SunTec India and eDataIndia, improving workflows and ensuring 97%+ accuracy in data operations.</p>
+        
+        <p>I specialize in Salesforce CRM, data entry, content moderation, and automation using tools like UiPath and Excel Macros. I’m currently pursuing a B.A. from the University of Delhi and hold a National Apprenticeship Certificate in Data Associate V2.</p>
 
-    <!-- Skills Section -->
-    <section class="skills" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Core Competencies</h2>
-      <ul>
-        <li>Responsive Web Development (HTML5, CSS3, JavaScript)</li>
-        <li>Cross-browser Testing & Accessibility (WCAG 2.1)</li>
-        <li>UiPath Automation & Workflow Design</li>
-        <li>Salesforce CRM Data Management</li>
-        <li>Excel Macros & VBA Automation</li>
-        <li>Data Validation & SOP Documentation</li>
-        <li>eCommerce Catalog Quality Assurance</li>
-        <li>Academic & Institutional Data Curation</li>
-      </ul>
-    </section>
+        <p>I aim to help businesses structure, clean, and enrich their data to make better decisions.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Resume Download CTA -->
-    <section class="resume-cta" aria-labelledby="resume-heading">
-      <h2 id="resume-heading">Want to Know More?</h2>
-      <p>You can download my full resume below to explore my experience and certifications.</p>
-      <a href="docs/Aakash-Verma-Resume.pdf" class="btn-resume" download>📄 Download Resume</a>
-    </section>
-  </main>
+  <!-- Skills Section -->
+  <section class="container skills-section">
+    <h2>Core Skills</h2>
+    <ul class="skills-list">
+      <li>Salesforce CRM</li>
+      <li>Content Moderation</li>
+      <li>UiPath Automation</li>
+      <li>Excel Macros & MIS Reporting</li>
+      <li>E-commerce Product Management</li>
+      <li>Google Sheets & Data Cleaning</li>
+      <li>Typing Speed: 30+ WPM | Accuracy: 90%+</li>
+    </ul>
+  </section>
+
+  <!-- Experience Timeline -->
+  <section class="container experience-section">
+    <h2>Professional Experience</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h3>SunTec India – Process Associate</h3>
+        <p><em>Sep 2023 – Present | Rohini, Delhi</em></p>
+        <ul>
+          <li>Validated user-submitted educational data for Studocu with 97%+ accuracy.</li>
+          <li>Updated global student population datasets and managed data deduplication.</li>
+          <li>Handled Salesforce account creation and quality control for DEQ processes.</li>
+          <li>Redacted sensitive documents to maintain privacy compliance.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <h3>eDataIndia – E-commerce Executive (Dressinn)</h3>
+        <p><em>Aug 2022 – Aug 2023 | Rohini, Delhi</em></p>
+        <ul>
+          <li>Uploaded and optimized 500+ fashion products on Dressinn.</li>
+          <li>Prepared daily and weekly MIS reports and monitored inventory.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
+    <p>© 2025 Aakash Verma | <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank">LinkedIn</a> | <a href="mailto:aakashverma852787@outlook.com">Email Me</a></p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
