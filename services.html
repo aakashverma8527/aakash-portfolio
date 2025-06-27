@@ -3,110 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore professional data services by Aakash Verma including collection, extraction, annotation, and web automation." />
-  <title>Services | Data & Web Solutions – Aakash Verma</title>
+  <meta name="description" content="Explore tailored data and web services by Aakash Verma — from data collection to CRM and healthcare BPO solutions." />
+  <meta name="keywords" content="Data Services, Web Scraping, Annotation, CRM Management, Healthcare BPO, Aakash Verma" />
+  <meta name="author" content="Aakash Verma" />
+  <title>Services – Aakash Verma</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Skip to Main Content -->
+  <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
 
   <header>
-    <h1>What I Offer</h1>
-    <p>Tailored solutions for digital presence, operational clarity, and scalable data systems.</p>
+    <nav aria-label="Main navigation">
+      <div class="logo" aria-label="Aakash Verma Logo">Aakash Verma</div>
+      <ul class="nav-links">
+        <li><a href="index.html" tabindex="0">Home</a></li>
+        <li><a href="about.html" tabindex="0">About</a></li>
+        <li><a href="contact.html" tabindex="0">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main id="main-content">
-    <!-- Services Section -->
-    <section class="services-grid" aria-label="List of services provided by Aakash Verma">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">What I Offer</h1>
+      <p>Tailored data and web solutions to drive clarity, scale, and operational excellence for your business.</p>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-grid" aria-label="Service offerings">
       <article class="service-card">
-        <img src="data-collection-icon.png" alt="Database icon representing Data Collection" class="icon" loading="lazy" />
-        <h2>Data Collection Services</h2>
-        <p>We gather accurate, relevant, and structured data from websites, databases, surveys, and social media—ideal for market research or CRM building.</p>
+        <img src="icons/data-collection.svg" class="icon" alt="Data collection icon" loading="lazy" />
+        <h2>Data Collection</h2>
+        <p>Aggregate verified datasets for market research, catalogs, or academic platforms with precision.</p>
       </article>
 
       <article class="service-card">
-        <img src="data-extraction-icon.png" alt="Icon representing data extraction tools" class="icon" loading="lazy" />
-        <h2>Data Extraction Services</h2>
-        <p>Extracting information from PDFs, images, or legacy portals into Excel or databases—ideal for finance, legal, healthcare, and eCommerce sectors.</p>
+        <img src="icons/web-scraping.svg" class="icon" alt="Web scraping icon" loading="lazy" />
+        <h2>Web Scraping</h2>
+        <p>Extract structured product, pricing, or lead data from websites for competitive insights and automation.</p>
       </article>
 
       <article class="service-card">
-        <img src="data-mining-icon.png" alt="Magnifying glass icon representing Data Mining" class="icon" loading="lazy" />
-        <h2>Data Mining Services</h2>
-        <p>We uncover patterns from large datasets to empower decisions—used for segmentation, forecasting, and trend analysis.</p>
+        <img src="icons/data-annotation.svg" class="icon" alt="Annotation icon" loading="lazy" />
+        <h2>Data Annotation</h2>
+        <p>Label and tag images or text for ML pipelines including bounding boxes, classifications, or NLP tasks.</p>
       </article>
 
       <article class="service-card">
-        <img src="web-research-icon.png" alt="Search icon representing Web Research" class="icon" loading="lazy" />
-        <h2>Web Research Services</h2>
-        <p>We provide up-to-date data on industries, markets, and competitors—ideal for consultants and research teams.</p>
+        <img src="icons/crm.svg" class="icon" alt="CRM management icon" loading="lazy" />
+        <h2>CRM Management</h2>
+        <p>Clean and organize Salesforce or HubSpot data to streamline customer onboarding and outreach.</p>
       </article>
 
       <article class="service-card">
-        <img src="list-building-icon.png" alt="Contact list icon for List Building" class="icon" loading="lazy" />
-        <h2>List Building Services</h2>
-        <p>Get customized lists with names, emails, and phone numbers—perfect for sales and recruitment outreach.</p>
-      </article>
-
-      <article class="service-card">
-        <img src="data-appending-icon.png" alt="Data enrichment icon for Appending" class="icon" loading="lazy" />
-        <h2>Data Appending Services</h2>
-        <p>Fill missing data in your lead or client records—boost CRM accuracy and personalization.</p>
-      </article>
-
-      <article class="service-card">
-        <img src="linkedin-icon.png" alt="LinkedIn icon for profile mining" class="icon" loading="lazy" />
-        <h2>LinkedIn Data Mining</h2>
-        <p>We extract job roles, industries, and contacts for targeted B2B outreach—ideal for sales and recruiting teams.</p>
-      </article>
-
-      <article class="service-card">
-        <img src="scraping-icon.png" alt="Scraping bot icon" class="icon" loading="lazy" />
-        <h2>Website Data Scraping</h2>
-        <p>Automate extraction of product data, pricing, reviews—ideal for price comparison and content aggregation.</p>
-      </article>
-
-      <article class="service-card">
-        <img src="healthcare-icon.png" alt="Healthcare form icon" class="icon" loading="lazy" />
+        <img src="icons/healthcare.svg" class="icon" alt="Healthcare BPO icon" loading="lazy" />
         <h2>Healthcare BPO</h2>
-        <p>Billing, claims processing, and patient data management—HIPAA-compliant solutions for clinics and hospitals.</p>
+        <p>Support medical billing, claim data entry, and EHR processing for healthcare service providers.</p>
       </article>
 
       <article class="service-card">
-        <img src="crm-icon.png" alt="CRM screen icon" class="icon" loading="lazy" />
-        <h2>CRM Data Entry</h2>
-        <p>Accurate Salesforce, HubSpot, and Zoho entries—supporting your campaigns with up-to-date lead and contact data.</p>
-      </article>
-
-      <article class="service-card">
-        <img src="annotation-icon.png" alt="Bounding box on image" class="icon" loading="lazy" />
-        <h2>2D & 3D Image Annotation</h2>
-        <p>High-quality image labeling for AI training—bounding boxes, polygons, and 3D cuboids for computer vision tasks.</p>
-      </article>
-
-      <article class="service-card">
-        <img src="esg-icon.png" alt="ESG report icon" class="icon" loading="lazy" />
-        <h2>ESG Reporting Services</h2>
-        <p>Track and report Environmental, Social, and Governance data aligned with global sustainability standards.</p>
+        <img src="icons/validation.svg" class="icon" alt="Data validation icon" loading="lazy" />
+        <h2>Data Validation</h2>
+        <p>Verify and sanitize internal and vendor datasets to ensure completeness, accuracy, and compliance.</p>
       </article>
     </section>
 
     <!-- Why Me Section -->
-    <section class="why-me" aria-label="Why Choose Aakash Verma">
-      <h2>Why Choose Me?</h2>
+    <section class="why-me" aria-labelledby="why-me-heading">
+      <h2 id="why-me-heading">Why Work With Me?</h2>
       <ul>
-        <li>✅ Methodical, results-driven approach to every project</li>
-        <li>✅ Deep understanding of SEO, UI/UX, and clean architecture</li>
-        <li>✅ Transparent communication & thoughtful documentation</li>
-        <li>✅ Blending technical skill with problem-solving clarity</li>
+        <li>✅ Methodical, detail-oriented approach</li>
+        <li>✅ Results-driven with a focus on data clarity</li>
+        <li>✅ 2+ years of real-world B2B project experience</li>
+        <li>✅ Trusted by clients in e-commerce and edtech</li>
+        <li>✅ Rapid response, accurate delivery, and transparency</li>
       </ul>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Aakash Verma | Data & Web Solutions</p>
+    <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
   </footer>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
