@@ -11,16 +11,17 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Skip to Main Content -->
+  <!-- Skip Link for Accessibility -->
   <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
 
+  <!-- Header & Navigation -->
   <header>
     <nav aria-label="Main navigation">
       <div class="logo" aria-label="Aakash Verma Logo">Aakash Verma</div>
       <ul class="nav-links">
-        <li><a href="index.html" tabindex="0">Home</a></li>
-        <li><a href="about.html" tabindex="0">About</a></li>
-        <li><a href="contact.html" tabindex="0">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -33,40 +34,42 @@
     </section>
 
     <!-- Services Grid -->
-    <section class="services-grid" aria-label="Service offerings">
+    <section class="services-grid" aria-labelledby="services-heading">
+      <h2 id="services-heading" class="visually-hidden">Service Offerings</h2>
+
       <article class="service-card">
         <img src="icons/data-collection.svg" class="icon" alt="Data collection icon" loading="lazy" />
-        <h2>Data Collection</h2>
+        <h3>Data Collection</h3>
         <p>Aggregate verified datasets for market research, catalogs, or academic platforms with precision.</p>
       </article>
 
       <article class="service-card">
         <img src="icons/web-scraping.svg" class="icon" alt="Web scraping icon" loading="lazy" />
-        <h2>Web Scraping</h2>
+        <h3>Web Scraping</h3>
         <p>Extract structured product, pricing, or lead data from websites for competitive insights and automation.</p>
       </article>
 
       <article class="service-card">
         <img src="icons/data-annotation.svg" class="icon" alt="Annotation icon" loading="lazy" />
-        <h2>Data Annotation</h2>
+        <h3>Data Annotation</h3>
         <p>Label and tag images or text for ML pipelines including bounding boxes, classifications, or NLP tasks.</p>
       </article>
 
       <article class="service-card">
         <img src="icons/crm.svg" class="icon" alt="CRM management icon" loading="lazy" />
-        <h2>CRM Management</h2>
+        <h3>CRM Management</h3>
         <p>Clean and organize Salesforce or HubSpot data to streamline customer onboarding and outreach.</p>
       </article>
 
       <article class="service-card">
         <img src="icons/healthcare.svg" class="icon" alt="Healthcare BPO icon" loading="lazy" />
-        <h2>Healthcare BPO</h2>
+        <h3>Healthcare BPO</h3>
         <p>Support medical billing, claim data entry, and EHR processing for healthcare service providers.</p>
       </article>
 
       <article class="service-card">
         <img src="icons/validation.svg" class="icon" alt="Data validation icon" loading="lazy" />
-        <h2>Data Validation</h2>
+        <h3>Data Validation</h3>
         <p>Verify and sanitize internal and vendor datasets to ensure completeness, accuracy, and compliance.</p>
       </article>
     </section>
@@ -84,6 +87,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
   </footer>
