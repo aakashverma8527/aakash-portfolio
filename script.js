@@ -1,49 +1,96 @@
-// Navigation Toggle for Mobile
+// ================================
+// 1. Mobile Navigation Toggle
+// ================================
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-bar ul');
 
-if (navToggle) {
+if (navToggle && navMenu) {
   navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+    const isExpanded = navMenu.classList.toggle('active');
+    navToggle.setAttribute('aria-expanded', isExpanded);
+  });
+
+  // Accessibility: Toggle with keyboard
+  navToggle.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      navToggle.click();
+    }
   });
 }
 
-// Smooth Scroll on Anchor Click
+// ================================
+// 2. Smooth Scroll for Anchor Links
+// ================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(anchor.getAttribute('href'));
+    const targetId = anchor.getAttribute('href');
+    const target = document.querySelector(targetId);
     if (target) {
+      e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 });
 
-// Basic Contact Form Validation
+// ================================
+// 3. Contact Form Validation (Enhanced)
+// ================================
 const form = document.querySelector('form');
+
 if (form) {
   form.addEventListener('submit', e => {
     const name = form.querySelector('#name');
     const email = form.querySelector('#email');
     const message = form.querySelector('#message');
 
-    if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+    let valid = true;
+
+    // Clear previous messages
+    form.querySelectorAll('.error-message').forEach(el => el.remove());
+
+    [name, email, message].forEach(field => {
+      if (!field?.value.trim()) {
+        valid = false;
+        const msg = document.createElement('div');
+        msg.className = 'error-message';
+        msg.style.color = 'red';
+        msg.style.fontSize = '0.9em';
+        msg.textContent = `${field.previousElementSibling.textContent} is required.`;
+        field.insertAdjacentElement('afterend', msg);
+      }
+    });
+
+    if (!valid) {
       e.preventDefault();
-      alert('Please fill out all fields before submitting the form.');
     }
   });
 }
 
-// Simple Scroll Reveal Animation
+// ================================
+// 4. Scroll Reveal Animation (Debounced)
+// ================================
 const revealElements = document.querySelectorAll('.reveal');
+
 const revealOnScroll = () => {
   const triggerBottom = window.innerHeight * 0.85;
+
   revealElements.forEach(el => {
-    const elTop = el.getBoundingClientRect().top;
-    if (elTop < triggerBottom) {
+    const boxTop = el.getBoundingClientRect().top;
+    if (boxTop < triggerBottom) {
       el.classList.add('visible');
     }
   });
 };
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll(); // Initial trigger
+
+// Debounce utility
+function debounce(func, wait = 20) {
+  let timeout;
+  return () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(func, wait);
+  };
+}
+
+window.addEventListener('scroll', debounce(revealOnScroll));
+window.addEventListener('load', revealOnScroll);
