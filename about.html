@@ -3,50 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me | Naksh</title>
+  <meta name="description" content="Learn more about Aakash Verma – a freelance web developer and data automation specialist with expertise in SOPs, validation workflows, and responsive design." />
+  <title>About Me | Aakash Verma</title>
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="About Me | Aakash Verma" />
+  <meta property="og:description" content="Meet Aakash Verma – expert in web development, automation, and scalable SOP-based systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.webp" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>About Me</h1>
+
+  <!-- Skip to Content -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header + Navigation -->
+  <header class="page-header">
+    <nav class="nav-bar" aria-label="Main navigation" role="navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html" class="active" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="page-title">
+      <h1>About Me</h1>
+    </div>
   </header>
 
-  <!-- Profile Section -->
-  <section class="profile-intro">
-    <img src="profile.jpg.jpg" alt="Photo of Naksh" class="profile-img" />
-    <div class="intro-text">
-      <h2>Hi, I'm Naksh</h2>
-      <p>
-        I’m a methodical and detail-oriented web developer with a deep passion for creating accessible, responsive websites. Whether it’s designing pixel-perfect layouts, optimizing code for SEO, or structuring scalable SOPs—I bring a balance of creativity and clarity to every project.
-      </p>
-      <p>
-        From refining SOPs to leading data validation workflows, my mission is simple: to simplify systems and elevate user experience with smart design and clean code.
-      </p>
-    </div>
-  </section>
+  <!-- Main Content -->
+  <main id="main">
 
-  <!-- Skills Section -->
-  <section class="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>HTML5 & Semantic Structure</li>
-      <li>CSS3 – Responsive Design with Flexbox/Grid</li>
-      <li>JavaScript – Interactive UI & Form Validation</li>
-      <li>SEO & Open Graph Metadata</li>
-      <li>SOP Creation & Data Workflow Design</li>
-    </ul>
-  </section>
+    <!-- Profile Intro -->
+    <section class="profile-intro" aria-labelledby="intro-heading">
+      <h2 id="intro-heading" class="visually-hidden">Introduction</h2>
+      <img src="profile.webp" alt="Photo of Aakash Verma" class="profile-img" loading="lazy" />
+      <div class="intro-text">
+        <h2>Hi, I'm Aakash Verma</h2>
+        <p>
+          I'm a freelance web developer and data operations associate with over 2 years of experience in content moderation, SOP structuring, and validation workflows. My passion lies in crafting responsive, accessible websites and simplifying complex data systems through clean design and automation.
+        </p>
+        <p>
+          With hands-on expertise in Salesforce CRM, UiPath, Excel Macros, and Google Sheets, I bring a technical edge to process optimization, especially in domains like eCommerce listing, academic course curation, and data verification.
+        </p>
+      </div>
+    </section>
 
-  <!-- Resume Download -->
-  <section class="resume-download">
-    <h2>Want to know more?</h2>
-    <a href="Naksh-Resume.pdf" class="btn-secondary" download>Download My Resume</a>
-  </section>
+    <!-- Skills Section -->
+    <section class="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Technical Skills</h2>
+      <ul>
+        <li>HTML5, CSS3 – Semantic & Responsive Design</li>
+        <li>JavaScript – UI Interactivity & DOM Manipulation</li>
+        <li>Salesforce CRM & Structured Data Entry</li>
+        <li>SOP Writing & Validation Workflow Design</li>
+        <li>UiPath & Excel Macros for Process Automation</li>
+        <li>Google Sheets – Dashboards & MIS Reporting</li>
+        <li>SEO & Accessibility Best Practices</li>
+      </ul>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Naksh | Web Developer Portfolio</p>
+    <!-- Resume Download -->
+    <section class="resume-download" aria-labelledby="resume-heading">
+      <h2 id="resume-heading">Want to Know More?</h2>
+      <a href="Aakash-Verma-Resume.pdf" class="btn-secondary" download>Download My Resume</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Aakash Verma | Web Developer Portfolio</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
 </body>
 </html>
