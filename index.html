@@ -3,52 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naksh | Web Developer Portfolio</title>
+  <meta name="description" content="Aakash Verma's portfolio showcasing accessible, responsive web development projects and services." />
+  <title>Aakash Verma | Web Developer Portfolio</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <!-- Hero Section -->
+
+  <!-- Skip to Content Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header + Navigation -->
   <header class="hero">
-    <img src="dressinn-ecommerce-listing.png" alt="Featured Project" class="hero-img" />
-    <div class="hero-text">
-      <h1>Hi, I'm Naksh</h1>
-      <p>I build accessible, responsive, and clean websites that simplify complex data and workflows.</p>
-      <a href="contact.html" class="btn-primary">Hire Me</a>
+    <nav class="nav-bar" aria-label="Main navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-content">
+      <img src="dressinn-ecommerce-listing.webp" alt="Screenshot of Dressinn e-commerce product listing by Aakash Verma" class="hero-img" loading="lazy" />
+      <div class="hero-text">
+        <h1>Hi, I'm Aakash Verma</h1>
+        <p>I build accessible, responsive websites that simplify complex data and workflows.</p>
+        <a href="contact.html" class="btn-primary">Hire Me</a>
+      </div>
     </div>
   </header>
 
-  <!-- Navigation -->
-  <nav class="nav-bar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Main Content -->
+  <main id="main">
+    <!-- Highlights Section -->
+    <section id="highlights" class="section">
+      <div class="highlight">
+        <h2><a href="services.html">Services</a></h2>
+        <p>Explore my offerings in custom web development, accessibility, and SOP automation.</p>
+      </div>
+      <div class="highlight">
+        <h2><a href="projects.html">Projects</a></h2>
+        <p>Browse real-world work like e-commerce listings, CRM tools, and academic data platforms.</p>
+      </div>
+      <div class="highlight">
+        <h2><a href="contact.html">Contact</a></h2>
+        <p>Let’s collaborate and create something remarkable—drop me a message!</p>
+      </div>
+    </section>
+  </main>
 
-  <!-- Highlights Section -->
-  <section id="highlights" class="section">
-    <div class="highlight">
-      <h2><a href="services.html">Services</a></h2>
-      <p>Explore my offerings in web development, accessibility enhancement, and SOP structuring.</p>
-    </div>
-    <div class="highlight">
-      <h2><a href="projects.html">Projects</a></h2>
-      <p>View my real-world projects like e-commerce listings, CRM systems, and academic data validation tools.</p>
-    </div>
-    <div class="highlight">
-      <h2><a href="contact.html">Contact</a></h2>
-      <p>Let’s build something remarkable together—drop me a message!</p>
-    </div>
-  </section>
-
-  <!-- Footer CTA -->
+  <!-- Footer Call-to-Action -->
   <footer class="footer-cta">
-    <h2>Ready to make your ideas a reality?</h2>
+    <h2>Ready to build something amazing?</h2>
     <a href="contact.html" class="btn-secondary">Let's Work Together</a>
+    <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
 </body>
 </html>
