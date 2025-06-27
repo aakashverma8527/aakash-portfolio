@@ -1,252 +1,54 @@
 <!DOCTYPE html>
-<html lang="en-IN">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio projects by Aakash Verma – showcasing expertise in eCommerce QA, data validation, and workflow automation.">
-  <link rel="canonical" href="https://aakashverma.in/portfolio-projects.html">
-  <title>Aakash Verma | Portfolio Projects</title>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Aakash Verma | Portfolio Projects">
-  <meta property="og:description" content="Explore detailed data validation and QA projects handled by Aakash Verma.">
-  <meta property="og:image" content="https://aakashverma.in/assets/aakash-verma-profile.jpg">
-  <meta property="og:url" content="https://aakashverma.in/portfolio-projects.html">
-  <meta property="og:type" content="website">
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- Styles -->
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 2rem;
-      background: #f9f9f9;
-      color: #222;
-    }
-    h1, h2, h3 {
-      color: #0a0a0a;
-    }
-    section {
-      margin-bottom: 3rem;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .project-summary, ul, ol, table {
-      margin-bottom: 1rem;
-    }
-    summary {
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: .5rem;
-    }
-    table, th, td {
-      border: 1px solid #ddd;
-    }
-    th, td {
-      padding: 0.75rem;
-      text-align: left;
-    }
-    aside.skills-highlight {
-      background: #f0f4ff;
-      padding: 1rem;
-      border-left: 4px solid #2a63f0;
-      border-radius: 8px;
-    }
-    details[open] summary::after {
-      content: " ▲";
-    }
-    summary::after {
-      content: " ▼";
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naksh | Web Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <img src="dressinn-ecommerce-listing.png" alt="Featured Project" class="hero-img" />
+    <div class="hero-text">
+      <h1>Hi, I'm Naksh</h1>
+      <p>I build accessible, responsive, and clean websites that simplify complex data and workflows.</p>
+      <a href="contact.html" class="btn-primary">Hire Me</a>
+    </div>
+  </header>
 
-  <h1>Aakash Verma – Portfolio Projects</h1>
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- PROJECT 1 -->
-  <section id="project1" data-aos="fade-up">
-    <h2>📘 Project 1: eCommerce Product Data Validation SOP</h2>
-    <p class="project-summary">
-      A structured SOP to validate product listings across Walmart and Amazon by comparing attributes such as <strong>brand</strong>, <strong>model</strong>, <strong>size</strong>, <strong>color</strong>, and <strong>condition</strong>.
-    </p>
-
-    <details open>
-      <summary>🧩 Process Steps</summary>
-      <ol>
-        <li>Open Walmart and Amazon product pages.</li>
-        <li>Compare key attributes side-by-side.</li>
-        <li>Decide match type based on logic below.</li>
-        <li>Record decisions in the tracking sheet.</li>
-      </ol>
-    </details>
-
-    <details>
-      <summary>📊 Match Type Logic Table</summary>
-      <table>
-        <thead>
-          <tr><th>Match Type</th><th>Definition</th><th>Criteria</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Exact Match</td><td>Identical attributes</td><td>Brand, model, size, color, and condition fully match</td></tr>
-          <tr><td>Close Match</td><td>Minor variation</td><td>Same model, slight brand/color difference</td></tr>
-          <tr><td>No Match</td><td>Major difference</td><td>Different product or specs mismatch</td></tr>
-        </tbody>
-      </table>
-    </details>
-
-    <details>
-      <summary>📋 Attribute Comparison Rules</summary>
-      <ul>
-        <li><strong>Fabric:</strong> “100% Cotton” ≠ “Cotton Blend” → No Match</li>
-        <li><strong>Condition:</strong> New vs Used grades must align</li>
-        <li><strong>ISBN/UPC:</strong> Must match if present</li>
-        <li><strong>Color:</strong> Accept minor naming variation with image match</li>
-        <li><strong>Size:</strong> Both numeric and label sizing must match</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>📚 Comic Book Grading</summary>
-      <table>
-        <thead><tr><th>Grade</th><th>Abbreviation</th><th>Description</th></tr></thead>
-        <tbody>
-          <tr><td>Near Mint</td><td>NM</td><td>Almost perfect</td></tr>
-          <tr><td>Very Fine</td><td>VF</td><td>Minimal wear</td></tr>
-          <tr><td>Fine</td><td>FN</td><td>Moderate wear</td></tr>
-          <tr><td>Good</td><td>GD</td><td>Obvious damage</td></tr>
-        </tbody>
-      </table>
-    </details>
-
-    <details>
-      <summary>🚫 Out-of-Stock & Ignored Attributes</summary>
-      <ul>
-        <li><strong>Out-of-stock:</strong> Use cached images/info to verify</li>
-        <li><strong>Ignored:</strong> Seller name, shipping time, rating</li>
-      </ul>
-    </details>
-
-    <aside class="skills-highlight">
-      <h3>🛠️ Key Skills</h3>
-      <ul>
-        <li>Attention to Detail</li>
-        <li>eCommerce QA & Attribute Mapping</li>
-        <li>Structured SOP Writing</li>
-        <li>Cross-platform Analysis</li>
-      </ul>
-    </aside>
+  <!-- Highlights Section -->
+  <section id="highlights" class="section">
+    <div class="highlight">
+      <h2><a href="services.html">Services</a></h2>
+      <p>Explore my offerings in web development, accessibility enhancement, and SOP structuring.</p>
+    </div>
+    <div class="highlight">
+      <h2><a href="projects.html">Projects</a></h2>
+      <p>View my real-world projects like e-commerce listings, CRM systems, and academic data validation tools.</p>
+    </div>
+    <div class="highlight">
+      <h2><a href="contact.html">Contact</a></h2>
+      <p>Let’s build something remarkable together—drop me a message!</p>
+    </div>
   </section>
 
-  <!-- PROJECT 2 -->
-  <section id="project2" data-aos="fade-up">
-    <h2>🏫 Project 2: User-Submitted Institution Validation Workflow</h2>
-    <p class="project-summary">
-      Managed continuous review of user-submitted institutions by verifying legitimacy, metadata extraction, and classification for database inclusion.
-    </p>
+  <!-- Footer CTA -->
+  <footer class="footer-cta">
+    <h2>Ready to make your ideas a reality?</h2>
+    <a href="contact.html" class="btn-secondary">Let's Work Together</a>
+  </footer>
 
-    <details open>
-      <summary>🔍 Validation Workflow</summary>
-      <ul>
-        <li>Match institution name with official websites (via 4icu.org, Google Maps, Wikipedia)</li>
-        <li>Classify as: <strong>To Add</strong>, <strong>To Merge</strong>, <strong>To Reject</strong></li>
-        <li>Extract full metadata: address, population, acronym, coordinates, website, etc.</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>🧠 Decision Logic</summary>
-      <table>
-        <thead><tr><th>Status</th><th>Criteria</th></tr></thead>
-        <tbody>
-          <tr><td>To Add</td><td>Unique valid institution with full metadata</td></tr>
-          <tr><td>To Merge</td><td>Duplicate entry under alternate name or spelling</td></tr>
-          <tr><td>To Reject</td><td>Unverifiable, fake, or non-educational submission</td></tr>
-        </tbody>
-      </table>
-    </details>
-
-    <aside class="skills-highlight">
-      <h3>📌 Research Tips Used</h3>
-      <ul>
-        <li>Use <strong>4icu.org</strong> for rank & legitimacy</li>
-        <li>Confirm using <strong>Google Maps</strong> & street view</li>
-        <li>Check regional Wikipedia articles (EN + local language)</li>
-      </ul>
-    </aside>
-  </section>
-
-  <!-- PROJECT 3 -->
-  <section id="project3" data-aos="fade-up">
-    <h2>📘 Project 3: Course Validation & Curation</h2>
-    <p class="project-summary">
-      Validated user-submitted courses against institutional catalogs to ensure accuracy, eliminate duplicates, and maintain data structure.
-    </p>
-
-    <details open>
-      <summary>📍 Project Scope</summary>
-      <ul>
-        <li>Verify course existence on official university sites</li>
-        <li>Apply decision logic: Add, Merge, Reject</li>
-        <li>Standardize course codes and correct naming inconsistencies</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>📘 Decision Table</summary>
-      <table>
-        <thead><tr><th>Decision</th><th>Action</th></tr></thead>
-        <tbody>
-          <tr><td>Add</td><td>Unique and valid course with verified institution match</td></tr>
-          <tr><td>Merge</td><td>Duplicate or alias of an existing course</td></tr>
-          <tr><td>Reject</td><td>Course doesn’t exist or not verifiable</td></tr>
-        </tbody>
-      </table>
-    </details>
-
-    <details>
-      <summary>🔁 Course Name Variations</summary>
-      <table>
-        <thead><tr><th>Submitted</th><th>Final Version</th></tr></thead>
-        <tbody>
-          <tr><td>BSc in Chemistry Honors</td><td>B.Sc. (Hons) Chemistry</td></tr>
-          <tr><td>Mechanical Engg Diploma</td><td>Diploma in Mechanical Engineering</td></tr>
-          <tr><td>CS Degree</td><td>B.Tech in Computer Science</td></tr>
-        </tbody>
-      </table>
-    </details>
-
-    <aside class="skills-highlight">
-      <h3>📈 Impact Metrics</h3>
-      <ul>
-        <li>98% Accuracy in validations</li>
-        <li>Removed 1000+ duplicates</li>
-        <li>Improved course structure consistency</li>
-      </ul>
-    </aside>
-  </section>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
