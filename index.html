@@ -3,18 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aakash Verma | Data Validation Specialist - Freelance data services in validation, moderation, and e-commerce support." />
-  <meta name="keywords" content="Data Validation, Freelance Data Services, E-commerce Data, CRM, Content Moderation" />
+  <meta name="description" content="Aakash Verma | Freelance Data Validation Specialist offering services in content moderation, CRM management, and e-commerce data accuracy." />
+  <meta name="keywords" content="Data Validation, Data Services, E-commerce Support, CRM Automation, Freelance, Content Moderation" />
   <meta name="author" content="Aakash Verma" />
   <title>Aakash Verma | Data Services Portfolio</title>
+
   <link rel="stylesheet" href="styles.css" />
   <script src="scripts.js" defer></script>
 </head>
 <body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <header>
-    <nav>
-      <h1>Aakash Verma</h1>
-      <ul>
+    <nav aria-label="Primary navigation">
+      <h1 class="logo">Aakash Verma</h1>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -23,71 +28,71 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Hero Section -->
-    <section id="hero">
+    <section id="hero" class="hero">
       <div class="hero-content">
         <h2>Reliable Data Services, Tailored for Your Needs</h2>
-        <p>Data validation, moderation, and e-commerce accuracy — delivered by an expert-led team.</p>
+        <p>Specialized in validation, moderation, and e-commerce accuracy — delivered by an expert-led team.</p>
         <div class="cta-buttons">
-          <a href="#about" class="btn">About</a>
-          <a href="#contact" class="btn">Contact</a>
+          <a href="#about" class="btn btn-primary">About</a>
+          <a href="#contact" class="btn btn-secondary">Contact</a>
         </div>
       </div>
     </section>
 
-    <!-- Welcome Section -->
-    <section id="services">
+    <!-- Welcome / Services Summary -->
+    <section id="services" class="welcome-section">
       <h2>Welcome</h2>
-      <p>We are a dedicated team passionate about delivering precise data validation, content moderation, and e-commerce support. Our work ensures your systems stay clean, compliant, and customer-ready — every time.</p>
+      <p>We are a dedicated remote team delivering high-quality data validation, content moderation, and e-commerce support. Our mission is to keep your systems clean, structured, and business-ready.</p>
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="about-section">
       <h2>About Aakash</h2>
-      <p>I'm Aakash Verma, a Data Validation Specialist with over 2 years of experience managing global data projects. I lead a remote team of five professionals to deliver high-accuracy datasets for academic platforms, e-commerce catalogs, and CRM systems.</p>
+      <p>I'm Aakash Verma, a Data Validation Specialist with 2+ years of experience leading global data projects. I manage a remote team of five professionals delivering structured, SOP-aligned data for academic platforms, CRMs, and e-commerce catalogs.</p>
     </section>
 
     <!-- Projects Portfolio -->
-    <section id="portfolio">
+    <section id="portfolio" class="portfolio-section">
       <h2>Projects Portfolio</h2>
 
       <div class="project">
-        <img src="images/studocu-placeholder.jpg" alt="Studocu academic validation project preview" />
+        <img src="images/studocu-data-validation.png" alt="Screenshot of academic data validation in Studocu" loading="lazy" />
         <h3>Studocu Academic Validation</h3>
         <ul>
-          <li>Verified 500+ institutions and 1,200+ academic courses</li>
-          <li>Implemented SOP-driven workflows for clean data intake</li>
-          <li>Achieved 98%+ consistency in validation logic</li>
+          <li>Verified 500+ institutions and 1,200+ courses</li>
+          <li>Used SOP-based workflows for accurate intake</li>
+          <li>Maintained over 98% validation consistency</li>
         </ul>
       </div>
 
       <div class="project">
-        <img src="images/salesforce-placeholder.jpg" alt="Salesforce CRM data entry and management" />
+        <img src="images/salesforce-crm-management.png" alt="Salesforce dashboard for CRM data entry" loading="lazy" />
         <h3>Salesforce CRM Entry</h3>
         <ul>
-          <li>Streamlined lead and contact data entry</li>
-          <li>Maintained CRM hygiene with routine audits</li>
-          <li>Integrated manual + UiPath automation for efficiency</li>
+          <li>Streamlined contact and lead records</li>
+          <li>Conducted periodic audits for CRM hygiene</li>
+          <li>Used UiPath automation for manual entry tasks</li>
         </ul>
       </div>
 
       <div class="project">
-        <img src="images/dressinn-placeholder.jpg" alt="Dressinn e-commerce product validation screenshot" />
+        <img src="images/dressinn-ecommerce-listing.png" alt="E-commerce product validation on Dressinn platform" loading="lazy" />
         <h3>Dressinn E-commerce Moderation</h3>
         <ul>
-          <li>Validated 10,000+ fashion listings for accuracy</li>
-          <li>Matched product metadata with source platforms</li>
-          <li>Ensured consistent naming, sizing, and tags</li>
+          <li>Validated 10,000+ listings for metadata accuracy</li>
+          <li>Ensured correct sizing, product names, and brand mapping</li>
+          <li>Cross-referenced catalog data with Walmart and Amazon</li>
         </ul>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="contact-section">
       <h2>Contact</h2>
-      <p>📧 Email: <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a></p>
-      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer">Aakash Verma on LinkedIn</a></p>
+      <p>📧 <strong>Email:</strong> <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a></p>
+      <p>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer">Connect with me on LinkedIn</a></p>
     </section>
   </main>
 
