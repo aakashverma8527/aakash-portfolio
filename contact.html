@@ -1,100 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Aakash Verma – Send a message, connect via LinkedIn or GitHub, or schedule a quick call." />
-  <meta property="og:title" content="Contact | Aakash Verma" />
-  <meta property="og:description" content="Get in touch with Aakash Verma to collaborate or discuss your project. Reach out via message, LinkedIn, GitHub, or book a call." />
+  <meta name="description" content="Contact Aakash Verma – Freelance web developer and data automation expert. Reach out for collaborations, project inquiries, or bookings." />
+  <meta name="author" content="Aakash Verma" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact Aakash Verma – Web Developer & Automation Specialist" />
+  <meta property="og:description" content="Send a message or book a call with Aakash Verma. Specializing in frontend development, CRM automation, and data services." />
+  <meta property="og:image" content="images/aakash-profile.jpg" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="profile.webp" />
-  <title>Contact | Aakash Verma</title>
+  <meta property="og:url" content="https://yourdomain.com/contact.html" />
+
+  <!-- Preload External CSS -->
   <link rel="preload" href="style.css" as="style" />
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+
+  <title>Contact – Aakash Verma</title>
 </head>
 <body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
 
-  <!-- Skip to main content -->
-  <a href="#main" class="skip-link">Skip to main content</a>
-
-  <!-- Header & Navigation -->
-  <header class="page-header">
-    <nav class="nav-bar" aria-label="Main navigation" role="navigation">
-      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-      <ul class="nav-links" id="nav-links">
+  <!-- Header -->
+  <header>
+    <nav aria-label="Main navigation">
+      <div class="logo" aria-label="Aakash Verma Logo">Aakash Verma</div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="projects.html">Projects</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
       </ul>
     </nav>
-    <div class="page-title">
-      <h1>Let’s Connect</h1>
-      <p>Have a project in mind or just want to say hello? Drop me a message!</p>
-    </div>
   </header>
 
   <!-- Main Content -->
-  <main id="main">
-
-    <!-- Contact Form -->
-    <section class="contact-form" aria-labelledby="form-heading">
-      <h2 id="form-heading" class="visually-hidden">Contact Form</h2>
-      <form action="https://formspree.io/f/your-id" method="POST">
-        <label for="name">Your Name</label>
+  <main id="main-content">
+    <section class="contact-form-section" aria-labelledby="contact-form-heading">
+      <h1 id="contact-form-heading">Get in Touch</h1>
+      <form action="https://formspree.io/f/your-form-id" method="POST" aria-label="Contact form">
+        <label for="name">Name</label>
         <input type="text" id="name" name="name" required />
 
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" required />
 
-        <label for="message">Your Message</label>
+        <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit" class="btn-primary">Send Message</button>
+        <button type="submit" class="btn-submit">Send Message</button>
       </form>
     </section>
 
     <!-- Social Links -->
-    <section class="social-media" aria-labelledby="social-heading">
-      <h2 id="social-heading">Connect With Me</h2>
-      <div class="social-icons">
-        <a href="https://github.com/aakashverma8527" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <img src="github-icon.webp" alt="GitHub icon" loading="lazy" />
-        </a>
-        <a href="https://linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <img src="linkedin-icon.webp" alt="LinkedIn icon" loading="lazy" />
-        </a>
-      </div>
+    <section class="social-links" aria-label="Social media links">
+      <h2>Connect with Me</h2>
+      <a href="https://github.com/aakashverma8527" target="_blank" rel="noopener" aria-label="GitHub profile">
+        <img src="icons/github.svg" alt="GitHub Icon" class="icon" loading="lazy" />
+      </a>
+      <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+        <img src="icons/linkedin.svg" alt="LinkedIn Icon" class="icon" loading="lazy" />
+      </a>
     </section>
 
-    <!-- Calendly Booking -->
-    <section class="booking" aria-labelledby="booking-heading">
+    <!-- Optional Booking Section -->
+    <section class="booking-section" aria-labelledby="booking-heading">
       <h2 id="booking-heading">Prefer to Schedule a Call?</h2>
+      <p>Use the calendar below to book a time that works best for you.</p>
       <iframe
-        src="https://calendly.com/yourhandle/30min"
+        src="https://calendly.com/your-calendly-id"
         width="100%"
-        height="400"
+        height="600"
         frameborder="0"
         loading="lazy"
         title="Schedule a call with Aakash Verma"
+        aria-label="Calendly booking form"
       ></iframe>
     </section>
-
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Aakash Verma | Portfolio Site</p>
+  <footer>
+    <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
   </footer>
-
-  <!-- JavaScript -->
-  <script defer>
-    const toggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-  </script>
 </body>
 </html>
