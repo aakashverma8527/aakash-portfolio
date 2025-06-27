@@ -1,89 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta Information -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Learn more about Aakash Verma – a freelance web developer and data automation specialist with expertise in SOPs, validation workflows, and responsive design." />
-  <title>About Me | Aakash Verma</title>
+  <meta name="description" content="Aakash Verma is a freelance web developer and data automation expert skilled in HTML, CSS, UiPath, Salesforce CRM, and process automation." />
+  <meta name="author" content="Aakash Verma" />
 
   <!-- Open Graph Metadata -->
-  <meta property="og:title" content="About Me | Aakash Verma" />
-  <meta property="og:description" content="Meet Aakash Verma – expert in web development, automation, and scalable SOP-based systems." />
+  <meta property="og:title" content="About Aakash Verma – Web Developer & Data Automation Specialist" />
+  <meta property="og:description" content="Explore Aakash Verma’s expertise in frontend development, automation tools like UiPath, and structured data operations." />
+  <meta property="og:image" content="images/aakash-profile.jpg" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="profile.webp" />
+  <meta property="og:url" content="https://yourdomain.com/about.html" />
 
-  <!-- Styles -->
+  <title>About Aakash Verma</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
 
-  <!-- Skip to Content -->
-  <a href="#main" class="skip-link">Skip to main content</a>
-
-  <!-- Header + Navigation -->
-  <header class="page-header">
-    <nav class="nav-bar" aria-label="Main navigation" role="navigation">
-      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-      <ul class="nav-links" id="nav-links">
+  <!-- Header with Navigation -->
+  <header>
+    <nav aria-label="Main Navigation">
+      <div class="logo" aria-label="Aakash Verma Logo">Aakash Verma</div>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="projects.html">Projects</a></li>
         <li><a href="about.html" class="active" aria-current="page">About</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-
-    <div class="page-title">
-      <h1>About Me</h1>
-    </div>
   </header>
 
   <!-- Main Content -->
-  <main id="main">
-
-    <!-- Profile Intro -->
-    <section class="profile-intro" aria-labelledby="intro-heading">
-      <h2 id="intro-heading" class="visually-hidden">Introduction</h2>
-      <img src="profile.webp" alt="Photo of Aakash Verma" class="profile-img" loading="lazy" />
-      <div class="intro-text">
-        <h2>Hi, I'm Aakash Verma</h2>
-        <p>
-          I'm a freelance web developer and data operations associate with over 2 years of experience in content moderation, SOP structuring, and validation workflows. My passion lies in crafting responsive, accessible websites and simplifying complex data systems through clean design and automation.
-        </p>
-        <p>
-          With hands-on expertise in Salesforce CRM, UiPath, Excel Macros, and Google Sheets, I bring a technical edge to process optimization, especially in domains like eCommerce listing, academic course curation, and data verification.
-        </p>
-      </div>
+  <main id="main-content">
+    <!-- Profile Intro Section -->
+    <section class="profile" aria-labelledby="intro-heading">
+      <img src="images/aakash-profile.jpg" alt="Aakash Verma smiling in a professional setting" class="profile-img" loading="lazy" />
+      <h1 id="intro-heading">Hi, I'm Aakash Verma</h1>
+      <p>I'm a freelance web developer and data automation specialist with a passion for building clean, accessible websites and streamlining business processes. I create structured, user-friendly web interfaces using modern HTML, CSS, and JavaScript.</p>
+      <p>Beyond development, I specialize in automation tools like UiPath and Excel Macros, helping businesses simplify CRM workflows, improve data accuracy, and scale operations. My work blends logic, design, and performance — all under clear SOPs and reliable delivery.</p>
     </section>
 
     <!-- Skills Section -->
     <section class="skills" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Technical Skills</h2>
+      <h2 id="skills-heading">Core Competencies</h2>
       <ul>
-        <li>HTML5, CSS3 – Semantic & Responsive Design</li>
-        <li>JavaScript – UI Interactivity & DOM Manipulation</li>
-        <li>Salesforce CRM & Structured Data Entry</li>
-        <li>SOP Writing & Validation Workflow Design</li>
-        <li>UiPath & Excel Macros for Process Automation</li>
-        <li>Google Sheets – Dashboards & MIS Reporting</li>
-        <li>SEO & Accessibility Best Practices</li>
+        <li>Responsive Web Development (HTML5, CSS3, JavaScript)</li>
+        <li>Cross-browser Testing & Accessibility (WCAG 2.1)</li>
+        <li>UiPath Automation & Workflow Design</li>
+        <li>Salesforce CRM Data Management</li>
+        <li>Excel Macros & VBA Automation</li>
+        <li>Data Validation & SOP Documentation</li>
+        <li>eCommerce Catalog Quality Assurance</li>
+        <li>Academic & Institutional Data Curation</li>
       </ul>
     </section>
 
-    <!-- Resume Download -->
-    <section class="resume-download" aria-labelledby="resume-heading">
+    <!-- Resume Download CTA -->
+    <section class="resume-cta" aria-labelledby="resume-heading">
       <h2 id="resume-heading">Want to Know More?</h2>
-      <a href="Aakash-Verma-Resume.pdf" class="btn-secondary" download>Download My Resume</a>
+      <p>You can download my full resume below to explore my experience and certifications.</p>
+      <a href="docs/Aakash-Verma-Resume.pdf" class="btn-resume" download>📄 Download Resume</a>
     </section>
-
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Aakash Verma | Web Developer Portfolio</p>
+  <footer>
+    <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
   </footer>
-
-  <!-- JavaScript -->
-  <script src="script.js" defer></script>
 </body>
 </html>
