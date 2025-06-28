@@ -1,4 +1,4 @@
-// Smooth scroll to anchors
+// Smooth scroll to anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
@@ -9,8 +9,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Basic form feedback on submit (contact form)
+// Contact Form Submission Feedback
 const contactForm = document.querySelector('.contact-form');
+
 if (contactForm) {
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -24,14 +25,14 @@ if (contactForm) {
       return;
     }
 
-    // Placeholder for actual form processing
+    // Simulate form submission (e.g., via API or email handler)
     alert("Thank you! Your message has been submitted.");
     this.reset();
   });
 }
 
-// Optional: Mobile nav toggle (if added later)
-const navToggle = document.querySelector('.nav-toggle');
+// Optional: Mobile Nav Toggle
+const navToggle = document.querySelector('.nav-toggle'); // Add .nav-toggle in HTML for mobile menu icon
 const navLinks = document.querySelector('.nav-links');
 
 if (navToggle && navLinks) {
