@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Aakash Verma</title>
+  <title>Contact Aakash Verma | Data & CRM Freelancer in Delhi</title>
+  <meta name="description" content="Reach out to Aakash Verma, a freelance expert in Salesforce CRM, data entry, and automation. Located in Rohini, Delhi. Let’s work together!">
+  <meta name="author" content="Aakash Verma">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Navigation -->
   <header>
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main menu">
       <div class="logo">Aakash Verma</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -24,37 +26,66 @@
   <!-- Contact Section -->
   <main>
     <section class="container contact-section">
-      <h1 class="section-title">Get in Touch</h1>
+      <h1 class="section-title">Let’s Connect</h1>
+      <p class="section-subtitle">I'd love to hear about your project. Whether it's data entry, Salesforce management, or e-commerce workflow—I'm ready to help!</p>
 
-      <div class="contact-info">
+      <!-- Contact Info -->
+      <div class="contact-info" role="contentinfo">
         <p><strong>Email:</strong> <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+918527879047">+91 85278 79047</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+918527879047" aria-label="Call Aakash Verma">+91 85278 79047</a></p>
         <p><strong>LinkedIn:</strong> 
           <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer">
             linkedin.com/in/aakash-verma
           </a>
         </p>
-        <p><strong>Location:</strong> Sector 22, Begumpur, Rohini, New Delhi</p>
+        <p><strong>Location:</strong> Sector 22, Begumpur, Rohini, New Delhi, India</p>
       </div>
 
-      <form class="contact-form" action="#" method="post">
+      <!-- Contact Form -->
+      <form class="contact-form" action="#" method="post" aria-label="Contact form">
         <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          placeholder="Enter your full name" 
+          required 
+          autocomplete="name"
+        />
 
         <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="Enter your email address" 
+          required 
+          autocomplete="email"
+        />
 
         <label for="message">Your Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+        <textarea 
+          id="message" 
+          name="message" 
+          rows="5" 
+          placeholder="Tell me how I can help you..." 
+          required
+          autocomplete="off"
+        ></textarea>
 
-        <button type="submit">Send Message</button>
+        <button type="submit" aria-label="Send your message to Aakash Verma">Send Message</button>
+
+        <!-- Form Feedback (placeholder, can be used with JS) -->
+        <p class="form-status success" style="display:none;">✅ Your message has been sent successfully!</p>
+        <p class="form-status error" style="display:none;">❌ Oops! Something went wrong. Please try again.</p>
       </form>
     </section>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Aakash Verma | 
+    <p>© 2025 Aakash Verma</p>
+    <p>
       <a href="mailto:aakashverma852787@outlook.com">Email</a> | 
       <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener">LinkedIn</a>
     </p>
