@@ -246,107 +246,47 @@ footer a {
   text-decoration: none;
 }
 
-/* 🎠 Carousel */
-.carousel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  margin: 2rem 0;
-}
-
-.carousel-btn {
-  background: var(--accent);
-  color: var(--text-light);
-  border: none;
-  font-size: 2rem;
-  padding: 0.5rem 1.2rem;
-  cursor: pointer;
-  z-index: 2;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px var(--shadow-light);
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.carousel-btn:hover {
-  background: var(--accent-hover);
-  transform: scale(1.1);
-}
-
-.carousel-btn.prev {
-  position: absolute;
-  left: 0.5rem;
-}
-
-.carousel-btn.next {
-  position: absolute;
-  right: 0.5rem;
-}
-
+/* 🎨 Featured Projects Grid */
 .project-grid {
-  scroll-behavior: smooth;
-  overflow-x: auto;
   display: flex;
-  scroll-snap-type: x mandatory;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 1.5rem;
-  padding: 1rem;
-  scroll-padding: 1rem;
-  -webkit-overflow-scrolling: touch;
-}
-
-.project-grid::-webkit-scrollbar {
-  display: none;
-}
-.project-grid {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  padding: 1rem 0;
 }
 
 .project-card {
-  scroll-snap-align: center;
-  flex: 0 0 100%;
-  max-width: 100%;
+  flex: 1 1 calc(33.333% - 1rem);
   background-color: var(--card-bg);
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 8px var(--shadow-light);
   border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px var(--shadow-light);
   transition: transform 0.3s ease;
+  text-align: center;
+  max-width: 100%;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
 }
 
-@media (min-width: 768px) {
-  .project-card {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .project-card {
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
-  }
-}
-
-/* ✨ Gradient Animation */
-@keyframes animated-gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.project-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 /* 📱 Responsive Fixes */
 @media (max-width: 768px) {
+  .project-card {
+    flex: 1 1 100%;
+  }
+
   .hero,
   .about-content {
     flex-direction: column;
@@ -364,5 +304,18 @@ footer a {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+  }
+}
+
+/* ✨ Gradient Animation */
+@keyframes animated-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
