@@ -11,8 +11,9 @@
 
   <!-- Navigation -->
   <header>
-    <nav class="navbar" aria-label="Main navigation">
+    <nav class="navbar container" aria-label="Main navigation">
       <div class="logo" aria-label="Aakash Verma Logo">Aakash Verma</div>
+      <button class="nav-toggle" aria-label="Toggle Menu">&#9776;</button>
       <ul class="nav-links">
         <li><a href="index.html" class="active" aria-current="page">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -25,18 +26,18 @@
   <!-- Hero Section -->
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-content" data-animate="fade-in-up">
+      <div class="hero-content animate-fade-in">
         <h1 id="hero-title">Hi, I'm Aakash Verma</h1>
         <h2 class="tagline">Boosting productivity with precision data & CRM solutions</h2>
         <p class="intro-text">
           Process Associate with 2+ years of experience in Salesforce, content moderation, and eCommerce operations.
         </p>
         <div class="hero-buttons">
-          <a href="contact.html" class="btn primary-cta" role="button">Hire Me</a>
-          <a href="about.html" class="btn secondary-cta" role="button">View Profile</a>
+          <a href="contact.html" class="btn primary-cta">Hire Me</a>
+          <a href="about.html" class="btn secondary-cta">View Profile</a>
         </div>
       </div>
-      <div class="hero-image" data-animate="zoom-in">
+      <div class="hero-image animate-zoom-in">
         <img src="images/profile.jpg" alt="Professional headshot of Aakash Verma" loading="lazy">
       </div>
     </section>
@@ -48,7 +49,7 @@
 
       <div class="carousel-wrapper">
         <button class="carousel-btn prev" aria-label="Previous Project">‹</button>
-        <div class="project-grid" id="projectCarousel">
+        <div class="carousel-track" id="projectCarousel">
           <div class="project-card">
             <img src="images/studocu-data-validation.png" alt="Dashboard snapshot from Studocu data validation project">
             <h3>Studocu Data Validation</h3>
@@ -75,7 +76,7 @@
       </div>
     </section>
 
-    <!-- Call to Action Banner -->
+    <!-- CTA Banner -->
     <section class="cta-banner" aria-labelledby="cta-title">
       <h2 id="cta-title">Looking for a reliable data or CRM expert?</h2>
       <p>Let’s collaborate to structure, clean, and enrich your business data efficiently.</p>
@@ -84,7 +85,7 @@
   </main>
 
   <!-- Footer -->
-  <footer role="contentinfo">
+  <footer role="contentinfo" class="footer">
     <p>© 2025 Aakash Verma</p>
     <p>
       <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener">LinkedIn</a> |
@@ -92,6 +93,6 @@
     </p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
