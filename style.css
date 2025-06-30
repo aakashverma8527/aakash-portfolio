@@ -1,75 +1,199 @@
-/* 🌈 Updated Theme with Animated Gradient Section */
+/* 🌸 Updated Theme: Pastel & Modern */
 :root {
-  --bg-light: #f0f4f8;
-  --bg-dark: #0f172a;
-  --text-dark: #0f172a;
-  --text-light: #f8fafc;
-  --accent: #6366f1;
-  --accent-hover: #4f46e5;
-  --gradient-start: #06b6d4;
-  --gradient-mid: #3b82f6;
-  --gradient-end: #8b5cf6;
-  --shadow-light: rgba(0, 0, 0, 0.06);
-  --shadow-dark: rgba(255, 255, 255, 0.08);
-  --border-color: #cbd5e1;
+  --bg-light: #fef6ff;
+  --bg-dark: #1f2937;
+  --text-dark: #1f2937;
+  --text-light: #fefefe;
+  --accent: #ff85a1;
+  --accent-hover: #e75480;
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-dark: rgba(255, 255, 255, 0.1);
+  --border-color: #f3d1dc;
   --card-bg: #ffffff;
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 3rem;
-  --radius: 8px;
-  --transition-fast: 0.2s ease-in-out;
-  --transition-slow: 0.4s ease;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-light: #0f172a;
-    --text-dark: #f8fafc;
-    --card-bg: #1e293b;
-    --shadow-light: rgba(255, 255, 255, 0.05);
-    --border-color: #475569;
+    --bg-light: #1f2937;
+    --text-dark: #fefefe;
+    --card-bg: #374151;
+    --shadow-light: rgba(255, 255, 255, 0.06);
+    --border-color: #6b7280;
   }
 }
 
-/* 🔥 Animated Gradient Section */
-.animated-section {
-  background: linear-gradient(-45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end), var(--gradient-mid));
-  background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;
+/* ✅ Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a, button {
+  transition: all 0.3s ease;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px dashed var(--accent);
+  outline-offset: 4px;
+}
+
+/* ✅ Navbar */
+.navbar {
+  background-color: var(--bg-dark);
   color: var(--text-light);
-  padding: var(--space-lg) var(--space-md);
-  border-radius: var(--radius);
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
 }
 
-.animated-section h2 {
-  font-size: 2.25rem;
-  margin-bottom: var(--space-sm);
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.animated-section p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-@keyframes gradientMove {
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--accent);
+  width: 0;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.nav-links a:hover::after,
+.nav-links .active::after {
+  width: 100%;
+}
+
+/* ✅ Layout Containers */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+}
+
+/* ✅ Hero */
+@keyframes animated-gradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* ✅ Fade-in Animation */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(-45deg, #ffeefc, #fbefff, #fef6ff, #ffeefc);
+  background-size: 400% 400%;
+  animation: animated-gradient 15s ease infinite;
+  padding: 2rem;
+  gap: 2rem;
 }
 
-/* ✅ Existing styles will continue below... */
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-hover);
+}
+
+.hero-image img {
+  max-width: 260px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px var(--shadow-light);
+  transition: transform 0.4s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Buttons */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* ✅ Contact */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px #fcd5e4;
+}
+
+.contact-form button {
+  background-color: var(--accent);
+}
+
+.contact-form button:hover {
+  background-color: var(--accent-hover);
+}
+
+footer {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+footer a {
+  color: #ffbfd0;
+}
+
+/* Responsive, CTA, Services, Projects, etc. remain structurally same with updated vars */
