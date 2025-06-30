@@ -9,102 +9,124 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Navigation -->
+  <!-- Header -->
   <header>
-    <nav class="navbar" role="navigation" aria-label="Main menu">
+    <nav class="navbar container" role="navigation" aria-label="Main menu">
       <div class="logo">Aakash Verma</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main Contact Section -->
-  <main>
-    <section class="container contact-section">
-      <h1 class="section-title">Let's Talk 👋</h1>
-      <p class="section-subtitle">Whether you need clean data, efficient CRM handling, or help with automation—I’m here to assist. Reach out and let's make your workflow smoother.</p>
+  <!-- Main Section -->
+  <main class="container">
+    <section class="contact-section" aria-labelledby="contact-title">
+      <h1 id="contact-title" class="section-title">Let's Connect 👋</h1>
+      <p class="section-subtitle">Whether you need clean data, efficient CRM handling, or help with automation—I’m here to support your business goals. Fill out the form or drop a message directly.</p>
 
-      <!-- Contact Info Block -->
+      <!-- Contact Information -->
       <div class="contact-info" role="contentinfo">
-        <p><strong>Email:</strong> <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+918527879047" aria-label="Call Aakash Verma">+91 85278 79047</a></p>
-        <p><strong>LinkedIn:</strong> 
-          <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer">
-            linkedin.com/in/aakash-verma
-          </a>
-        </p>
-        <p><strong>Location:</strong> Sector 22, Begumpur, Rohini, New Delhi, India</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+918527879047">+91 85278 79047</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener">linkedin.com/in/aakash-verma</a></li>
+          <li><strong>Location:</strong> Rohini Sector 22, New Delhi, India</li>
+        </ul>
       </div>
 
       <!-- Contact Form -->
-      <form class="contact-form" action="#" method="post" aria-label="Contact form" novalidate>
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input 
-            type="text" 
-            id="name" 
-            name="name" 
-            placeholder="Full Name" 
-            required 
-            autocomplete="name"
-            aria-required="true"
-          />
-          <span class="input-error" id="name-error" aria-live="polite"></span>
-        </div>
+      <form class="contact-form" action="#" method="post" aria-label="Contact Form" novalidate>
+        <fieldset>
+          <legend>Send a Message</legend>
 
-        <div class="form-group">
-          <label for="email">Your Email</label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            placeholder="you@example.com" 
-            required 
-            autocomplete="email"
-            aria-required="true"
-          />
-          <span class="input-error" id="email-error" aria-live="polite"></span>
-        </div>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Full Name" required aria-required="true" autocomplete="name" />
+            <span class="input-error" id="name-error" aria-live="polite"></span>
+          </div>
 
-        <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea 
-            id="message" 
-            name="message" 
-            rows="5" 
-            placeholder="How can I help you today?" 
-            required 
-            autocomplete="off"
-            aria-required="true"
-          ></textarea>
-          <span class="input-error" id="message-error" aria-live="polite"></span>
-        </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true" autocomplete="email" />
+            <span class="input-error" id="email-error" aria-live="polite"></span>
+          </div>
 
-        <button type="submit" class="btn primary-cta" aria-label="Send your message to Aakash Verma">Send Message</button>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can I help you today?" required aria-required="true"></textarea>
+            <span class="input-error" id="message-error" aria-live="polite"></span>
+          </div>
 
-        <!-- Form Feedback -->
-        <div class="form-feedback" aria-live="polite">
-          <p class="form-status success" style="display:none;">✅ Thanks for reaching out! I'll get back to you shortly.</p>
-          <p class="form-status error" style="display:none;">❌ Something went wrong. Please try again or contact me via email.</p>
-        </div>
+          <button type="submit" class="btn primary-cta" aria-label="Send your message to Aakash Verma">Send Message</button>
+
+          <!-- Feedback Area -->
+          <div class="form-feedback" aria-live="polite">
+            <p class="form-status success" style="display: none;">✅ Thanks for reaching out! I'll get back to you soon.</p>
+            <p class="form-status error" style="display: none;">❌ Something went wrong. Please try again later or contact me via email.</p>
+          </div>
+        </fieldset>
       </form>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <p>© 2025 Aakash Verma</p>
     <p>
-      <a href="mailto:aakashverma852787@outlook.com">Email</a> | 
+      <a href="mailto:aakashverma852787@outlook.com">Email</a> |
       <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Inline Validation & UX Feedback -->
+  <script>
+    document.querySelector('.contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const message = document.getElementById('message');
+      const successMsg = document.querySelector('.form-status.success');
+      const errorMsg = document.querySelector('.form-status.error');
+
+      let hasError = false;
+
+      // Reset feedback
+      [name, email, message].forEach(field => field.classList.remove('invalid'));
+      document.querySelectorAll('.input-error').forEach(span => span.textContent = '');
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      if (name.value.trim() === '') {
+        name.classList.add('invalid');
+        document.getElementById('name-error').textContent = 'Name is required.';
+        hasError = true;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email.value)) {
+        email.classList.add('invalid');
+        document.getElementById('email-error').textContent = 'Enter a valid email address.';
+        hasError = true;
+      }
+
+      if (message.value.trim().length < 10) {
+        message.classList.add('invalid');
+        document.getElementById('message-error').textContent = 'Message must be at least 10 characters.';
+        hasError = true;
+      }
+
+      if (!hasError) {
+        successMsg.style.display = 'block';
+        this.reset();
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>
