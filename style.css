@@ -1,28 +1,28 @@
-/* CSS Custom Properties for Light/Dark Support */
+/* 🌙 Light & Dark Theme Variables */
 :root {
-  --bg-light: #f9fafc;
-  --bg-dark: #0f172a;
-  --text-dark: #0f172a;
-  --text-light: #ffffff;
+  --bg-light: #f8fafc;
+  --bg-dark: #1e293b;
+  --text-dark: #1e293b;
+  --text-light: #f1f5f9;
   --accent: #0ea5e9;
-  --accent-hover: #0369a1;
-  --shadow-light: rgba(0, 0, 0, 0.06);
+  --accent-hover: #0284c7;
+  --shadow-light: rgba(0, 0, 0, 0.05);
   --shadow-dark: rgba(255, 255, 255, 0.08);
-  --border-color: #ccc;
+  --border-color: #cbd5e1;
   --card-bg: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-light: #0f172a;
-    --text-dark: #ffffff;
-    --card-bg: #1e293b;
+    --bg-light: #1e293b;
+    --text-dark: #f1f5f9;
+    --card-bg: #334155;
     --shadow-light: rgba(255, 255, 255, 0.05);
-    --border-color: #444;
+    --border-color: #475569;
   }
 }
 
-/* Reset and Base */
+/* ✅ Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -41,9 +41,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Links & Buttons Focus Styles */
-a,
-button {
+/* ✅ Links & Focus */
+a, button {
   transition: all 0.3s ease;
 }
 
@@ -53,7 +52,7 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
-/* Navbar */
+/* ✅ Navbar */
 .navbar {
   background-color: var(--bg-dark);
   color: var(--text-light);
@@ -100,7 +99,7 @@ button:focus-visible {
   width: 100%;
 }
 
-/* Containers & Section Titles */
+/* ✅ Layout Containers */
 .container {
   max-width: 1100px;
   margin: 2rem auto;
@@ -115,19 +114,13 @@ button:focus-visible {
   padding-left: 10px;
 }
 
-.section-subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: #555;
-}
-
-/* Hero Section */
+/* ✅ Hero */
 .hero {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background: #e0f2fe;
+  background: #f0f9ff;
   padding: 2rem;
   gap: 2rem;
   animation: fade-in 0.6s ease-in;
@@ -156,7 +149,7 @@ button:focus-visible {
   transform: scale(1.05);
 }
 
-/* Button */
+/* ✅ Buttons */
 .btn {
   display: inline-block;
   background: var(--accent);
@@ -172,7 +165,7 @@ button:focus-visible {
   transform: translateY(-2px);
 }
 
-/* About */
+/* ✅ About */
 .about-content {
   display: flex;
   flex-wrap: wrap;
@@ -191,7 +184,7 @@ button:focus-visible {
   min-width: 280px;
 }
 
-/* Skills */
+/* ✅ Skills */
 .skills-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -200,14 +193,14 @@ button:focus-visible {
 }
 
 .skills-list li {
-  background: #e0f2fe;
+  background: #f0f9ff;
   padding: 0.75rem 1rem;
   border-radius: 6px;
   color: var(--accent-hover);
   font-weight: 500;
 }
 
-/* Timeline */
+/* ✅ Timeline */
 .timeline-item {
   background: #f1f5f9;
   padding: 1rem;
@@ -216,7 +209,7 @@ button:focus-visible {
   border-radius: 6px;
 }
 
-/* Services Grid */
+/* ✅ Services */
 .services-grid {
   display: grid;
   gap: 1.5rem;
@@ -243,10 +236,10 @@ button:focus-visible {
 
 .service-card p {
   font-size: 0.95rem;
-  color: #444;
+  color: #475569;
 }
 
-/* Projects */
+/* ✅ Projects */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -285,13 +278,13 @@ button:focus-visible {
 
 .project-card p {
   font-size: 0.95rem;
-  color: #444;
+  color: #475569;
 }
 
-/* CTA Section */
+/* ✅ CTA */
 .cta {
   text-align: center;
-  background: #e0f2fe;
+  background: #f0f9ff;
   padding: 2rem;
   margin-top: 3rem;
 }
@@ -301,13 +294,13 @@ button:focus-visible {
   color: var(--text-dark);
 }
 
-/* Contact Section */
+/* ✅ Contact */
 .contact-info p {
   margin-bottom: 0.75rem;
 }
 
 .contact-info a {
-  color: #0077cc;
+  color: var(--accent-hover);
   text-decoration: none;
 }
 
@@ -350,7 +343,7 @@ button:focus-visible {
   background-color: var(--accent-hover);
 }
 
-/* Form Feedback */
+/* ✅ Form Feedback */
 .form-status {
   font-size: 0.95rem;
   margin-top: 0.5rem;
@@ -364,7 +357,7 @@ button:focus-visible {
   color: red;
 }
 
-/* Footer */
+/* ✅ Footer */
 footer {
   text-align: center;
   padding: 1rem;
@@ -378,7 +371,7 @@ footer a {
   text-decoration: none;
 }
 
-/* Responsive */
+/* ✅ Responsive Tweaks */
 @media (max-width: 768px) {
   .about-content,
   .hero {
@@ -404,8 +397,14 @@ footer a {
   }
 }
 
-/* Subtle Fade Animation */
+/* ✅ Animation */
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
