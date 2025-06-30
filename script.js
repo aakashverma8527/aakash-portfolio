@@ -1,20 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Smooth scroll for anchor links
+  // ✅ Smooth Scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener(
-      "click",
-      function (e) {
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth" });
-        }
-      },
-      { passive: true }
-    );
+    anchor.addEventListener("click", e => {
+      const target = document.querySelector(anchor.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        target.setAttribute("tabindex", "-1"); // for accessibility
+        target.focus({ preventScroll: true });
+      }
+    }, { passive: true });
   });
 
-  // Contact form handling with accessibility
+  // ✅ Reveal on scroll (Intersection Observer)
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-in");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+  // ✅ Contact form with validation & accessibility
   const contactForm = document.querySelector(".contact-form");
 
   if (contactForm) {
@@ -31,16 +44,32 @@ document.addEventListener("DOMContentLoaded", () => {
       const message = this.querySelector("#message");
 
       let hasError = false;
+
+      // Clear previous errors
       [name, email, message].forEach(input => {
+        const errorEl = input.nextElementSibling;
+        if (errorEl && errorEl.classList.contains("input-error-msg")) {
+          errorEl.remove();
+        }
         input.classList.remove("input-error");
+        input.removeAttribute("aria-invalid");
+      });
+
+      // Validate fields
+      [name, email, message].forEach(input => {
         if (!input.value.trim()) {
+          const errorText = document.createElement("div");
+          errorText.className = "input-error-msg";
+          errorText.textContent = `${input.placeholder || "This field"} is required.`;
+          input.insertAdjacentElement("afterend", errorText);
           input.classList.add("input-error");
+          input.setAttribute("aria-invalid", "true");
           hasError = true;
         }
       });
 
       if (hasError) {
-        statusDiv.textContent = "Please fill in all fields.";
+        statusDiv.textContent = "Please correct the highlighted fields.";
         statusDiv.className = "form-status error";
         statusDiv.focus();
         return;
@@ -53,20 +82,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Mobile nav toggle
+  // ✅ Mobile Navigation Toggle
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".nav-links");
 
   if (navToggle && navLinks) {
-    navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-      navToggle.setAttribute(
-        "aria-expanded",
-        navLinks.classList.contains("open")
-      );
-    });
+    const toggleMenu = () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen);
+      navLinks.style.maxHeight = isOpen ? navLinks.scrollHeight + "px" : null;
+    };
 
-    // Close nav if user clicks outside
+    navToggle.addEventListener("click", toggleMenu);
+
+    // Close menu when clicking outside
     document.addEventListener("click", e => {
       if (
         !navToggle.contains(e.target) &&
@@ -75,7 +104,17 @@ document.addEventListener("DOMContentLoaded", () => {
       ) {
         navLinks.classList.remove("open");
         navToggle.setAttribute("aria-expanded", "false");
+        navLinks.style.maxHeight = null;
       }
+    });
+
+    // Close menu on link click (single-page style)
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navLinks.style.maxHeight = null;
+      });
     });
   }
 });
