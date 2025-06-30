@@ -1,36 +1,42 @@
-/* 🌟 Cinematic Portfolio Style (Attractive + Readable) */
+/* ======================================================================
+   🌐 Aakash Verma Portfolio - styles.css
+   Semantic, Accessible, Responsive, and Scalable CSS
+   ====================================================================== */
 
+/* ---------- Root Variables ---------- */
 :root {
-  --bg-light: #fdfaf6;
-  --bg-dark: #121418;
-  --text-dark: #2a2a2a;
-  --text-light: #f3f3f3;
-  --accent: #b46060;
-  --accent-hover: #8e3f3f;
-  --shadow-light: rgba(0, 0, 0, 0.05);
-  --shadow-dark: rgba(255, 255, 255, 0.07);
-  --border-color: #eccccc;
-  --card-bg: #ffffff;
-  --hero-gradient-start: #fff0eb;
-  --hero-gradient-mid: #fbe4de;
-  --hero-gradient-end: #fdfaf6;
+  --clr-bg-light: #fdfaf6;
+  --clr-bg-dark: #121418;
+  --clr-text-dark: #2a2a2a;
+  --clr-text-light: #f3f3f3;
+  --clr-accent: #b46060;
+  --clr-accent-hover: #8e3f3f;
+  --clr-border: #eccccc;
+  --clr-card-bg: #ffffff;
+  --clr-shadow-light: rgba(0, 0, 0, 0.05);
+  --clr-shadow-dark: rgba(255, 255, 255, 0.07);
+  --clr-muted: #6b7280;
+  --gradient-start: #fff0eb;
+  --gradient-mid: #fbe4de;
+  --gradient-end: #fdfaf6;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-light: #121418;
-    --text-dark: #f3f3f3;
-    --card-bg: #1f232a;
-    --shadow-light: rgba(255, 255, 255, 0.07);
-    --border-color: #3c404a;
-    --hero-gradient-start: #292c36;
-    --hero-gradient-mid: #20232b;
-    --hero-gradient-end: #1c1e25;
-    --accent: #f27474;
-    --accent-hover: #f03c3c;
+    --clr-bg-light: #121418;
+    --clr-text-dark: #f3f3f3;
+    --clr-card-bg: #1f232a;
+    --clr-shadow-light: rgba(255, 255, 255, 0.07);
+    --clr-border: #3c404a;
+    --gradient-start: #292c36;
+    --gradient-mid: #20232b;
+    --gradient-end: #1c1e25;
+    --clr-accent: #f27474;
+    --clr-accent-hover: #f03c3c;
   }
 }
 
+/* ---------- Reset ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -38,127 +44,137 @@
 }
 
 body {
-  font-family: "Segoe UI", Roboto, sans-serif;
-  background-color: var(--bg-light);
-  color: var(--text-dark);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--clr-bg-light);
+  color: var(--clr-text-dark);
   line-height: 1.6;
-  transition: background 0.5s ease, color 0.5s ease;
+  transition: background 0.4s ease, color 0.4s ease;
   -webkit-font-smoothing: antialiased;
 }
 
-a, button {
+a,
+button {
   transition: all 0.3s ease;
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px dashed var(--accent);
+  outline: 3px dashed var(--clr-accent);
   outline-offset: 4px;
 }
 
-/* 🔝 Navbar */
-.navbar {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  flex-wrap: wrap;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-}
-
-.nav-links a::after {
-  content: '';
-  display: block;
-  height: 2px;
-  background: var(--accent);
-  width: 0;
-  transition: width 0.3s ease;
+/* ---------- Skip Link ---------- */
+.skip-link {
   position: absolute;
-  bottom: -4px;
+  top: -40px;
   left: 0;
+  background: var(--clr-accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  text-decoration: none;
 }
 
-.nav-links a:hover::after,
-.nav-links .active::after {
-  width: 100%;
+.skip-link:focus {
+  top: 0;
 }
 
-/* 📦 Layout */
+/* ---------- Layout ---------- */
 .container {
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 .section-title {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: var(--text-dark);
-  border-left: 4px solid var(--accent);
-  padding-left: 10px;
+  color: var(--clr-text-dark);
+  border-left: 4px solid var(--clr-accent);
+  padding-left: 0.75rem;
 }
 
-/* 🎬 Hero Section */
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-bg-dark);
+  color: var(--clr-text-light);
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.navbar__brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-text-light);
+  text-decoration: none;
+}
+
+.navbar__menu {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.navbar__menu a {
+  color: var(--clr-text-light);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar__menu a::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  background: var(--clr-accent);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+
+.navbar__menu a:hover::after,
+.navbar__menu a[aria-current="page"]::after {
+  width: 100%;
+}
+
+/* ---------- Hero Section ---------- */
 .hero {
-  background: linear-gradient(-45deg, var(--hero-gradient-start), var(--hero-gradient-mid), var(--hero-gradient-end), var(--hero-gradient-start));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(-45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
   background-size: 400% 400%;
   animation: animated-gradient 18s ease infinite;
   padding: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
-  align-items: center;
+  border-radius: 8px;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--text-dark);
+.hero__content {
+  flex: 1 1 400px;
 }
 
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: var(--accent-hover);
-}
-
-.hero-image img {
-  max-width: 260px;
+.hero__image img {
+  width: 260px;
   border-radius: 50%;
-  box-shadow: 0 4px 10px var(--shadow-light);
+  box-shadow: 0 4px 10px var(--clr-shadow-light);
   transition: transform 0.4s ease;
 }
 
-.hero-image img:hover {
+.hero__image img:hover {
   transform: scale(1.05);
 }
 
-/* 🎯 Button */
+/* ---------- Button ---------- */
 .btn {
   display: inline-block;
-  background: var(--accent);
-  color: var(--text-light);
+  background: var(--clr-accent);
+  color: var(--clr-text-light);
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
@@ -166,59 +182,71 @@ button:focus-visible {
 }
 
 .btn:hover {
-  background: var(--accent-hover);
+  background: var(--clr-accent-hover);
   transform: translateY(-2px);
 }
 
-/* 💼 Services */
-.service-card {
-  background-color: var(--card-bg);
-  padding: 1.2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px var(--shadow-light);
-  border-left: 4px solid var(--accent);
+.btn--secondary {
+  background: transparent;
+  border: 2px solid var(--clr-accent);
+  color: var(--clr-accent);
+}
+
+.btn--secondary:hover {
+  background: var(--clr-accent);
+  color: #fff;
+}
+
+/* ---------- Cards & Grids ---------- */
+.services-grid,
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card,
+.project-card {
+  background-color: var(--clr-card-bg);
+  border-left: 4px solid var(--clr-accent);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px var(--clr-shadow-light);
   transition: transform 0.3s ease;
 }
 
-.service-card:hover {
+.service-card:hover,
+.project-card:hover {
   transform: translateY(-5px);
 }
 
-.service-card h3 {
-  color: var(--text-dark);
-  margin-bottom: 0.5rem;
+.project-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-bottom: 1rem;
 }
 
-.service-card p {
-  font-size: 0.95rem;
-  color: #6b7280;
-}
-
-.services-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-/* 📧 Contact */
+/* ---------- Contact Form ---------- */
 .contact-form input,
 .contact-form textarea {
+  width: 100%;
   padding: 0.75rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--clr-border);
   border-radius: 6px;
   font-size: 1rem;
-  width: 100%;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--accent);
-  outline: none;
+  border-color: var(--clr-accent);
   box-shadow: 0 0 0 2px #fad6e8;
+  outline: none;
 }
 
 .contact-form button {
-  background-color: var(--accent);
+  background-color: var(--clr-accent);
   color: #fff;
   border: none;
   padding: 0.8rem;
@@ -229,85 +257,53 @@ button:focus-visible {
 }
 
 .contact-form button:hover {
-  background-color: var(--accent-hover);
+  background-color: var(--clr-accent-hover);
 }
 
-/* 🦶 Footer */
-footer {
+/* ---------- Footer ---------- */
+.site-footer {
   text-align: center;
   padding: 1rem;
-  background: var(--bg-dark);
-  color: var(--text-light);
-  margin-top: 2rem;
+  background: var(--clr-bg-dark);
+  color: var(--clr-text-light);
 }
 
-footer a {
+.footer__links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+}
+
+.footer__links a {
   color: #fbc2d2;
   text-decoration: none;
 }
 
-/* 🎨 Featured Projects Grid */
-.project-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1rem 0;
-}
-
-.project-card {
-  flex: 1 1 calc(33.333% - 1rem);
-  background-color: var(--card-bg);
-  border-left: 4px solid var(--accent);
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 4px 8px var(--shadow-light);
-  transition: transform 0.3s ease;
-  text-align: center;
-  max-width: 100%;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-}
-
-.project-card img {
-  width: 100%;
-  height: 140px;
-  object-fit: contain;
-  background-color: #fff;
-  border-radius: 6px;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-/* 📱 Responsive Fixes */
+/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
-  .project-card {
-    flex: 1 1 100%;
-  }
-
   .hero,
-  .about-content {
+  .about-wrapper {
     flex-direction: column;
     text-align: center;
     gap: 1.5rem;
   }
 
-  .hero-image img,
+  .hero__image img,
   .about-image img {
     width: 200px;
     margin: 0 auto;
   }
 
-  .nav-links {
+  .navbar__menu {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
 }
 
-/* ✨ Gradient Animation */
+/* ---------- Animations ---------- */
 @keyframes animated-gradient {
   0% {
     background-position: 0% 50%;
