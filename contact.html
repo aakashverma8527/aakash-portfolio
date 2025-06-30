@@ -23,13 +23,13 @@
     </nav>
   </header>
 
-  <!-- Contact Section -->
+  <!-- Main Contact Section -->
   <main>
     <section class="container contact-section">
-      <h1 class="section-title">Let’s Connect</h1>
-      <p class="section-subtitle">I'd love to hear about your project. Whether it's data entry, Salesforce management, or e-commerce workflow—I'm ready to help!</p>
+      <h1 class="section-title">Let's Talk 👋</h1>
+      <p class="section-subtitle">Whether you need clean data, efficient CRM handling, or help with automation—I’m here to assist. Reach out and let's make your workflow smoother.</p>
 
-      <!-- Contact Info -->
+      <!-- Contact Info Block -->
       <div class="contact-info" role="contentinfo">
         <p><strong>Email:</strong> <a href="mailto:aakashverma852787@outlook.com">aakashverma852787@outlook.com</a></p>
         <p><strong>Phone:</strong> <a href="tel:+918527879047" aria-label="Call Aakash Verma">+91 85278 79047</a></p>
@@ -42,42 +42,56 @@
       </div>
 
       <!-- Contact Form -->
-      <form class="contact-form" action="#" method="post" aria-label="Contact form">
-        <label for="name">Your Name</label>
-        <input 
-          type="text" 
-          id="name" 
-          name="name" 
-          placeholder="Enter your full name" 
-          required 
-          autocomplete="name"
-        />
+      <form class="contact-form" action="#" method="post" aria-label="Contact form" novalidate>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            placeholder="Full Name" 
+            required 
+            autocomplete="name"
+            aria-required="true"
+          />
+          <span class="input-error" id="name-error" aria-live="polite"></span>
+        </div>
 
-        <label for="email">Your Email</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          placeholder="Enter your email address" 
-          required 
-          autocomplete="email"
-        />
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="you@example.com" 
+            required 
+            autocomplete="email"
+            aria-required="true"
+          />
+          <span class="input-error" id="email-error" aria-live="polite"></span>
+        </div>
 
-        <label for="message">Your Message</label>
-        <textarea 
-          id="message" 
-          name="message" 
-          rows="5" 
-          placeholder="Tell me how I can help you..." 
-          required
-          autocomplete="off"
-        ></textarea>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea 
+            id="message" 
+            name="message" 
+            rows="5" 
+            placeholder="How can I help you today?" 
+            required 
+            autocomplete="off"
+            aria-required="true"
+          ></textarea>
+          <span class="input-error" id="message-error" aria-live="polite"></span>
+        </div>
 
-        <button type="submit" aria-label="Send your message to Aakash Verma">Send Message</button>
+        <button type="submit" class="btn primary-cta" aria-label="Send your message to Aakash Verma">Send Message</button>
 
-        <!-- Form Feedback (placeholder, can be used with JS) -->
-        <p class="form-status success" style="display:none;">✅ Your message has been sent successfully!</p>
-        <p class="form-status error" style="display:none;">❌ Oops! Something went wrong. Please try again.</p>
+        <!-- Form Feedback -->
+        <div class="form-feedback" aria-live="polite">
+          <p class="form-status success" style="display:none;">✅ Thanks for reaching out! I'll get back to you shortly.</p>
+          <p class="form-status error" style="display:none;">❌ Something went wrong. Please try again or contact me via email.</p>
+        </div>
       </form>
     </section>
   </main>
