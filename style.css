@@ -1,28 +1,33 @@
-/* 🌸 Full Cinematic Pastel Style CSS */
+/* 🌟 Cinematic Portfolio Style (Attractive + Readable) */
 
 :root {
-  --bg-light: #fdf6f9;
-  --bg-dark: #1c1f24;
-  --text-dark: #2b2d42;
-  --text-light: #fefefe;
-  --accent: #d87ca0;
-  --accent-hover: #a64c72;
-  --shadow-light: rgba(0, 0, 0, 0.08);
-  --shadow-dark: rgba(255, 255, 255, 0.1);
-  --border-color: #f3ccd6;
+  --bg-light: #fdfaf6;
+  --bg-dark: #121418;
+  --text-dark: #2a2a2a;
+  --text-light: #f3f3f3;
+  --accent: #b46060;
+  --accent-hover: #8e3f3f;
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-dark: rgba(255, 255, 255, 0.07);
+  --border-color: #eccccc;
   --card-bg: #ffffff;
-  --hero-gradient-start: #ffe2ec;
-  --hero-gradient-mid: #fce7f3;
-  --hero-gradient-end: #fdf6f9;
+  --hero-gradient-start: #fff0eb;
+  --hero-gradient-mid: #fbe4de;
+  --hero-gradient-end: #fdfaf6;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-light: #1c1f24;
-    --text-dark: #fefefe;
-    --card-bg: #2d323a;
-    --shadow-light: rgba(255, 255, 255, 0.06);
-    --border-color: #4b5563;
+    --bg-light: #121418;
+    --text-dark: #f3f3f3;
+    --card-bg: #1f232a;
+    --shadow-light: rgba(255, 255, 255, 0.07);
+    --border-color: #3c404a;
+    --hero-gradient-start: #292c36;
+    --hero-gradient-mid: #20232b;
+    --hero-gradient-end: #1c1e25;
+    --accent: #f27474;
+    --accent-hover: #f03c3c;
   }
 }
 
@@ -51,6 +56,7 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
+/* 🔝 Navbar */
 .navbar {
   background-color: var(--bg-dark);
   color: var(--text-light);
@@ -97,6 +103,7 @@ button:focus-visible {
   width: 100%;
 }
 
+/* 📦 Layout */
 .container {
   max-width: 1100px;
   margin: 2rem auto;
@@ -111,6 +118,7 @@ button:focus-visible {
   padding-left: 10px;
 }
 
+/* 🎬 Hero Section */
 .hero {
   background: linear-gradient(-45deg, var(--hero-gradient-start), var(--hero-gradient-mid), var(--hero-gradient-end), var(--hero-gradient-start));
   background-size: 400% 400%;
@@ -146,6 +154,7 @@ button:focus-visible {
   transform: scale(1.05);
 }
 
+/* 🎯 Button */
 .btn {
   display: inline-block;
   background: var(--accent);
@@ -161,6 +170,7 @@ button:focus-visible {
   transform: translateY(-2px);
 }
 
+/* 💼 Services */
 .service-card {
   background-color: var(--card-bg);
   padding: 1.2rem;
@@ -190,12 +200,14 @@ button:focus-visible {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+/* 📧 Contact */
 .contact-form input,
 .contact-form textarea {
   padding: 0.75rem;
   border: 1px solid var(--border-color);
   border-radius: 6px;
   font-size: 1rem;
+  width: 100%;
 }
 
 .contact-form input:focus,
@@ -220,6 +232,7 @@ button:focus-visible {
   background-color: var(--accent-hover);
 }
 
+/* 🦶 Footer */
 footer {
   text-align: center;
   padding: 1rem;
@@ -233,6 +246,93 @@ footer a {
   text-decoration: none;
 }
 
+/* 🎠 Carousel */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.carousel-btn {
+  background: var(--accent);
+  color: var(--text-light);
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px var(--shadow-light);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--accent-hover);
+  transform: scale(1.1);
+}
+
+.carousel-btn.prev {
+  position: absolute;
+  left: 0.5rem;
+}
+
+.carousel-btn.next {
+  position: absolute;
+  right: 0.5rem;
+}
+
+.project-grid {
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding: 1rem;
+  scroll-padding: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.project-grid::-webkit-scrollbar {
+  display: none;
+}
+.project-grid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.project-card {
+  scroll-snap-align: center;
+  flex: 0 0 100%;
+  max-width: 100%;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px var(--shadow-light);
+  border-left: 4px solid var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+@media (min-width: 768px) {
+  .project-card {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-card {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+}
+
+/* ✨ Gradient Animation */
 @keyframes animated-gradient {
   0% {
     background-position: 0% 50%;
@@ -245,6 +345,7 @@ footer a {
   }
 }
 
+/* 📱 Responsive Fixes */
 @media (max-width: 768px) {
   .hero,
   .about-content {
