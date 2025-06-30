@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Aakash Verma – Freelance Salesforce CRM and Data Validation Specialist based in Delhi. Explore featured projects and hire for remote or onsite support.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aakash Verma – Freelance Salesforce CRM and Data Validation Specialist based in Delhi. Explore featured projects and hire for remote or onsite support." />
   <title>Aakash Verma | Freelance Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Navigation -->
-  <header>
-    <nav class="navbar container" aria-label="Main navigation">
-      <div class="logo">Aakash Verma</div>
-      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
-      <ul class="nav-links">
+  <!-- Header / Navigation -->
+  <header class="header">
+    <nav class="navbar container" aria-label="Primary">
+      <div class="navbar__brand">Aakash Verma</div>
+      <button class="navbar__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="navbar__menu" id="navMenu">
         <li><a href="index.html" class="active" aria-current="page">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
@@ -23,80 +24,78 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-content animate-fade-in">
-        <h1 id="hero-title">Hi, I'm Aakash Verma</h1>
-        <h2 class="tagline">Boosting productivity with precision data & CRM solutions</h2>
-        <p class="intro-text">
+    <!-- Hero Section -->
+    <section class="hero container" aria-labelledby="hero-heading">
+      <div class="hero__text">
+        <h1 id="hero-heading">Hi, I'm Aakash Verma</h1>
+        <p class="hero__tagline">Boosting productivity with precision data & CRM solutions</p>
+        <p class="hero__intro">
           Process Associate with 2+ years of experience in Salesforce, content moderation, and eCommerce operations.
         </p>
-        <div class="hero-buttons">
-          <a href="contact.html" class="btn primary-cta">Hire Me</a>
-          <a href="about.html" class="btn secondary-cta">View Profile</a>
+        <div class="hero__actions">
+          <a href="contact.html" class="btn btn--primary">Hire Me</a>
+          <a href="about.html" class="btn btn--secondary">View Profile</a>
         </div>
       </div>
-      <div class="hero-image animate-zoom-in">
-        <img src="images/profile.jpg" alt="Professional headshot of Aakash Verma" loading="lazy">
+      <div class="hero__image">
+        <img src="images/profile.jpg" alt="Professional headshot of Aakash Verma" loading="lazy" />
       </div>
     </section>
 
     <!-- Featured Projects Carousel -->
-    <section class="projects container" aria-labelledby="projects-title">
-      <h2 id="projects-title">Featured Projects</h2>
-      <p class="section-description">Explore my hands-on work across eCommerce, CRM, and data validation projects.</p>
+    <section class="projects container" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Featured Projects</h2>
+      <p class="projects__description">Explore my hands-on work across eCommerce, CRM, and data validation projects.</p>
 
-      <div class="carousel-wrapper">
-        <button class="carousel-btn prev" aria-label="Previous Project">‹</button>
-        <div class="carousel-track" id="projectCarousel">
-          <div class="carousel-slide">
-            <div class="project-card">
-              <img src="images/studocu-data-validation.png" alt="Dashboard snapshot from Studocu data validation project">
-              <h3>Studocu Data Validation</h3>
-              <p>Validated global university data and documents with 97% accuracy using SOP-driven research workflows.</p>
-            </div>
-          </div>
+      <div class="carousel" role="region" aria-label="Project Showcase">
+        <button class="carousel__btn carousel__btn--prev" aria-label="Previous Project">‹</button>
 
-          <div class="carousel-slide">
-            <div class="project-card">
-              <img src="images/salesforce-crm-management.png" alt="Salesforce CRM interface showing contact tagging and workflow">
-              <h3>Salesforce CRM Management</h3>
-              <p>Managed U.S. account data and performed quality control & tagging in Salesforce with high efficiency.</p>
-            </div>
-          </div>
+        <div class="carousel__track" id="projectCarousel">
+          <article class="carousel__slide">
+            <img src="images/studocu-data-validation.png" alt="Studocu project dashboard" />
+            <h3>Studocu Data Validation</h3>
+            <p>Validated global university data and documents with 97% accuracy using SOP-driven research workflows.</p>
+          </article>
 
-          <div class="carousel-slide">
-            <div class="project-card">
-              <img src="images/dressinn-ecommerce-listing.png" alt="Product listings from Dressinn eCommerce project">
-              <h3>Dressinn E-commerce Listings</h3>
-              <p>Uploaded and optimized 500+ product listings with visual accuracy and regular inventory reporting.</p>
-            </div>
-          </div>
+          <article class="carousel__slide">
+            <img src="images/salesforce-crm-management.png" alt="Salesforce CRM interface" />
+            <h3>Salesforce CRM Management</h3>
+            <p>Managed U.S. account data and performed quality control & tagging in Salesforce with high efficiency.</p>
+          </article>
+
+          <article class="carousel__slide">
+            <img src="images/dressinn-ecommerce-listing.png" alt="Dressinn eCommerce product listings" />
+            <h3>Dressinn E-commerce Listings</h3>
+            <p>Uploaded and optimized 500+ product listings with visual accuracy and regular inventory reporting.</p>
+          </article>
         </div>
-        <button class="carousel-btn next" aria-label="Next Project">›</button>
+
+        <button class="carousel__btn carousel__btn--next" aria-label="Next Project">›</button>
       </div>
 
-      <div class="project-cta">
-        <a href="contact.html" class="btn primary-cta">Discuss a Similar Project</a>
+      <div class="projects__cta">
+        <a href="contact.html" class="btn btn--primary">Discuss a Similar Project</a>
       </div>
     </section>
 
     <!-- CTA Banner -->
-    <section class="cta-banner" aria-labelledby="cta-title">
-      <h2 id="cta-title">Looking for a reliable data or CRM expert?</h2>
+    <section class="cta container" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Looking for a reliable data or CRM expert?</h2>
       <p>Let’s collaborate to structure, clean, and enrich your business data efficiently.</p>
-      <a href="contact.html" class="btn primary-cta">Get in Touch</a>
+      <a href="contact.html" class="btn btn--primary">Get in Touch</a>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer role="contentinfo" class="footer">
-    <p>© 2025 Aakash Verma</p>
-    <p>
-      <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener">LinkedIn</a> |
-      <a href="mailto:aakashverma852787@outlook.com">Email Me</a>
-    </p>
+  <footer class="footer" role="contentinfo">
+    <p>&copy; 2025 Aakash Verma</p>
+    <nav aria-label="Footer links">
+      <ul class="footer__links">
+        <li><a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="mailto:aakashverma852787@outlook.com">Email Me</a></li>
+      </ul>
+    </nav>
   </footer>
 
   <script src="script.js" defer></script>
