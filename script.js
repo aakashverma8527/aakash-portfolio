@@ -1,131 +1,136 @@
-// ✅ JavaScript Enhancements for Portfolio Website
+// ✅ Portfolio Script - Modern, Accessible, Modular
 
-document.addEventListener("DOMContentLoaded", () => {
-  // ✅ Smooth Scroll for Anchor Links
+// Smooth Scroll for Anchor Links
+const enableSmoothScroll = () => {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      const target = document.querySelector(this.getAttribute("href"));
+    anchor.addEventListener('click', e => {
+      const target = document.querySelector(anchor.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth" });
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     }, { passive: true });
   });
+};
 
-  // ✅ Contact Form Handling with Inline Validation and Accessibility
-  const contactForm = document.querySelector(".contact-form");
+// Contact Form Validation
+const initContactForm = () => {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
 
-  if (contactForm) {
-    const statusDiv = document.createElement("div");
-    statusDiv.className = "form-status";
-    statusDiv.setAttribute("aria-live", "polite");
-    contactForm.appendChild(statusDiv);
+  const status = document.createElement('div');
+  status.className = 'form-status';
+  status.setAttribute('aria-live', 'polite');
+  form.appendChild(status);
 
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+  form.addEventListener('submit', e => {
+    e.preventDefault();
 
-      const name = this.querySelector("#name");
-      const email = this.querySelector("#email");
-      const message = this.querySelector("#message");
+    const name = form.querySelector('#name');
+    const email = form.querySelector('#email');
+    const message = form.querySelector('#message');
 
-      let hasError = false;
+    let valid = true;
+    [name, email, message].forEach(input => {
+      const error = input.nextElementSibling;
+      input.classList.remove('input-error');
+      error.textContent = '';
 
-      [name, email, message].forEach(input => {
-        const errorField = input.nextElementSibling;
-        input.classList.remove("input-error");
-        if (errorField) errorField.textContent = "";
-
-        if (!input.value.trim()) {
-          input.classList.add("input-error");
-          if (errorField) errorField.textContent = `Please enter your ${input.name}.`;
-          hasError = true;
-        }
-      });
-
-      if (hasError) {
-        statusDiv.textContent = "Please fill in all required fields.";
-        statusDiv.className = "form-status error";
-        statusDiv.focus();
-        return;
-      }
-
-      statusDiv.textContent = "Thank you! Your message has been submitted.";
-      statusDiv.className = "form-status success";
-      this.reset();
-    });
-  }
-
-  // ✅ Mobile Navigation Toggle with Keyboard Support
-  const navToggle = document.querySelector(".nav-toggle");
-  const navLinks = document.querySelector(".nav-links");
-
-  if (navToggle && navLinks) {
-    navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-      const isOpen = navLinks.classList.contains("open");
-      navToggle.setAttribute("aria-expanded", isOpen);
-    });
-
-    navToggle.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" || e.key === "Enter") {
-        navToggle.click();
+      if (!input.value.trim()) {
+        input.classList.add('input-error');
+        error.textContent = `Please enter your ${input.name}.`;
+        valid = false;
       }
     });
 
-    document.addEventListener("click", e => {
-      if (!navToggle.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains("open")) {
-        navLinks.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
+    if (!valid) {
+      status.textContent = '❌ Please fill in all required fields.';
+      status.className = 'form-status error';
+      return;
+    }
 
-  // ✅ Scroll-Based Reveal Animations with Intersection Observer
-  const revealEls = document.querySelectorAll("[data-reveal]");
+    status.textContent = '✅ Thank you! I will get back to you soon.';
+    status.className = 'form-status success';
+    form.reset();
+  });
+};
 
+// Mobile Navigation Toggle
+const initMobileNav = () => {
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.nav-links');
+
+  if (!toggle || !menu) return;
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
+  });
+
+  toggle.addEventListener('keydown', e => {
+    if (['Escape', 'Enter'].includes(e.key)) toggle.click();
+  });
+
+  document.addEventListener('click', e => {
+    if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+};
+
+// Scroll Reveal Animations
+const initRevealAnimations = () => {
+  const elements = document.querySelectorAll('[data-reveal]');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("revealed");
+        entry.target.classList.add('revealed');
         observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.2
-  });
+  }, { threshold: 0.2 });
 
-  revealEls.forEach(el => {
-    el.classList.add("hidden");
+  elements.forEach(el => {
+    el.classList.add('hidden');
     observer.observe(el);
   });
+};
 
-  // ✅ Carousel Navigation for Featured Projects
-  const carousel = document.getElementById("projectCarousel");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const nextBtn = document.querySelector(".carousel-btn.next");
+// Carousel Logic
+const initCarousel = () => {
+  const track = document.getElementById('projectCarousel');
+  const prev = document.querySelector('.carousel-btn.prev');
+  const next = document.querySelector('.carousel-btn.next');
 
-  if (carousel && prevBtn && nextBtn) {
-    const slideAmount = 320;
+  if (!track || !prev || !next) return;
 
-    nextBtn.addEventListener("click", () => {
-      carousel.scrollBy({ left: slideAmount, behavior: "smooth" });
-    });
+  const scrollAmount = 320;
+  next.addEventListener('click', () => {
+    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+  prev.addEventListener('click', () => {
+    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
 
-    prevBtn.addEventListener("click", () => {
-      carousel.scrollBy({ left: -slideAmount, behavior: "smooth" });
-    });
+  // Swipe for mobile
+  let startX = 0;
+  track.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+  track.addEventListener('touchend', e => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+    if (diff > 50) next.click();
+    else if (diff < -50) prev.click();
+  });
+};
 
-    // Optional: swipe gesture for mobile
-    let startX = 0;
-    carousel.addEventListener("touchstart", e => {
-      startX = e.touches[0].clientX;
-    });
-
-    carousel.addEventListener("touchend", e => {
-      const endX = e.changedTouches[0].clientX;
-      const diff = startX - endX;
-      if (diff > 50) nextBtn.click();
-      else if (diff < -50) prevBtn.click();
-    });
-  }
+// Initialize All
+document.addEventListener('DOMContentLoaded', () => {
+  enableSmoothScroll();
+  initContactForm();
+  initMobileNav();
+  initRevealAnimations();
+  initCarousel();
 });
