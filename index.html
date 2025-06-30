@@ -4,34 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Services | Aakash Verma - Freelance Portfolio</title>
-  <meta name="description" content="Explore professional freelance services by Aakash Verma including Salesforce CRM, Data Entry, Automation, Content Moderation, and more." />
+  <title>Aakash Verma | Freelance Portfolio</title>
+  <meta name="description" content="Portfolio of Aakash Verma – Salesforce, Data Entry, E-commerce Product Listing, UiPath Automation & MIS Reporting Expert." />
   <meta name="author" content="Aakash Verma" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Services | Aakash Verma Portfolio" />
-  <meta property="og:description" content="Freelance data services: Salesforce support, data entry, automation, and more." />
+  <meta property="og:title" content="Aakash Verma | Freelance Portfolio" />
+  <meta property="og:description" content="Professional portfolio of Aakash Verma: Salesforce CRM, E-commerce, SOPs, and Automation Services." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com/services.html" />
-  <meta property="og:image" content="https://yourdomain.com/assets/og-services.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/index.html" />
+  <meta property="og:image" content="https://yourdomain.com/assets/profile.jpg" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Services | Aakash Verma" />
-  <meta name="twitter:description" content="Explore freelance data and automation services offered by Aakash Verma." />
-  <meta name="twitter:image" content="https://yourdomain.com/assets/twitter-services.jpg" />
+  <meta name="twitter:title" content="Aakash Verma | Freelance Portfolio" />
+  <meta name="twitter:description" content="Explore freelance services by Aakash Verma in CRM, automation, and e-commerce." />
+  <meta name="twitter:image" content="https://yourdomain.com/assets/profile.jpg" />
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Services",
-    "url": "https://yourdomain.com/services.html",
-    "about": {
-      "@type": "Person",
-      "name": "Aakash Verma"
-    }
+    "@type": "Person",
+    "name": "Aakash Verma",
+    "jobTitle": "Process Associate",
+    "url": "https://yourdomain.com",
+    "email": "mailto:aakashverma852787@outlook.com",
+    "image": "https://yourdomain.com/assets/profile.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rohini",
+      "addressRegion": "Delhi",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/aakash-verma-3b1187272",
+      "https://github.com/aakashverma8527"
+    ]
   }
   </script>
 
@@ -41,59 +50,61 @@
   <!-- Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Header -->
+  <!-- Header / Navigation -->
   <header>
     <nav class="navbar" aria-label="Main navigation">
       <div class="logo">Aakash Verma</div>
       <ul class="nav-menu" role="menubar">
-        <li><a href="index.html" role="menuitem">Home</a></li>
         <li><a href="about.html" role="menuitem">About</a></li>
-        <li><a href="services.html" class="active" role="menuitem" aria-current="page">Services</a></li>
+        <li><a href="services.html" role="menuitem">Services</a></li>
         <li><a href="projects.html" role="menuitem">Projects</a></li>
         <li><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
-        ☰
-      </button>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">☰</button>
     </nav>
   </header>
 
   <!-- Main -->
   <main id="main-content">
-    <section class="section services-section" aria-labelledby="services-heading">
+    <!-- Hero Section -->
+    <section class="section hero" aria-labelledby="hero-heading">
+      <div class="container hero-content">
+        <div class="hero-image">
+          <img src="assets/profile.jpg" alt="Aakash Verma headshot" />
+        </div>
+        <div>
+          <h1 id="hero-heading">Aakash Verma</h1>
+          <h2 class="subtitle">Process Associate | Salesforce | E-commerce | Data Entry | MIS Executive</h2>
+          <p class="section-intro">Detail-oriented and results-driven professional with 2+ years of experience in automation, CRM, and data reporting.</p>
+          <div class="cta-buttons">
+            <a href="projects.html" class="btn-primary">View Projects</a>
+            <a href="contact.html" class="btn-primary">Hire Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Preview -->
+    <section class="section" aria-labelledby="projects-preview-heading">
       <div class="container">
-        <h1 id="services-heading">Services I Offer</h1>
-        <p class="section-intro">I provide professional freelance services tailored to business operations, automation, and data integrity.</p>
-
-        <div class="service-grid">
-          <article class="service-card" tabindex="0">
-            <h2>Salesforce CRM Support</h2>
-            <p>Streamline your CRM processes with expert Salesforce data entry, cleanup, report generation, and workflow optimization.</p>
+        <h2 id="projects-preview-heading">Featured Projects</h2>
+        <div class="project-grid">
+          <article class="project-card" tabindex="0">
+            <img src="assets/dressinn-ecommerce-listing.png" alt="Dressinn product listings UI" />
+            <h3>Dressinn Product Listing</h3>
+            <p>Managed and optimized 500+ listings for Dressinn, standardizing metadata and inventory tracking.</p>
           </article>
 
-          <article class="service-card" tabindex="0">
-            <h2>Data Entry & MIS Reporting</h2>
-            <p>Accurate and timely entry of data in spreadsheets, CRMs, and internal tools. I also create dashboards and summaries for reporting.</p>
+          <article class="project-card" tabindex="0">
+            <img src="assets/salesforce-crm-management.png" alt="Salesforce CRM interface showing client records" />
+            <h3>Salesforce CRM Management</h3>
+            <p>Created, updated, and audited client records in Salesforce for accurate DEQ generation.</p>
           </article>
 
-          <article class="service-card" tabindex="0">
-            <h2>E-commerce Product Listing</h2>
-            <p>Experienced in managing product data for marketplaces like Amazon and Walmart, including title, description, attributes, and categorization.</p>
-          </article>
-
-          <article class="service-card" tabindex="0">
-            <h2>SOP Documentation</h2>
-            <p>Custom standard operating procedures for recurring workflows like data validation, moderation, or process handover.</p>
-          </article>
-
-          <article class="service-card" tabindex="0">
-            <h2>UiPath Automation Support</h2>
-            <p>Build or support task automations using UiPath, such as data scraping, form filling, email parsing, and repetitive task scheduling.</p>
-          </article>
-
-          <article class="service-card" tabindex="0">
-            <h2>Content Moderation</h2>
-            <p>Over 2 years of experience in moderating eCommerce and user-submitted content using platform-specific guidelines and logic-based checks.</p>
+          <article class="project-card" tabindex="0">
+            <img src="assets/studocu-data-validation.png" alt="Studocu data validation workflow with SOPs" />
+            <h3>Studocu Data Validation</h3>
+            <p>Built SOPs and maintained quality standards in academic content moderation and data merging.</p>
           </article>
         </div>
       </div>
