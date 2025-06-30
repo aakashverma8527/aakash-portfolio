@@ -3,121 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Aakash Verma - Freelance Data & CRM Specialist</title>
-  <meta name="description" content="Learn more about Aakash Verma, a dedicated freelance specialist in data operations, Salesforce CRM, content moderation, and automation. Over 2 years of experience boosting business productivity.">
-  <meta name="author" content="Aakash Verma">
-  <meta property="og:title" content="About | Aakash Verma - Freelance Data & CRM Specialist">
-  <meta property="og:description" content="Freelance expert in Salesforce CRM, data validation, and automation. Explore my experience and skills.">
-  <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://aakashverma.dev/about.html">
-  <meta property="og:image" content="https://aakashverma.dev/images/profile.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About | Aakash Verma">
-  <meta name="twitter:description" content="Freelance data specialist with 2+ years in CRM and validation workflows.">
-  <meta name="twitter:image" content="https://aakashverma.dev/images/profile.jpg">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>About | Aakash Verma - Freelance Portfolio</title>
+  <meta name="description" content="Learn more about Aakash Verma, a freelance data associate with 2+ years of experience in content moderation, CRM, eCommerce data, UiPath automation, and reporting." />
+  <meta name="author" content="Aakash Verma" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Aakash Verma | Freelance Portfolio" />
+  <meta property="og:description" content="Aakash is skilled in Salesforce, UiPath, MIS reporting, and eCommerce operations with over 2 years of experience." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/about.html" />
+  <meta property="og:image" content="https://yourdomain.com/assets/og-about.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Aakash Verma" />
+  <meta name="twitter:description" content="Freelance data and automation specialist with 2+ years of experience." />
+  <meta name="twitter:image" content="https://yourdomain.com/assets/twitter-about.jpg" />
+
+  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Aakash Verma",
-      "jobTitle": "Freelance Data & CRM Specialist",
-      "url": "https://aakashverma.dev/about.html",
-      "sameAs": [
-        "https://www.linkedin.com/in/aakash-verma-3b1187272"
-      ]
-    }
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aakash Verma",
+    "jobTitle": "Freelance Data Associate",
+    "url": "https://yourdomain.com/about.html",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "email": "mailto:aakashverma852787@outlook.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rohini",
+      "addressRegion": "Delhi",
+      "addressCountry": "IN"
+    },
+    "knowsAbout": ["Salesforce CRM", "UiPath", "Content Moderation", "Data Entry", "MIS Reporting", "eCommerce", "Excel Macros", "Google Sheets"]
+  }
   </script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header" role="banner">
-    <nav class="navbar container" aria-label="Primary">
-      <a href="index.html" class="navbar__brand">Aakash Verma</a>
-      <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
-      <ul class="navbar__menu" id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" aria-current="page">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="logo">Aakash Verma</div>
+      <ul class="nav-menu" role="menubar">
+        <li><a href="index.html" role="menuitem">Home</a></li>
+        <li><a href="about.html" class="active" role="menuitem" aria-current="page">About</a></li>
+        <li><a href="services.html" role="menuitem">Services</a></li>
+        <li><a href="projects.html" role="menuitem">Projects</a></li>
+        <li><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">☰</button>
     </nav>
   </header>
 
-  <main id="main-content" class="container">
-    <section class="about section" aria-labelledby="about-title">
-      <div class="about__wrapper">
-        <div class="about__text">
-          <h1 id="about-title">About Me</h1>
-          <p>I’m <strong>Aakash Verma</strong>, a freelance <em>Process Associate</em> with 2+ years of experience in <strong>data validation</strong>, <strong>Salesforce CRM</strong>, and <strong>content moderation</strong>. I help organizations streamline operations and make data-driven decisions through scalable workflows.</p>
-          <p>I've worked across <strong>eCommerce</strong>, <strong>education</strong>, and <strong>healthcare</strong> sectors, specializing in turning unstructured inputs into organized insights that support smarter strategies.</p>
-        </div>
-        <div class="about__image">
-          <img src="images/profile.jpg" alt="Aakash Verma working at a desk with laptop" loading="lazy">
+  <!-- Main -->
+  <main id="main-content">
+    <section class="section about-section" aria-labelledby="about-heading">
+      <div class="container">
+        <h1 id="about-heading">About Me</h1>
+        <p class="section-intro">
+          I'm Aakash Verma — a freelance data associate based in Delhi with over 2 years of experience in content moderation, CRM support, eCommerce, automation, and MIS reporting.
+        </p>
+
+        <div class="about-content">
+          <div class="bio">
+            <h2>Professional Background</h2>
+            <p>
+              I’ve worked with organizations like SunTec India and eDataIndia to streamline eCommerce operations and ensure data quality. My responsibilities have included moderating user-generated content, validating product listings, designing SOPs, and automating tasks using UiPath. I am proficient in handling bulk data entry in tools like Salesforce, Excel, and Google Sheets.
+            </p>
+            <p>
+              With a solid understanding of workflows and clean documentation practices, I help businesses optimize recurring tasks and maintain scalable digital operations.
+            </p>
+          </div>
+
+          <div class="details-grid">
+            <div class="detail-block">
+              <h3>🛠️ Technical Tools</h3>
+              <ul>
+                <li>Salesforce CRM</li>
+                <li>UiPath Automation</li>
+                <li>MS Excel (Macros, Pivot)</li>
+                <li>Google Sheets</li>
+                <li>Content Management Tools</li>
+              </ul>
+            </div>
+
+            <div class="detail-block">
+              <h3>📍 Location</h3>
+              <p>Sec-22, Begumpur, Rohini, New Delhi, India</p>
+            </div>
+
+            <div class="detail-block">
+              <h3>⌨️ Typing Speed</h3>
+              <p>30+ WPM with 90%+ Accuracy</p>
+            </div>
+
+            <div class="detail-block">
+              <h3>🎓 Certifications</h3>
+              <ul>
+                <li>National Apprenticeship Certificate – Data Associate V2</li>
+                <li>CRM Entry & Moderation Training (Internal)</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <section class="skills section" aria-labelledby="skills-title">
-      <h2 id="skills-title">What I Bring to the Table</h2>
-      <div class="skills__grid">
-        <div class="skills__card">
-          <h3>Technical Skills</h3>
-          <ul>
-            <li>Salesforce CRM & automation</li>
-            <li>UiPath automation workflows</li>
-            <li>Excel Macros & Google Sheets</li>
-            <li>Data validation & transformation</li>
-            <li>Annotation & tagging tasks</li>
-          </ul>
-        </div>
-        <div class="skills__card">
-          <h3>Soft Skills</h3>
-          <ul>
-            <li>Attention to detail</li>
-            <li>On-time delivery</li>
-            <li>Remote collaboration</li>
-            <li>Effective communication</li>
-            <li>Process-oriented mindset</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonials section" aria-labelledby="testimonials-title">
-      <h2 id="testimonials-title">Client Feedback</h2>
-      <div class="testimonials__grid">
-        <blockquote class="testimonial">
-          <p>"Aakash is fast, reliable, and extremely accurate. His CRM knowledge really boosted our internal workflow."</p>
-          <footer>&mdash; <cite>Team Lead, SaaS Company</cite></footer>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>"His structured data reviews saved our QA team countless hours. Great communication too!"</p>
-          <footer>&mdash; <cite>Manager, EdTech Startup</cite></footer>
-        </blockquote>
-      </div>
-    </section>
-
-    <section class="cta section" aria-labelledby="cta-title">
-      <h2 id="cta-title">Let’s Work Together</h2>
-      <p>If you're looking for a reliable, detail-oriented freelancer to support your data or CRM goals, let’s connect.</p>
-      <a href="contact.html" class="btn btn--primary">Contact Me</a>
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer__inner">
-      <p>&copy; 2025 Aakash Verma</p>
-      <nav aria-label="Footer links">
-        <ul class="footer__links">
-          <li><a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="mailto:aakashverma852787@outlook.com">Email Me</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
   </footer>
 
   <script src="script.js" defer></script>
