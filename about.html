@@ -3,129 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Aakash Verma | Freelance CRM & Data Specialist</title>
-  <meta name="description" content="Get to know Aakash Verma – a detail-oriented freelancer skilled in Salesforce CRM, data validation, content moderation, and process automation.">
-  <meta name="keywords" content="Aakash Verma, CRM Specialist, Salesforce Freelancer, Data Entry Expert, UiPath Automation, Delhi Freelancer">
-  <meta name="author" content="Aakash Verma">
+  <title>Aakash Verma | Freelance Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Meta for SEO -->
+  <meta name="description" content="Freelance portfolio of Aakash Verma - expert in data operations, Salesforce CRM, and eCommerce projects.">
 </head>
 <body>
-
-  <!-- Navigation -->
-  <header>
-    <nav class="navbar" role="navigation" aria-label="Main menu">
-      <div class="logo">Aakash Verma</div>
+  <!-- Header -->
+  <header role="banner">
+    <nav class="navbar container" aria-label="Main navigation">
+      <div class="logo" aria-label="Site Logo">Aakash Verma</div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <main role="main">
-
-    <!-- About Section -->
-    <section class="container about-section">
-      <h1 class="section-title">About Me</h1>
-      <div class="about-content">
-        <div class="about-image">
-          <img src="images/profile.jpg" alt="Professional photo of Aakash Verma" loading="lazy" />
+  <!-- Hero Section -->
+  <main>
+    <section class="hero container" aria-label="Hero Introduction">
+      <div class="hero-content" data-aos="fade-up" data-aos-delay="100">
+        <h1>Hi, I'm <span class="highlight">Aakash Verma</span></h1>
+        <h2 class="tagline">Boosting business productivity through precision data and CRM solutions</h2>
+        <p>Process Associate | Salesforce CRM Specialist | Data Quality Expert | Content Moderator</p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn primary-cta">Hire Me</a>
+          <a href="about.html" class="btn secondary-cta">View Profile</a>
         </div>
-        <div class="about-text">
-          <h2>Hello, I'm Aakash Verma</h2>
-          <p class="mission-line"><strong>My mission is to help businesses transform messy, unstructured data into clean, actionable insights that power decisions.</strong></p>
-          <p>As a freelance CRM & data operations specialist, I bring over 2 years of experience across content moderation, eCommerce, Salesforce CRM, and automation. I’ve contributed to teams at SunTec India and eDataIndia, delivering accuracy, accountability, and on-time results at scale.</p>
-          <p>Whether it’s managing workflows in Salesforce, building data pipelines, or structuring raw input into quality datasets—I focus on reliability, clarity, and client impact. I’m currently pursuing a B.A. at the University of Delhi and hold a certified National Apprenticeship in Data Associate V2.</p>
-          <p>Based in Rohini, Delhi—but available globally—I help teams streamline operations with data that actually works for them.</p>
-        </div>
+      </div>
+      <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+        <img src="images/profile.jpg" alt="Professional headshot of Aakash Verma" loading="lazy">
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="container skills-section">
-      <h2>Skills & Strengths</h2>
-      <div class="skills-columns">
-        <div class="hard-skills">
-          <h3>Technical Skills</h3>
-          <ul class="skills-list">
-            <li>Salesforce CRM & Workflow Tagging</li>
-            <li>Content Moderation & Policy Compliance</li>
-            <li>UiPath Automation & Rule-based Bots</li>
-            <li>Excel Macros, Google Sheets, MIS Reports</li>
-            <li>eCommerce Product Listing (Dressinn)</li>
-            <li>Data Validation, Deduplication, QA</li>
-            <li>Typing Speed: 30+ WPM | 90%+ Accuracy</li>
-          </ul>
+    <!-- Projects Section -->
+    <section class="projects container" aria-label="Featured Projects">
+      <h2 data-aos="fade-up">Featured Projects</h2>
+      <p class="section-description" data-aos="fade-up" data-aos-delay="100">
+        Explore some of my hands-on work across eCommerce, CRM, and data validation projects.
+      </p>
+      <div class="project-grid">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/studocu-data-validation.png" alt="Dashboard snapshot from Studocu data validation project" loading="lazy">
+          <h3>Studocu Data Validation</h3>
+          <p>Validated global university data and documents with 97% accuracy, using research and SOP-driven automation techniques.</p>
         </div>
-        <div class="soft-skills">
-          <h3>Soft Skills</h3>
-          <ul class="skills-list">
-            <li>Detail-Oriented Problem Solving</li>
-            <li>Strong Accountability & Ownership</li>
-            <li>Time Management & Task Prioritization</li>
-            <li>Client Communication & Collaboration</li>
-            <li>Adaptability Across Projects & Tools</li>
-          </ul>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/salesforce-crm-management.png" alt="Salesforce CRM interface showing contact tagging and data workflow" loading="lazy">
+          <h3>Salesforce CRM Management</h3>
+          <p>Managed U.S. account data, performed quality control, and executed CRM tagging in Salesforce with high efficiency.</p>
         </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+          <img src="images/dressinn-ecommerce-listing.png" alt="Product listings from Dressinn eCommerce project" loading="lazy">
+          <h3>Dressinn E-commerce Listings</h3>
+          <p>Uploaded and optimized 500+ fashion product listings with daily reporting and visual merchandising accuracy.</p>
+        </div>
+      </div>
+      <div class="project-cta" data-aos="zoom-in" data-aos-delay="500">
+        <a href="contact.html" class="btn primary-cta">Discuss a Similar Project</a>
       </div>
     </section>
 
-    <!-- Experience Timeline -->
-    <section class="container experience-section">
-      <h2>Professional Experience</h2>
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <h3>Process Associate — SunTec India</h3>
-          <p><em>Sep 2023 – Present | Rohini, Delhi</em></p>
-          <ul>
-            <li>Curated and validated global university data for Studocu using SOPs and research tools.</li>
-            <li>Maintained 97%+ accuracy across sensitive educational datasets and metadata reviews.</li>
-            <li>Managed Salesforce account creation, QC processes, and DEQ-level workflows.</li>
-            <li>Handled confidential data with redaction and privacy compliance standards.</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item">
-          <h3>E-commerce Executive — eDataIndia (Dressinn)</h3>
-          <p><em>Aug 2022 – Aug 2023 | Rohini, Delhi</em></p>
-          <ul>
-            <li>Uploaded and mapped 500+ product listings with variants, sizes, and visual assets.</li>
-            <li>Generated daily/weekly MIS reports on inventory, price changes, and stock status.</li>
-            <li>Supported content QA and spreadsheet automation using Excel functions and macros.</li>
-          </ul>
-        </div>
-
-      </div>
+    <!-- CTA Banner -->
+    <section class="cta-banner" aria-label="Final Call to Action" data-aos="fade-in">
+      <h2>Looking for a reliable freelance data or CRM expert?</h2>
+      <p>Let’s collaborate to bring structure and insight to your business operations.</p>
+      <a href="contact.html" class="btn primary-cta">Get in Touch</a>
     </section>
-
-    <!-- Trust Signals -->
-    <section class="container testimonial-section">
-      <h2>What Clients Say</h2>
-      <p><em>Coming soon — this space will feature real testimonials, reviews, and success stories from past clients.</em></p>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="container cta-section">
-      <h2>Let’s Collaborate</h2>
-      <p>If you need support with CRM processes, data workflows, or automation tasks, I’m here to help.</p>
-      <a href="contact.html" class="btn primary-cta">Contact Me</a>
-    </section>
-
   </main>
 
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <p>© 2025 Aakash Verma</p>
     <p>
-      <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener">LinkedIn</a> |
+      <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
       <a href="mailto:aakashverma852787@outlook.com">Email Me</a>
     </p>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
