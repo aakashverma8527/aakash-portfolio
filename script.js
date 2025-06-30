@@ -1,4 +1,4 @@
-// ✅ JavaScript Enhancements for Portfolio
+// ✅ JavaScript Enhancements for Portfolio Website
 
 document.addEventListener("DOMContentLoaded", () => {
   // ✅ Smooth Scroll for Anchor Links
@@ -33,11 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
       [name, email, message].forEach(input => {
         const errorField = input.nextElementSibling;
         input.classList.remove("input-error");
-        errorField.textContent = "";
+        if (errorField) errorField.textContent = "";
 
         if (!input.value.trim()) {
           input.classList.add("input-error");
-          errorField.textContent = `Please enter your ${input.name}.`;
+          if (errorField) errorField.textContent = `Please enter your ${input.name}.`;
           hasError = true;
         }
       });
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ✅ Intersection Observer for Scroll-Based Reveal Animations
+  // ✅ Scroll-Based Reveal Animations with Intersection Observer
   const revealEls = document.querySelectorAll("[data-reveal]");
 
   const observer = new IntersectionObserver(entries => {
@@ -98,4 +98,34 @@ document.addEventListener("DOMContentLoaded", () => {
     el.classList.add("hidden");
     observer.observe(el);
   });
+
+  // ✅ Carousel Navigation for Featured Projects
+  const carousel = document.getElementById("projectCarousel");
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  const nextBtn = document.querySelector(".carousel-btn.next");
+
+  if (carousel && prevBtn && nextBtn) {
+    const slideAmount = 320;
+
+    nextBtn.addEventListener("click", () => {
+      carousel.scrollBy({ left: slideAmount, behavior: "smooth" });
+    });
+
+    prevBtn.addEventListener("click", () => {
+      carousel.scrollBy({ left: -slideAmount, behavior: "smooth" });
+    });
+
+    // Optional: swipe gesture for mobile
+    let startX = 0;
+    carousel.addEventListener("touchstart", e => {
+      startX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener("touchend", e => {
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      if (diff > 50) nextBtn.click();
+      else if (diff < -50) prevBtn.click();
+    });
+  }
 });
