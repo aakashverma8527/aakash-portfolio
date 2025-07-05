@@ -1,24 +1,15 @@
-/* 🌙 Modern Freelance Portfolio Theme */
+/* 🌙 Global Dark Theme Variables */
 :root {
   --bg-color: #0d1117;
   --text-color: #f5f5f5;
   --accent: #00bfa6;
   --accent-hover: #029e87;
-  --border-color: #1f2937;
   --card-bg: #161b22;
+  --border-color: #1f2937;
   --shadow: rgba(0, 0, 0, 0.25);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #0d1117;
-    --text-color: #f5f5f5;
-    --card-bg: #161b22;
-    --border-color: #2d3748;
-  }
-}
-
-/* ✅ Base Reset */
+/* ✅ Base Reset & Typography */
 * {
   margin: 0;
   padding: 0;
@@ -27,21 +18,25 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: "Inter", "Roboto", system-ui, sans-serif;
+  font-family: "Segoe UI", Roboto, system-ui, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  font-size: 1rem;
+  min-height: 100vh;
 }
 
-a,
-button {
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
   color: inherit;
   text-decoration: none;
-  transition: all 0.3s ease;
 }
 
 a:focus-visible,
@@ -50,20 +45,26 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
+h1, h2, h3 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
 /* ✅ Navbar */
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: var(--bg-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.logo {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--accent);
 }
 
 .nav-menu {
@@ -78,13 +79,14 @@ button:focus-visible {
 
 .nav-menu a::after {
   content: '';
-  position: absolute;
-  width: 0;
+  display: block;
   height: 2px;
-  bottom: -4px;
-  left: 0;
+  width: 0;
   background: var(--accent);
   transition: width 0.3s ease;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
 }
 
 .nav-menu a:hover::after,
@@ -92,10 +94,9 @@ button:focus-visible {
   width: 100%;
 }
 
-/* ✅ Sections */
+/* ✅ Sections & Layout */
 .section {
   padding: 3rem 1rem;
-  background: var(--bg-color);
 }
 
 .container {
@@ -104,109 +105,76 @@ button:focus-visible {
   padding: 0 1rem;
 }
 
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: var(--accent);
-  text-align: center;
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/* ✅ Hero */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 2rem;
-  background: var(--card-bg);
-  padding: 3rem 1rem;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  color: var(--accent);
-}
-
-.hero p {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.hero-image img {
-  width: 220px;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px var(--shadow);
+/* ✅ Cards */
+.card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 2px 6px var(--shadow);
+  border-radius: 4px;
   transition: transform 0.3s ease;
 }
 
-.hero-image img:hover {
-  transform: scale(1.05);
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
 }
 
 /* ✅ Buttons */
 .btn {
   display: inline-block;
-  background: var(--accent);
-  color: #fff;
-  padding: 0.7rem 1.5rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 4px;
   font-weight: 500;
-  margin-top: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.btn:hover {
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
   background: var(--accent-hover);
   transform: translateY(-1px);
 }
 
-/* ✅ Cards & Grids */
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.services-grid,
-.projects-grid,
-.skills-grid {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.card {
-  background: var(--card-bg);
-  padding: 1.2rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 10px var(--shadow);
-}
-
-.card h3 {
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--accent);
   color: var(--accent);
-  margin-bottom: 0.5rem;
 }
 
-.card p {
-  font-size: 0.95rem;
-  color: #cbd5e1;
+.btn-secondary:hover {
+  background: var(--accent-hover);
+  color: #fff;
 }
 
-/* ✅ About */
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
+/* ✅ Skills & Services Grid */
+.skills-grid,
+.services-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.skills-grid .card,
+.services-grid .card {
   text-align: center;
-}
-
-.about-text {
-  flex: 1;
+  background: var(--card-bg);
+  padding: 0.75rem;
+  border-radius: 4px;
 }
 
 /* ✅ Contact Form */
@@ -214,12 +182,10 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .contact-form label {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .contact-form input,
@@ -231,11 +197,18 @@ button:focus-visible {
   color: var(--text-color);
 }
 
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
 .contact-form button {
   background: var(--accent);
   color: #fff;
-  padding: 0.75rem;
   border: none;
+  padding: 0.75rem;
   cursor: pointer;
 }
 
@@ -245,10 +218,10 @@ button:focus-visible {
 
 /* ✅ Footer */
 footer {
+  background: var(--card-bg);
   text-align: center;
   padding: 1rem;
-  background: var(--card-bg);
-  color: #aaa;
+  color: #ccc;
 }
 
 footer a {
@@ -266,18 +239,32 @@ footer a:hover {
     gap: 1rem;
   }
 
+  .hero,
   .about-content,
-  .hero {
+  .contact-grid {
     flex-direction: column;
     text-align: center;
   }
 
-  .hero-image img {
+  .hero img,
+  .about-content img {
     margin: 0 auto;
   }
+}
 
-  .nav-menu {
-    flex-direction: column;
-    gap: 1rem;
-  }
+/* ✅ Utility */
+.text-center {
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
