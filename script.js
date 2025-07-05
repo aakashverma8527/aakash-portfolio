@@ -1,27 +1,32 @@
-// ==========================================
-// script.js — Aakash Verma Portfolio
-// ==========================================
+// ==============================
+// script.js - Aakash Verma Portfolio
+// ==============================
 
-// Initialize all modules when DOM is ready
+// Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
-  initSkipLinkHandler();
-  initMobileNavToggle();
-  initFocusOutlineHandler();
-  initSmoothScrolling();
-  initContactFormHandler();
+  initSkipLink();
+  initNavToggle();
+  initFocusIndicator();
+  initSmoothScroll();
+  initContactForm();
 });
 
-// ==========================================
-// Skip-link: move focus to #main-content
-// ==========================================
-function initSkipLinkHandler() {
-  const mainContent = document.getElementById('main-content');
-  if (!mainContent) return;
+// ==============================
+// 1️⃣ Skip Link Focus
+// ==============================
+function initSkipLink() {
+  const skipLinks = document.querySelectorAll('.skip-link');
+  const mainContent = document.querySelector('#main-content');
 
-  document.querySelectorAll('.skip-link').forEach(link => {
+  if (!mainContent || skipLinks.length === 0) return;
+
+  skipLinks.forEach(link => {
     link.addEventListener('click', () => {
+      // Make main content focusable and move focus
       mainContent.setAttribute('tabindex', '-1');
       mainContent.focus();
+
+      // Remove tabindex after focus is lost
       mainContent.addEventListener('blur', () => {
         mainContent.removeAttribute('tabindex');
       }, { once: true });
@@ -29,64 +34,68 @@ function initSkipLinkHandler() {
   });
 }
 
-// ==========================================
-// Mobile Nav Toggle: open/close menu
-// ==========================================
-function initMobileNavToggle() {
+// ==============================
+// 2️⃣ Mobile Navigation Toggle
+// ==============================
+function initNavToggle() {
   const toggleBtn = document.querySelector('.nav-toggle');
   const navMenu = document.querySelector('.nav-menu');
+
   if (!toggleBtn || !navMenu) return;
 
   toggleBtn.addEventListener('click', () => {
-    const isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
-    toggleBtn.setAttribute('aria-expanded', String(!isOpen));
-    navMenu.classList.toggle('open');
+    const isOpen = navMenu.classList.toggle('open');
+    toggleBtn.setAttribute('aria-expanded', String(isOpen));
   });
 }
 
-// ==========================================
-// Focus Outline: show outlines when tabbing
-// ==========================================
-function initFocusOutlineHandler() {
-  const handleFirstTab = e => {
+// ==============================
+// 3️⃣ Keyboard-Only Focus Class
+// ==============================
+function initFocusIndicator() {
+  const handleFirstTab = (e) => {
     if (e.key === 'Tab') {
       document.body.classList.add('user-is-tabbing');
       window.removeEventListener('keydown', handleFirstTab);
       window.addEventListener('mousedown', () => {
         document.body.classList.remove('user-is-tabbing');
-        window.addEventListener('keydown', handleFirstTab);
+        window.addEventListener('keydown', handleFirstTab, { once: true });
       }, { once: true });
     }
   };
+
   window.addEventListener('keydown', handleFirstTab);
 }
 
-// ==========================================
-// Smooth Scroll: animate internal anchors
-// ==========================================
-function initSmoothScrolling() {
-  const links = document.querySelectorAll('a[href^="#"]:not([href="#"])');
-  links.forEach(link => {
-    link.addEventListener('click', e => {
-      const targetId = link.getAttribute('href')?.substring(1);
-      const target = document.getElementById(targetId);
-      if (target) {
+// ==============================
+// 4️⃣ Smooth Scroll for Anchor Links
+// ==============================
+function initSmoothScroll() {
+  const internalLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+
+  internalLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href').slice(1);
+      const targetEl = document.getElementById(targetId);
+
+      if (targetEl) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        target.focus({ preventScroll: true });
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        targetEl.focus({ preventScroll: true });
       }
     });
   });
 }
 
-// ==========================================
-// Contact Form: validate and handle submit
-// ==========================================
-function initContactFormHandler() {
+// ==============================
+// 5️⃣ Contact Form Handler
+// ==============================
+function initContactForm() {
   const form = document.querySelector('.contact-form');
+
   if (!form) return;
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const name = form.querySelector('#name')?.value.trim();
@@ -94,12 +103,24 @@ function initContactFormHandler() {
     const message = form.querySelector('#message')?.value.trim();
 
     if (!name || !email || !message) {
-      alert('⚠️ Please fill out all required fields: Name, Email, and Message.');
+      alert('⚠️ Please fill out all required fields.');
       return;
     }
 
-    // Simulated successful submission
-    console.log('✅ Contact Form Submitted:', { name, email, message });
+    const emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
+    if (!emailPattern.test(email)) {
+      alert('⚠️ Please enter a valid email address.');
+      return;
+    }
+
+    const formData = {
+      name,
+      email,
+      subject: form.querySelector('#subject')?.value.trim() || '(No Subject)',
+      message
+    };
+
+    console.log('📨 Contact Form Submitted:', formData);
     alert(`✅ Thank you, ${name}! Your message has been sent.`);
 
     form.reset();
