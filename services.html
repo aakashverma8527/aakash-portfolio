@@ -4,29 +4,29 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Services | Aakash Verma</title>
-<meta name="description" content="Explore professional services in data operations, automation, CRM, and more by Aakash Verma." />
+<meta name="description" content="Explore freelance services in Data Operations, Automation, CRM, and AI solutions by Aakash Verma." />
 <meta name="author" content="Aakash Verma" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="Services | Aakash Verma" />
-<meta property="og:description" content="Tailored services across data, automation, and annotation by Aakash Verma." />
+<meta property="og:description" content="Freelance Data, Automation, CRM, and AI services by Aakash Verma." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://aakashverma.dev/services" />
-<meta property="og:image" content="https://aakashverma.dev/images/services-og.jpg" />
+<meta property="og:url" content="https://yourdomain.com/services.html" />
+<meta property="og:image" content="https://yourdomain.com/images/services-og.jpg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Services | Aakash Verma" />
-<meta name="twitter:description" content="Freelance data and automation services by Aakash Verma." />
-<meta name="twitter:image" content="https://aakashverma.dev/images/services-og.jpg" />
+<meta name="twitter:description" content="Explore professional services in data, automation, CRM, and AI by Aakash Verma." />
+<meta name="twitter:image" content="https://yourdomain.com/images/services-og.jpg" />
 
-<!-- Structured Data -->
+<!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Services",
-  "url": "https://aakashverma.dev/services",
+  "url": "https://yourdomain.com/services.html",
   "about": {
     "@type": "Person",
     "name": "Aakash Verma"
@@ -36,125 +36,88 @@
 
 <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header>
   <nav class="navbar" aria-label="Main navigation">
-    <a href="index.html" class="logo" title="Go to homepage">Aakash Verma</a>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation" aria-controls="nav-menu">☰</button>
-    <ul class="nav-menu" id="nav-menu" role="menubar">
-      <li><a href="index.html" role="menuitem">Home</a></li>
-      <li><a href="about.html" role="menuitem">About</a></li>
-      <li><a href="services.html" class="active" role="menuitem" aria-current="page">Services</a></li>
-      <li><a href="projects.html" role="menuitem">Projects</a></li>
-      <li><a href="contact.html" role="menuitem">Contact</a></li>
+    <a href="index.html" class="logo">Aakash Verma</a>
+    <ul class="nav-menu" role="menubar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <main id="main-content">
-  <section class="section services-hero">
+  <!-- Hero -->
+  <section class="section hero" aria-labelledby="hero-heading">
     <div class="container">
-      <h1>Professional Services I Offer</h1>
-      <p>Whether you're scaling operations, automating workflows, or sourcing research-ready data, I deliver tailored solutions across industries.</p>
+      <h1 id="hero-heading">Professional Services I Offer</h1>
+      <p>I help businesses streamline operations through data-driven, automated, and tailored solutions.</p>
     </div>
   </section>
 
   <!-- Data Services -->
-  <section class="section" aria-labelledby="data-services">
+  <section class="section" id="data-services" aria-labelledby="data-heading">
     <div class="container">
-      <h2 id="data-services">Data Services</h2>
+      <h2 id="data-heading">Data Services</h2>
       <div class="services-grid">
-        <article class="service-card">
-          <h3>Data Collection</h3>
-          <p>Gather structured data from websites, surveys, directories, and more—tailored for research, growth, and decision-making.</p>
-        </article>
-        <article class="service-card">
-          <h3>Data Extraction</h3>
-          <p>Extract usable data from PDFs, images, or portals—essential for finance, eCommerce, and healthcare domains.</p>
-        </article>
-        <article class="service-card">
-          <h3>Data Mining</h3>
-          <p>Identify patterns, trends, and insights from large data sets to drive smarter strategy and engagement.</p>
-        </article>
-        <article class="service-card">
-          <h3>Web Research</h3>
-          <p>Custom online research for markets, trends, and competitors—ideal for analysts, marketers, and consultants.</p>
-        </article>
-        <article class="service-card">
-          <h3>List Building</h3>
-          <p>Generate targeted lead/contact lists with names, emails, phone numbers—great for outreach campaigns.</p>
-        </article>
-        <article class="service-card">
-          <h3>Data Appending</h3>
-          <p>Enrich existing databases with missing info like phone numbers or emails to boost CRM effectiveness.</p>
-        </article>
+        <article class="service-card"><h3>Data Collection</h3><p>Structured data gathered from diverse sources.</p></article>
+        <article class="service-card"><h3>Data Extraction</h3><p>Turn PDFs, images, and portals into usable data.</p></article>
+        <article class="service-card"><h3>Data Mining</h3><p>Discover trends and insights in large datasets.</p></article>
+        <article class="service-card"><h3>Web Research</h3><p>Competitor and market research tailored to you.</p></article>
+        <article class="service-card"><h3>List Building</h3><p>Targeted lists of contacts and leads.</p></article>
+        <article class="service-card"><h3>Data Appending</h3><p>Enrich your database with missing information.</p></article>
       </div>
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn btn-primary">Request a Custom Data Solution</a>
+      <div class="cta">
+        <a href="contact.html" class="btn" role="button">Request Data Services</a>
       </div>
     </div>
   </section>
 
   <!-- Automation & CRM -->
-  <section class="section" aria-labelledby="automation-crm">
+  <section class="section" id="automation-crm" aria-labelledby="automation-heading">
     <div class="container">
-      <h2 id="automation-crm">Automation & CRM Services</h2>
+      <h2 id="automation-heading">Automation & CRM</h2>
       <div class="services-grid">
-        <article class="service-card">
-          <h3>LinkedIn Data Mining</h3>
-          <p>Mine profile-level LinkedIn data to target B2B leads—ideal for sales, recruitment, and outreach funnels.</p>
-        </article>
-        <article class="service-card">
-          <h3>Website Data Scraping</h3>
-          <p>Automate web scraping for product details, reviews, pricing—perfect for eCommerce and price research.</p>
-        </article>
-        <article class="service-card">
-          <h3>CRM Data Entry</h3>
-          <p>Accurate and timely Salesforce/HubSpot CRM updates—trusted by marketing and sales ops teams globally.</p>
-        </article>
+        <article class="service-card"><h3>LinkedIn Mining</h3><p>Extract B2B leads from LinkedIn effectively.</p></article>
+        <article class="service-card"><h3>Web Scraping</h3><p>Automated scraping for e-commerce and research.</p></article>
+        <article class="service-card"><h3>CRM Data Entry</h3><p>Accurate updates and maintenance of CRM data.</p></article>
       </div>
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn btn-secondary">Improve My CRM Workflows</a>
+      <div class="cta">
+        <a href="contact.html" class="btn" role="button">Request Automation & CRM</a>
       </div>
     </div>
   </section>
 
   <!-- AI & Industry-Specific -->
-  <section class="section" aria-labelledby="ai-services">
+  <section class="section" id="ai-industry" aria-labelledby="ai-heading">
     <div class="container">
-      <h2 id="ai-services">AI & Industry-Specific Solutions</h2>
+      <h2 id="ai-heading">AI & Industry-Specific Solutions</h2>
       <div class="services-grid">
-        <article class="service-card">
-          <h3>Healthcare BPO</h3>
-          <p>End-to-end support in medical billing, claims entry, patient data indexing, and record processing.</p>
-        </article>
-        <article class="service-card">
-          <h3>2D & 3D Image Annotation</h3>
-          <p>Label objects with bounding boxes, polygons, cuboids for machine learning models in AI/vision domains.</p>
-        </article>
-        <article class="service-card">
-          <h3>ESG Reporting & Data</h3>
-          <p>Track, manage, and report on ESG metrics for compliance, sustainability, and stakeholder trust.</p>
-        </article>
+        <article class="service-card"><h3>Healthcare BPO</h3><p>Medical billing, claims, and record processing.</p></article>
+        <article class="service-card"><h3>2D/3D Annotation</h3><p>Data labeling for computer vision models.</p></article>
+        <article class="service-card"><h3>ESG Reporting</h3><p>Track and report environmental and social data.</p></article>
       </div>
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn btn-primary">Get a Project Estimate</a>
+      <div class="cta">
+        <a href="contact.html" class="btn" role="button">Request AI Solutions</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
+<footer class="footer">
   <div class="container">
-    <p>&copy; 2025 Aakash Verma. All rights reserved.</p>
-    <nav aria-label="Footer Navigation">
-      <ul class="footer-links">
-        <li><a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="mailto:aakashverma852787@outlook.com">Email</a></li>
-      </ul>
-    </nav>
+    <p>&copy; 2025 Aakash Verma</p>
+    <p>
+      <a href="mailto:aakashverma852787@outlook.com">Email</a> |
+      <a href="https://www.linkedin.com/in/aakash-verma-3b1187272" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
   </div>
 </footer>
 
